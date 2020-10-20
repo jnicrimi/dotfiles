@@ -45,9 +45,32 @@ set visualbell
 set whichwrap=b,s,[,],<,>
 set wrapscan
 
+" mapleader
+let g:mapleader = "\<Space>"
+
+" tabpage
+nnoremap [Tag] <Nop>
+nmap t [Tag]
+
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+map <silent> [Tag]x :tabclose<CR>
+map <silent> [Tag]n :tabnext<CR>
+map <silent> [Tag]p :tabprevious<CR>
+
 " CursorShape
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" Remap Esc key
+inoremap <silent> jj <ESC>
+
+" Cursor key
+nnoremap <Down> gj
+nnoremap <Up>   gk
 
 " ZenkakuSpace
 function! ZenkakuSpace()
@@ -62,13 +85,6 @@ if has('syntax')
   augroup END
   call ZenkakuSpace()
 endif
-
-" Remap Esc key
-inoremap <silent> jj <ESC>
-
-" Cursor key
-nnoremap <Down> gj
-nnoremap <Up>   gk
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -100,22 +116,6 @@ autocmd ColorScheme * highlight NonText    ctermbg=NONE ctermfg=239
 autocmd ColorScheme * highlight SpecialKey ctermbg=NONE ctermfg=239
 
 colorscheme gruvbox
-
-" tabpage
-nnoremap [Tag] <Nop>
-nmap t [Tag]
-
-for n in range(1, 9)
-  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
-endfor
-
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
-map <silent> [Tag]x :tabclose<CR>
-map <silent> [Tag]n :tabnext<CR>
-map <silent> [Tag]p :tabprevious<CR>
-
-" mapleader
-let g:mapleader = "\<Space>"
 
 " vim-airline
 let g:airline_theme = 'base16_gruvbox_dark_hard'
