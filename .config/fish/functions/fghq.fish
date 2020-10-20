@@ -1,5 +1,5 @@
 function fghq
-  set -l repository (ghq list | fzf -e)
+  set -l repository (ghq list | fzf)
   if test -z "$repository"
     return 0
   end

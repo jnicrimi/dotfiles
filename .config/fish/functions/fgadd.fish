@@ -1,5 +1,5 @@
 function fgadd
-  set -l target_files (git diff --name-only | fzf -e -m)
+  set -l target_files (git diff --name-only | fzf -m)
   if test -z "$target_files"
     return 0
   end

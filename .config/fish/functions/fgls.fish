@@ -16,10 +16,10 @@ function fgls
     end
   end
   if test $staged -eq 1
-    set target_file (git diff --cached --name-only --diff-filter=ACMR | fzf -e)
+    set target_file (git diff --cached --name-only --diff-filter=ACMR | fzf)
     set target_path (git rev-parse --show-toplevel)"/"$target_file
   else
-    set target_path (pwd)"/"(git ls-files | fzf -e)
+    set target_path (pwd)"/"(git ls-files | fzf)
   end
   if test -z "$target_path"
     return 0

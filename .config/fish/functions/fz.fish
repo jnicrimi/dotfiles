@@ -1,5 +1,5 @@
 function fz
-  set -l fz_path (z -l | sort -nr | cut -d ' ' -f2- | sed -e "s/^[ \t]*//" | fzf -e)
+  set -l fz_path (z -l | sort -nr | cut -d ' ' -f2- | sed -e "s/^[ \t]*//" | fzf)
   if test -z "$fz_path"
     return 0
   end
