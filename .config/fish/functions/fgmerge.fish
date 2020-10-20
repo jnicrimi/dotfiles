@@ -7,7 +7,7 @@ function fgmerge
   set -l prompt "merge: $target_branch > $current_branch"
   echo -e $prompt
   read -P "(yes/no) " -l confirm
-  if test $status -ne 0
+  if test $confirm  != "yes"
     return 0
   end
   git merge $target_branch
