@@ -79,11 +79,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish'
 Plug 'dense-analysis/ale'
+Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ryanoasis/vim-devicons'
@@ -131,14 +131,6 @@ nnoremap [Fzf]g :<C-u>GFiles<CR>
 nnoremap [Fzf]G :<C-u>GFiles?<CR>
 nnoremap [Fzf]h :<C-u>History<CR>
 
-" vim-indent-guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size  = 1
-let g:indent_guides_start_level = 2
-
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
-
 " indentLine
 let g:indentLine_color_term = 239
 
@@ -147,6 +139,11 @@ nnoremap [gitgutter] <Nop>
 nmap <C-h> [gitgutter]
 nmap [gitgutter]j <Plug>(GitGutterNextHunk)
 nmap [gitgutter]k <Plug>(GitGutterPrevHunk)
+
+" vim-easymotion
+map <Leader> <Plug>(easymotion-prefix)
+map <Leader>f <Plug>(easymotion-bd-f2)
+map <Leader>L <Plug>(easymotion-bd-jk)
 
 " ale
 let g:ale_fixers = {
