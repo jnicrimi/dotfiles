@@ -141,9 +141,13 @@ nmap [gitgutter]j <Plug>(GitGutterNextHunk)
 nmap [gitgutter]k <Plug>(GitGutterPrevHunk)
 
 " vim-easymotion
-map <Leader> <Plug>(easymotion-prefix)
-map <Leader>f <Plug>(easymotion-bd-f2)
-map <Leader>L <Plug>(easymotion-bd-jk)
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+
+map <Leader>s <Plug>(easymotion-bd-f2)
+map <Leader>l <Plug>(easymotion-bd-jk)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " ale
 let g:ale_fixers = {
