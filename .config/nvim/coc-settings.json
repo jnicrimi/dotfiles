@@ -1,0 +1,18 @@
+{
+  "suggest.minTriggerInputLength": 2,
+  "suggest.noselect": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.timeout": 300,
+  "intelephense.diagnostics": {
+    "enable": false,
+    "undefinedClassConstants": false,
+    "undefinedConstants": false,
+    "undefinedFunctions": false,
+    "undefinedMethods": false,
+    "undefinedProperties": false,
+    "undefinedTypes": false,
+    "signOffset": 9999999
+  },
+  "javascript.showUnused": false,
+  "typescript.showUnused": false
+}

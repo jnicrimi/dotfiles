@@ -1,0 +1,53 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+brew "anyenv"
+brew "bat"
+brew "diff-so-fancy"
+brew "exa"
+brew "fd"
+brew "fish"
+brew "fzf"
+brew "ghq"
+brew "git"
+brew "git-secrets"
+brew "hub"
+brew "jq"
+brew "mas"
+brew "neovim"
+brew "reattach-to-user-namespace"
+brew "ripgrep"
+brew "tmux"
+brew "tree"
+brew "wget"
+cask "1password"
+cask "alacritty"
+cask "alfred"
+cask "authy"
+cask "box-drive"
+cask "docker"
+cask "dropbox"
+cask "firefox"
+cask "font-hack-nerd-font"
+cask "github"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "karabiner-elements"
+cask "notion"
+cask "postman"
+cask "slack"
+cask "spotify"
+cask "transmit"
+cask "visual-studio-code"
+cask "zoomus"
+mas "EdgeView 2", id: 1206246482
+mas "Magnet", id: 441258766
+mas "Messenger", id: 1480068668
+mas "Microsoft OneNote", id: 784801555
+mas "Pocket", id: 568494494
+mas "Quiver", id: 866773894
+mas "Reeder", id: 1449412482
+mas "Things", id: 904280696
+mas "Xcode", id: 497799835

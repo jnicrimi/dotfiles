@@ -1,0 +1,66 @@
+[core]
+  quotepath = false
+  editor = vim -c \"set fenc=utf-8\"
+  pager = diff-so-fancy | less --tabs=4 -RFX
+
+[fetch]
+  prune = true
+
+[pull]
+  rebase = false
+
+[push]
+  default = nothing
+
+[merge]
+  tool = vimdiff
+
+[color]
+  ui = auto
+  [diff-highlight]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[diff-so-fancy]
+  markEmptyLines = false
+  useUnicodeRuler = false
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
+[diff]
+  compactionHeuristic = true
+
+[status]
+  showUntrackedFiles = all
+
+[ghq]
+  root = ~/.ghq
+  root = ~/.go/src
+
+[alias]
+  a = add
+  aa = add --all
+  b = branch
+  br = branch --remote
+  ci = commit
+  co = checkout
+  d = diff
+  dc = diff --cached
+  dcn = diff --cached --name-only
+  dn = diff --name-only
+  dr = !git diff origin/$(git rev-parse --abbrev-ref HEAD)..$(git rev-parse --abbrev-ref HEAD)
+  f = fetch
+  l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph
+  pull-dry-run = !git diff --stat --summary $(git rev-parse --abbrev-ref HEAD)..origin/$(git rev-parse --abbrev-ref HEAD)
+  s = status --short --branch
+  stash-all = stash save --include-untracked
+
+[include]
+  path = ~/.gitconfig.local
