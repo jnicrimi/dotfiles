@@ -75,6 +75,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Raimondi/delimitMate'
 Plug 'Townk/vim-autoclose'
+Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish'
 Plug 'dense-analysis/ale'
@@ -116,13 +117,13 @@ map <silent> [Tag]p :tabprevious<CR>
 " mapleader
 let g:mapleader = "\<Space>"
 
-" airline
+" vim-airline
 let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 
-" fzf-vim
+" fzf.vim
 nnoremap [Fzf] <Nop>
 nmap <Leader>f [Fzf]
 nnoremap [Fzf]f :<C-u>Files<CR>
@@ -137,6 +138,9 @@ let g:indent_guides_start_level = 2
 
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=gray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
+
+" indentLine
+let g:indentLine_color_term = 239
 
 " vim-gitgutter
 nnoremap [gitgutter] <Nop>
@@ -173,7 +177,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Find symbol of current document.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 
-" local.vim
+" init.local.vim
 if filereadable($XDG_CONFIG_HOME.'/nvim/init.local.vim')
   runtime! init.local.vim
 endif
