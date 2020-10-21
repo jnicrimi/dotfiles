@@ -1,20 +1,10 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
 env:
   TERM: xterm-256color
 
-# Colors (Gruvbox dark)
 colors:
-  # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
     background: '#282828'
-    # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
-  # Normal colors
   normal:
     black:   '#282828'
     red:     '#cc241d'
@@ -24,7 +14,6 @@ colors:
     magenta: '#b16286'
     cyan:    '#689d6a'
     white:   '#a89984'
-  # Bright colors
   bright:
     black:   '#928374'
     red:     '#fb4934'
@@ -35,7 +24,6 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-# Font configuration
 font:
   normal:
     family: Hack Nerd Font
@@ -51,6 +39,8 @@ font:
     style: Bold Italic
   size: 14.0
 
-# Key bindings
+mouse:
+  hide_when_typing: true
+
 key_bindings:
   - { key: Return, mods: Command, action: ToggleFullscreen }
