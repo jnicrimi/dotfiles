@@ -38,14 +38,6 @@ for dot_file in ${dot_files[@]}; do
   create_symlink ${target_file} ${source_file}
 done
 
-if [ ! -e "${HOME}/.config/alacritty" ]; then
-  mkdir "${HOME}/.config/alacritty"
-fi
-
-source_file="${BASE_DIRECTORY}/.config/alacritty/alacritty.yml"
-target_file="${HOME}/.config/alacritty/alacritty.yml"
-create_symlink ${target_file} ${source_file}
-
 if [ ! -e "${HOME}/.config/git" ]; then
   mkdir "${HOME}/.config/git"
 fi
@@ -74,8 +66,17 @@ if [ "$(uname)" == 'Darwin' ]; then
   if [ ! -e "${HOME}/.config/homebrew" ]; then
     mkdir "${HOME}/.config/homebrew"
   fi
+
   source_file="${BASE_DIRECTORY}/.config/homebrew/Brewfile"
   target_file="${HOME}/.config/homebrew/Brewfile"
+  create_symlink ${target_file} ${source_file}
+
+  if [ ! -e "${HOME}/.config/alacritty" ]; then
+    mkdir "${HOME}/.config/alacritty"
+  fi
+
+  source_file="${BASE_DIRECTORY}/.config/alacritty/alacritty.yml"
+  target_file="${HOME}/.config/alacritty/alacritty.yml"
   create_symlink ${target_file} ${source_file}
 
   source_file="${BASE_DIRECTORY}/.config/karabiner/karabiner.json"
