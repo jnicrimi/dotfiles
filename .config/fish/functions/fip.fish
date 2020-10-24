@@ -1,4 +1,4 @@
-function fp
+function fip
   set -l insensitive
   set -l number
   set -l pattern
