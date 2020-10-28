@@ -19,9 +19,9 @@ function fgdiff
     set -l hash (git log --no-merges --pretty=format:"%h - %an : %s" | fzf | cut -d " " -f1)
     if test -n "$hash"
       if test $stat -eq 1
-        git diff --stat HEAD..$hash
+        git diff --stat $hash..HEAD
       else
-        git diff HEAD..$hash
+        git diff $hash..HEAD
       end
     end
   else
