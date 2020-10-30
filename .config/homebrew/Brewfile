@@ -43,6 +43,7 @@ cask "transmit"
 cask "visual-studio-code"
 cask "zoomus"
 mas "EdgeView 2", id: 1206246482
+mas "Jira", id: 1475897096
 mas "Magnet", id: 441258766
 mas "Messenger", id: 1480068668
 mas "Microsoft OneNote", id: 784801555
