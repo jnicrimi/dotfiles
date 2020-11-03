@@ -30,7 +30,7 @@ readonly BASE_DIRECTORY=$(cd $(dirname $0); pwd)
 
 cd ${BASE_DIRECTORY}
 
-dot_files=( .editorconfig .gitconfig .hushlogin .tmux.conf )
+dot_files=( .editorconfig .gitconfig .hushlogin )
 
 for dot_file in ${dot_files[@]}; do
   source_file="${BASE_DIRECTORY}/${dot_file}"
@@ -63,6 +63,18 @@ target_file="${HOME}/.config/nvim/coc-settings.json"
 create_symlink ${target_file} ${source_file}
 
 if [ "$(uname)" == 'Darwin' ]; then
+  if [ ! -e "${HOME}/.config/tmux" ]; then
+    mkdir "${HOME}/.config/tmux"
+  fi
+
+  source_file="${BASE_DIRECTORY}/.config/tmux/tmux.conf"
+  target_file="${HOME}/.config/tmux/tmux.conf"
+  create_symlink ${target_file} ${source_file}
+
+  source_file="${BASE_DIRECTORY}/.config/tmux/tmux-gruvbox-dark.conf"
+  target_file="${HOME}/.config/tmux/tmux-gruvbox-dark.conf"
+  create_symlink ${target_file} ${source_file}
+
   if [ ! -e "${HOME}/.config/homebrew" ]; then
     mkdir "${HOME}/.config/homebrew"
   fi
