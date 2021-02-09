@@ -100,8 +100,8 @@ source_file="${BASE_DIRECTORY}/.config/fish/config.fish"
 target_file="${HOME}/.config/fish/config.fish"
 create_symlink ${target_file} ${source_file}
 
-source_file="${BASE_DIRECTORY}/.config/fish/fishfile"
-target_file="${HOME}/.config/fish/fishfile"
+source_file="${BASE_DIRECTORY}/.config/fish/fish_plugins"
+target_file="${HOME}/.config/fish/fish_plugins"
 create_symlink ${target_file} ${source_file}
 
 for source_file in ${BASE_DIRECTORY}/.config/fish/functions/*.fish; do
