@@ -42,6 +42,7 @@ cask "spotify"
 cask "transmit"
 cask "visual-studio-code"
 cask "zoom"
+mas "ComicViewer", id: 1455702185
 mas "EdgeView 2", id: 1206246482
 mas "Habitify", id: 1111447047
 mas "Jira", id: 1475897096
