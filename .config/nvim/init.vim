@@ -107,6 +107,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -117,6 +118,7 @@ autocmd ColorScheme * highlight SpecialKey ctermbg=NONE ctermfg=239
 colorscheme gruvbox
 
 " vim-airline
+let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
