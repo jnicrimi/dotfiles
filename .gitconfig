@@ -1,7 +1,6 @@
 [core]
   quotepath = false
   editor = vim -c \"set fenc=utf-8\"
-  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [fetch]
   prune = true
@@ -17,15 +16,6 @@
 
 [color]
   ui = auto
-  [diff-highlight]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-
-[diff-so-fancy]
-  markEmptyLines = false
-  useUnicodeRuler = false
 
 [filter "lfs"]
   required = true
@@ -42,6 +32,25 @@
 [ghq]
   root = ~/.ghq
   root = ~/.go/src
+
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+  syntax-theme = gruvbox-dark
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 
 [alias]
   a = add
