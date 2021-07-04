@@ -102,6 +102,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -124,8 +125,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 
 " fzf.vim
-nnoremap [Fzf] <Nop>
 nmap <Leader>f [Fzf]
+nnoremap [Fzf] <Nop>
 nnoremap [Fzf]f :<C-u>Files<CR>
 nnoremap [Fzf]g :<C-u>GFiles<CR>
 nnoremap [Fzf]G :<C-u>GFiles?<CR>
@@ -133,6 +134,13 @@ nnoremap [Fzf]h :<C-u>History<CR>
 
 " indentLine
 let g:indentLine_color_term = 239
+
+" nerdtree
+let NERDTreeShowHidden=1
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " vim-gitgutter
 nnoremap [gitgutter] <Nop>
