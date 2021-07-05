@@ -136,8 +136,7 @@ let g:indentLine_color_term = 239
 " nerdtree
 let NERDTreeShowHidden=1
 
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 " vim-gitgutter
