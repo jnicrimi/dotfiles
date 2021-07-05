@@ -35,7 +35,6 @@ set signcolumn=yes
 set smartcase
 set smartindent
 set smarttab
-set t_vb=
 set tabstop=2
 set timeout timeoutlen=1000 ttimeoutlen=10
 set title
