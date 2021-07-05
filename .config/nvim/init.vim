@@ -18,7 +18,6 @@ set laststatus=2
 set list
 set listchars=trail:-,eol:¬,tab:▸\ ,extends:»,precedes:«
 set nobackup
-set nocompatible
 set noerrorbells
 set noswapfile
 set notitle
