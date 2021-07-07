@@ -36,6 +36,7 @@ set smartcase
 set smartindent
 set smarttab
 set tabstop=2
+set termguicolors
 set timeout timeoutlen=1000 ttimeoutlen=10
 set title
 set updatetime=300
@@ -45,6 +46,10 @@ set wrapscan
 
 " mapleader
 let g:mapleader = "\<Space>"
+
+" termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " tabpage
 nnoremap [Tag] <Nop>
@@ -110,10 +115,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
-
-" ColorScheme
-autocmd ColorScheme * highlight NonText    ctermbg=NONE ctermfg=239
-autocmd ColorScheme * highlight SpecialKey ctermbg=NONE ctermfg=239
 
 colorscheme gruvbox
 
