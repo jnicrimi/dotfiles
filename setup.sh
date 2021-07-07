@@ -71,10 +71,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   target_file="${HOME}/.config/tmux/tmux.conf"
   create_symlink ${target_file} ${source_file}
 
-  source_file="${BASE_DIRECTORY}/.config/tmux/tmux-gruvbox-dark.conf"
-  target_file="${HOME}/.config/tmux/tmux-gruvbox-dark.conf"
-  create_symlink ${target_file} ${source_file}
-
   if [ ! -e "${HOME}/.config/homebrew" ]; then
     mkdir "${HOME}/.config/homebrew"
   fi
