@@ -38,10 +38,6 @@ for dot_file in ${dot_files[@]}; do
   create_symlink ${target_file} ${source_file}
 done
 
-source_file="${BASE_DIRECTORY}/package.json"
-target_file="${HOME}/package.json"
-create_symlink ${target_file} ${source_file}
-
 if [ ! -e "${HOME}/.config/git" ]; then
   mkdir "${HOME}/.config/git"
 fi
