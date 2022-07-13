@@ -2,119 +2,88 @@
 
 set -eu
 
+SCRIPT_DIRECTORY=$(dirname "$0")
+
+readonly SCRIPT_DIRECTORY
+
+DOTFILES=$(cd "$SCRIPT_DIRECTORY"; pwd)
+
+readonly DOTFILES
+
+create_directory() {
+  local _dir_path="$HOME"/"$1"
+  if [ ! -e "$_dir_path" ]; then
+    mkdir "$_dir_path"
+  fi
+}
+
 create_symlink() {
-  if [ -L "${1}" ]; then
-    echo "exists: ${1}"
+  local _src_path="$DOTFILES"/"$1"
+  local _dst_path="$HOME"/"$1"
+  if [ -L "$_dst_path" ]; then
+    echo exists: "$_dst_path"
     return 0
   fi
-  if [ -f "${1}" ]; then
-    rm ${1}
-    echo "delete: ${1}"
-  fi
-  ln -s ${2} ${1}
-  echo "create: ${1} -> ${2}"
+  ln -s "$_src_path" "$_dst_path"
+  echo create: "$_dst_path"
 }
 
 delete_symlink() {
-  unlink ${1}
-  echo "unlink: ${1}"
+  local _dst_path="$HOME"/"$1"
+  unlink "$_dst_path"
+  echo unlink: "$_dst_path"
 }
 
-read -p "Setup dotfiles? (y/N) " answer
-
-if [ ${answer} != "y" -a ${answer} != "Y" ]; then
+read -rp "Setup dotfiles? (yes/no) " answer
+if [ "$answer" != "yes" ]; then
   exit
 fi
 
-readonly BASE_DIRECTORY=$(cd $(dirname $0); pwd)
-
-cd ${BASE_DIRECTORY}
+echo -n -e "\n"
 
 dot_files=( .gitconfig .hushlogin )
-
-for dot_file in ${dot_files[@]}; do
-  source_file="${BASE_DIRECTORY}/${dot_file}"
-  target_file="${HOME}/${dot_file}"
-  create_symlink ${target_file} ${source_file}
+for dot_file in "${dot_files[@]}"; do
+  create_symlink "$dot_file"
 done
 
-if [ ! -e "${HOME}/.config/git" ]; then
-  mkdir "${HOME}/.config/git"
+create_directory .config/git
+create_symlink .config/git/attributes
+create_symlink .config/git/ignore
+
+create_directory .config/nvim
+create_symlink .config/nvim/init.vim
+
+if [ "$(uname)" == "Darwin" ]; then
+  create_directory .config/tmux
+  create_symlink .config/tmux/tmux.conf
+
+  create_directory .config/homebrew
+  create_symlink .config/homebrew/Brewfile
+
+  create_directory .config/alacritty
+  create_symlink .config/alacritty/alacritty.yml
+
+  create_directory .config/karabiner
+  create_symlink .config/karabiner/karabiner.json
+
+  create_symlink .config/starship.toml
 fi
 
-source_file="${BASE_DIRECTORY}/.config/git/attributes"
-target_file="${HOME}/.config/git/attributes"
-create_symlink ${target_file} ${source_file}
+create_symlink .config/fish/config.fish
+create_symlink .config/fish/fish_plugins
 
-source_file="${BASE_DIRECTORY}/.config/git/ignore"
-target_file="${HOME}/.config/git/ignore"
-create_symlink ${target_file} ${source_file}
-
-if [ ! -e "${HOME}/.config/nvim" ]; then
-  mkdir "${HOME}/.config/nvim"
-fi
-
-source_file="${BASE_DIRECTORY}/.config/nvim/init.vim"
-target_file="${HOME}/.config/nvim/init.vim"
-create_symlink ${target_file} ${source_file}
-
-if [ "$(uname)" == 'Darwin' ]; then
-  if [ ! -e "${HOME}/.config/tmux" ]; then
-    mkdir "${HOME}/.config/tmux"
-  fi
-
-  source_file="${BASE_DIRECTORY}/.config/tmux/tmux.conf"
-  target_file="${HOME}/.config/tmux/tmux.conf"
-  create_symlink ${target_file} ${source_file}
-
-  if [ ! -e "${HOME}/.config/homebrew" ]; then
-    mkdir "${HOME}/.config/homebrew"
-  fi
-
-  source_file="${BASE_DIRECTORY}/.config/homebrew/Brewfile"
-  target_file="${HOME}/.config/homebrew/Brewfile"
-  create_symlink ${target_file} ${source_file}
-
-  if [ ! -e "${HOME}/.config/alacritty" ]; then
-    mkdir "${HOME}/.config/alacritty"
-  fi
-
-  source_file="${BASE_DIRECTORY}/.config/alacritty/alacritty.yml"
-  target_file="${HOME}/.config/alacritty/alacritty.yml"
-  create_symlink ${target_file} ${source_file}
-
-  if [ ! -e "${HOME}/.config/karabiner" ]; then
-    mkdir "${HOME}/.config/karabiner"
-  fi
-
-  source_file="${BASE_DIRECTORY}/.config/karabiner/karabiner.json"
-  target_file="${HOME}/.config/karabiner/karabiner.json"
-  create_symlink ${target_file} ${source_file}
-
-  source_file="${BASE_DIRECTORY}/.config/starship.toml"
-  target_file="${HOME}/.config/starship.toml"
-  create_symlink ${target_file} ${source_file}
-fi
-
-source_file="${BASE_DIRECTORY}/.config/fish/config.fish"
-target_file="${HOME}/.config/fish/config.fish"
-create_symlink ${target_file} ${source_file}
-
-source_file="${BASE_DIRECTORY}/.config/fish/fish_plugins"
-target_file="${HOME}/.config/fish/fish_plugins"
-create_symlink ${target_file} ${source_file}
-
-for source_file in ${BASE_DIRECTORY}/.config/fish/functions/*.fish; do
-  target_file="${HOME}/.config/fish/functions/$(basename ${source_file})"
-  create_symlink ${target_file} ${source_file}
+for fish_file_path in "$DOTFILES"/.config/fish/functions/*.fish; do
+  fish_file_name=$(basename "$fish_file_path")
+  create_symlink .config/fish/functions/"$fish_file_name"
 done
 
-if [ "$(uname)" == 'Darwin' ]; then
-  symlinks=$(find -L ${HOME}/.config/fish/functions -type l -name "*.fish")
+if [ "$(uname)" == "Darwin" ]; then
+  symlinks=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish")
 else
-  symlinks=$(find ${HOME}/.config/fish/functions -xtype l -name "*.fish")
+  symlinks=$(find "$HOME"/.config/fish/functions -xtype l -name "*.fish")
 fi
 
-for symlink in ${symlinks}; do
-  delete_symlink ${symlink}
+for symlink in $symlinks; do
+  fish_file_name=$(basename "$symlink")
+  delete_symlink .config/fish/functions/"$fish_file_name"
 done
