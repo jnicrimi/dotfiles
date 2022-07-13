@@ -1,6 +1,6 @@
 ---
 
-name: Slack Incoming Webhooks
+name: Deploy
 on:
   push:
     branches: [main]
