@@ -7,11 +7,17 @@ on:
     pull_request:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install required packages
+        run: |
+          brew install shellcheck
+      - name: Check setup script
+        run: shellcheck ${GITHUB_WORKSPACE}/setup.sh
       - name: Send custom JSON data to Slack workflow
         id: slack
+        if: always()
         uses: slackapi/slack-github-action@v1.18.0
         with:
           payload: |
