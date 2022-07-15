@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.md": "markdownlint .",
+    "*.{yaml,yml,yamllint}": "yamllint ."
+  }
+}
