@@ -8,11 +8,16 @@ set -x NODENV_ROOT $HOME/.anyenv/envs/nodenv
 set -x PATH $NODENV_ROOT/bin $PATH
 set -x PATH $NODENV_ROOT/shims $PATH
 
+alias cat "bat --paging=never"
+alias cp "cp -i"
 alias g "git"
 alias la "exa -aal --icons"
+alias less "bat"
 alias ll "exa -l --icons"
 alias ls "exa --icons"
+alias mv "mv -i"
 alias p "pwd"
+alias rm "rm -i"
 alias u "cd .."
 alias vi "vim"
 alias vim "nvim"
