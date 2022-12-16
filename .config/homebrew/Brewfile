@@ -4,7 +4,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "anyenv"
-brew "jpeg", link: true
 brew "libpng"
 brew "autoconf"
 brew "bat"
@@ -25,6 +24,7 @@ brew "git-delta"
 brew "git-secrets"
 brew "go"
 brew "hub"
+brew "jpeg", link: true
 brew "jq"
 brew "jsonlint"
 brew "libiconv"
@@ -73,7 +73,6 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Messenger", id: 1480068668
-mas "Microsoft OneNote", id: 784801555
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pocket", id: 568494494
