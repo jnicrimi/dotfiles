@@ -5,5 +5,9 @@
   "lint-staged": {
     "*.md": "markdownlint .",
     "*.{yaml,yml,yamllint}": "yamllint ."
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4"
   }
 }
