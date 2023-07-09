@@ -3,7 +3,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.md": "markdownlint . --ignore node_modules",
+    "**/*.md": "markdownlint --ignore node_modules .",
     "**/*.{yaml,yml,yamllint}": "yamllint --strict ."
   },
   "devDependencies": {
