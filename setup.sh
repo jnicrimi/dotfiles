@@ -50,6 +50,9 @@ create_directory .config/git
 create_symlink .config/git/attributes
 create_symlink .config/git/ignore
 
+create_directory .config/gh
+create_symlink .config/gh/config.yml
+
 create_directory .config/nvim
 create_symlink .config/nvim/init.vim
 
