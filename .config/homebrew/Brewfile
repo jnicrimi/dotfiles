@@ -86,6 +86,7 @@ mas "Quiver", id: 866773894
 mas "Reeder", id: 1529448980
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
+vscode "42Crunch.vscode-openapi"
 vscode "alefragnani.project-manager"
 vscode "bmewburn.vscode-intelephense-client"
 vscode "christian-kohler.path-intellisense"
@@ -104,6 +105,7 @@ vscode "golang.go"
 vscode "Gruntfuggly.todo-tree"
 vscode "mechatroner.rainbow-csv"
 vscode "MehediDracula.php-namespace-resolver"
+vscode "mermade.openapi-lint"
 vscode "mhutchie.git-graph"
 vscode "mikestead.dotenv"
 vscode "mosapride.zenkaku"
@@ -114,6 +116,7 @@ vscode "ms-vsliveshare.vsliveshare"
 vscode "naumovs.color-highlight"
 vscode "neilbrayfield.php-docblocker"
 vscode "oderwat.indent-rainbow"
+vscode "redhat.vscode-yaml"
 vscode "ritwickdey.LiveServer"
 vscode "shd101wyy.markdown-preview-enhanced"
 vscode "streetsidesoftware.code-spell-checker"
