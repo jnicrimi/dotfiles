@@ -24,6 +24,7 @@ brew "git"
 brew "git-delta"
 brew "git-secrets"
 brew "go"
+brew "hadolint"
 brew "hub"
 brew "jpeg", link: true
 brew "jq"
