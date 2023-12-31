@@ -64,7 +64,7 @@ if [ "$(uname)" == "Darwin" ]; then
   create_symlink .config/homebrew/Brewfile
 
   create_directory .config/alacritty
-  create_symlink .config/alacritty/alacritty.yml
+  create_symlink .config/alacritty/alacritty.toml
 
   create_directory .config/karabiner
   create_symlink .config/karabiner/karabiner.json
