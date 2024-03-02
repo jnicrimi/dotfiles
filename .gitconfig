@@ -58,7 +58,7 @@
   b = branch
   br = branch --remote
   ci = commit
-  co = checkout
+  sw = switch
   d = diff
   dc = diff --cached
   dcn = diff --cached --name-only
