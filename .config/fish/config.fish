@@ -9,17 +9,16 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 alias cat "bat --paging=never"
 alias cp "cp -i"
 alias g "git"
-alias la "exa -aal --icons"
+alias la "eza -al --icons"
 alias less "bat"
-alias ll "exa -l --icons"
-alias ls "exa --icons"
+alias ll "eza -l --icons"
+alias ls "eza"
 alias mv "mv -i"
 alias p "pwd"
 alias rm "rm -i"
 alias u "cd .."
 alias vi "vim"
 alias vim "nvim"
-
 if test -e $XDG_CONFIG_HOME/fish/config.local.fish
   source $XDG_CONFIG_HOME/fish/config.local.fish
 end
