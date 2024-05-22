@@ -60,9 +60,6 @@ if [ "$(uname)" == "Darwin" ]; then
   create_directory .config/tmux
   create_symlink .config/tmux/tmux.conf
 
-  create_directory .config/homebrew
-  create_symlink .config/homebrew/Brewfile
-
   create_directory .config/alacritty
   create_symlink .config/alacritty/alacritty.toml
 
