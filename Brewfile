@@ -92,6 +92,7 @@ mas "Xcode", id: 497799835
 vscode "42crunch.vscode-openapi"
 vscode "alefragnani.project-manager"
 vscode "bmewburn.vscode-intelephense-client"
+vscode "bradlc.vscode-tailwindcss"
 vscode "christian-kohler.path-intellisense"
 vscode "davidanson.vscode-markdownlint"
 vscode "dbaeumer.vscode-eslint"
