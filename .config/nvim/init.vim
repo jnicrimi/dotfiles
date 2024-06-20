@@ -89,6 +89,9 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
+" vim-polyglot
+let g:polyglot_disabled = ['vue']
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
