@@ -87,7 +87,6 @@ mas "Messenger", id: 1480068668
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Quiver", id: 866773894
-mas "Reeder", id: 1529448980
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
 vscode "42crunch.vscode-openapi"
