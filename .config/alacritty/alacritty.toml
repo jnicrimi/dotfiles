@@ -31,3 +31,7 @@ mods = "Command"
 
 [mouse]
 hide_when_typing = true
+
+[shell]
+program = "/opt/homebrew/bin/fish"
+args = ["-c", "tmux"]
