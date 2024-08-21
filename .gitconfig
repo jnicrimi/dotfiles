@@ -45,12 +45,14 @@
 [delta]
   features = line-numbers decorations
   whitespace-error-style = 22 reverse
+  side-by-side = true
   syntax-theme = Nord
 
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
   file-decoration-style = none
+  hunk-header-decoration-style = yellow box
 
 [alias]
   a = add
