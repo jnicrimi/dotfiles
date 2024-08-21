@@ -32,6 +32,9 @@ mods = "Command"
 [mouse]
 hide_when_typing = true
 
+[window]
+option_as_alt = "Both"
+
 [shell]
 program = "/opt/homebrew/bin/fish"
-args = ["-c", "tmux"]
+args = ["-c", "zellij options --theme nord"]
