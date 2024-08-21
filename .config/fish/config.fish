@@ -1,11 +1,12 @@
-set -gx LANG ja_JP.UTF-8
-set -gx PATH /opt/homebrew/bin $PATH
-set -gx PATH /opt/homebrew/sbin $PATH
-set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx EDITOR nvim
+set -gx EDITOR vim
 set -gx FZF_DEFAULT_OPTS "--border --height 30% --reverse --no-sort --exit-0"
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+set -gx LANG ja_JP.UTF-8
+set -gx VOLTA_HOME $HOME/.volta
+set -gx XDG_CONFIG_HOME $HOME/.config
+
+fish_add_path $VOLTA_HOME/bin
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 
 alias cat "bat --paging=never"
 alias chrome "open -a 'Google Chrome'"
@@ -21,6 +22,7 @@ alias rm "rm -i"
 alias u "cd .."
 alias vi "vim"
 alias vim "nvim"
+
 if test -e $XDG_CONFIG_HOME/fish/config.local.fish
   source $XDG_CONFIG_HOME/fish/config.local.fish
 end
