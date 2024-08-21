@@ -60,9 +60,6 @@ if [ "$(uname)" == "Darwin" ]; then
   create_directory .config/alacritty
   create_symlink .config/alacritty/alacritty.toml
 
-  create_directory .config/karabiner
-  create_symlink .config/karabiner/karabiner.json
-
   create_symlink .config/starship.toml
 fi
 
