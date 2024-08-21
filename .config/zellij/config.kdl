@@ -1,0 +1,12 @@
+keybinds {
+  normal {
+    unbind "Ctrl o"
+    unbind "Ctrl q"
+  }
+}
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
