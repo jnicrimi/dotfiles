@@ -1,5 +1,6 @@
 keybinds {
   normal {
+    bind "Ctrl c" { Clear; }
     unbind "Ctrl o"
     unbind "Ctrl q"
   }
