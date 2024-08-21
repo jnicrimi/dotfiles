@@ -57,9 +57,6 @@ create_directory .config/nvim
 create_symlink .config/nvim/init.vim
 
 if [ "$(uname)" == "Darwin" ]; then
-  create_directory .config/tmux
-  create_symlink .config/tmux/tmux.conf
-
   create_directory .config/alacritty
   create_symlink .config/alacritty/alacritty.toml
 
