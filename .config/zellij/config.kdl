@@ -1,9 +1,9 @@
 keybinds {
-  normal {
-    bind "Ctrl c" { Clear; }
-    unbind "Ctrl o"
-    unbind "Ctrl q"
-  }
+    shared {
+        bind "Ctrl c" { Clear; }
+        unbind "Ctrl o"
+        unbind "Ctrl q"
+    }
 }
 
 ui {
