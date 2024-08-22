@@ -46,6 +46,9 @@ for dot_file in "${dot_files[@]}"; do
   create_symlink "$dot_file"
 done
 
+create_directory .config/bat
+create_symlink .config/bat/config
+
 create_directory .config/git
 create_symlink .config/git/attributes
 create_symlink .config/git/ignore
