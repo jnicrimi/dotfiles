@@ -147,8 +147,3 @@ let g:ale_fixers = {
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" init.local.vim
-if filereadable($XDG_CONFIG_HOME.'/nvim/init.local.vim')
-  runtime! init.local.vim
-endif

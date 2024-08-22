@@ -24,8 +24,4 @@ alias u "cd .."
 alias vi "vim"
 alias vim "nvim"
 
-if test -e $XDG_CONFIG_HOME/fish/config.local.fish
-  source $XDG_CONFIG_HOME/fish/config.local.fish
-end
-
 starship init fish | source
