@@ -1,6 +1,6 @@
 keybinds {
     shared {
-        bind "Ctrl c" { Clear; }
+        bind "Ctrl b" { Clear; }
         unbind "Ctrl o"
         unbind "Ctrl q"
     }
