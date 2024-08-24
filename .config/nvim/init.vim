@@ -99,12 +99,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'arcticicestudio/nord-vim'
 Plug 'dag/vim-fish'
 Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -115,10 +115,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-colorscheme nord
+colorscheme gruvbox
 
 " vim-airline
-let g:airline_theme='base16_nord'
+let g:airline_theme='base16_gruvbox_dark_medium'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
