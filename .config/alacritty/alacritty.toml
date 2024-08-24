@@ -1,5 +1,5 @@
 import = [
-    "~/.dotfiles/.config/alacritty/themes/nord.toml"
+    "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
 ]
 
 [env]
@@ -37,4 +37,4 @@ option_as_alt = "Both"
 
 [shell]
 program = "/opt/homebrew/bin/fish"
-args = ["-c", "zellij options --theme nord"]
+args = ["-c", "zellij options --theme gruvbox-dark"]
