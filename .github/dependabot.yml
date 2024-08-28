@@ -9,6 +9,13 @@ updates:
       day: 'saturday'
       time: '10:00'
       timezone: 'Asia/Tokyo'
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
     assignees:
       - 'jnicrimi'
     reviewers:
@@ -20,6 +27,13 @@ updates:
       day: 'saturday'
       time: '10:00'
       timezone: 'Asia/Tokyo'
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
     assignees:
       - 'jnicrimi'
     reviewers:
