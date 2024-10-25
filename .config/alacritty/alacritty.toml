@@ -1,7 +1,3 @@
-import = [
-    "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
-]
-
 [env]
 TERM = "xterm-256color"
 
@@ -35,6 +31,13 @@ hide_when_typing = true
 [window]
 option_as_alt = "Both"
 
-[shell]
+[general]
+import = [
+    "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
+]
+
+[terminal]
+
+[terminal.shell]
 program = "/opt/homebrew/bin/fish"
 args = ["-c", "zellij options --theme gruvbox-dark"]
