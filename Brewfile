@@ -35,7 +35,7 @@ brew "libiconv"
 brew "markdownlint-cli"
 brew "mas"
 brew "neovim"
-brew "pkg-config"
+brew "pkgconf"
 brew "ripgrep"
 brew "shellcheck"
 brew "starship"
@@ -73,7 +73,6 @@ cask "transmit"
 cask "visual-studio-code"
 cask "zoom"
 mas "EdgeView", id: 1580323719
-mas "Kindle", id: 302584613
 mas "Messenger", id: 1480068668
 mas "Quiver", id: 866773894
 mas "Things", id: 904280696
