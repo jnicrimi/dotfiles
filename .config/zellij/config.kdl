@@ -3,7 +3,6 @@ keybinds {
         bind "Ctrl b" { Clear; }
         unbind "Ctrl o"
         unbind "Ctrl q"
-        unbind "Ctrl r"
     }
 }
 
