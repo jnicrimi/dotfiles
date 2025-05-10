@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "localstack/tap"
 brew "act"
 brew "libpng"
