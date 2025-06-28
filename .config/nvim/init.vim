@@ -110,18 +110,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 colorscheme gruvbox
-
-" vim-airline
-let g:airline_theme='base16_gruvbox_dark_medium'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tab_nr_type = 1
 
 " fzf.vim
 nmap <Leader>f [Fzf]
