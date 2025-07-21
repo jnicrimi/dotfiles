@@ -46,6 +46,7 @@ for dot_file in "${dot_files[@]}"; do
   create_symlink "$dot_file"
 done
 
+create_directory .claude
 create_directory .config/alacritty
 create_directory .config/bat
 create_directory .config/fish
@@ -55,6 +56,7 @@ create_directory .config/git
 create_directory .config/nvim
 create_directory .config/zellij
 
+create_symlink .claude/CLAUDE.md
 create_symlink .config/alacritty/alacritty.toml
 create_symlink .config/bat/config
 create_symlink .config/fish/config.fish
