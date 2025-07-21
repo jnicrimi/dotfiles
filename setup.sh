@@ -21,17 +21,17 @@ create_symlink() {
   local _src_path="$DOTFILES"/"$1"
   local _dst_path="$HOME"/"$1"
   if [ -L "$_dst_path" ]; then
-    echo exists: "$_dst_path"
+    echo "exists: $_dst_path"
     return 0
   fi
   ln -s "$_src_path" "$_dst_path"
-  echo create: "$_dst_path"
+  echo "create: $_dst_path"
 }
 
 delete_symlink() {
   local _dst_path="$HOME"/"$1"
   unlink "$_dst_path"
-  echo unlink: "$_dst_path"
+  echo "unlink: $_dst_path"
 }
 
 read -rp "Setup dotfiles? (yes/no) " answer
