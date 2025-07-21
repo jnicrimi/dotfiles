@@ -13,7 +13,7 @@ readonly DOTFILES
 create_directory() {
   local _dir_path="$HOME"/"$1"
   if [ ! -e "$_dir_path" ]; then
-    mkdir "$_dir_path"
+    mkdir -p "$_dir_path"
   fi
 }
 
@@ -48,6 +48,8 @@ done
 
 create_directory .config/alacritty
 create_directory .config/bat
+create_directory .config/fish
+create_directory .config/fish/functions
 create_directory .config/gh
 create_directory .config/git
 create_directory .config/nvim
