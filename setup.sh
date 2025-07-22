@@ -57,6 +57,7 @@ create_directory .config/nvim
 create_directory .config/zellij
 
 create_symlink .claude/CLAUDE.md
+create_symlink .claude/settings.json
 create_symlink .config/alacritty/alacritty.toml
 create_symlink .config/bat/config
 create_symlink .config/fish/config.fish
