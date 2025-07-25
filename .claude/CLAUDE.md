@@ -1,5 +1,7 @@
-# CLAUDE.md
+# Guidelines
 
-## Conversation Guidelines
+## Top Level Rules
 
-- 常に日本語で会話する
+- Always think in English.
+- Write all code comments in Japanese.
+- Use Japanese for all communication.
