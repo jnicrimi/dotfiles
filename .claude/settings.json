@@ -3,6 +3,29 @@
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "SHELL": "/opt/homebrew/bin/fish"
   },
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:stackoverflow.com)"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(git stash:*)",
+      "Bash(mysql:*)",
+      "Bash(nc:*)",
+      "Bash(psql:*)",
+      "Bash(rm:*)",
+      "Bash(sudo:*)",
+      "Bash(wget:*)",
+      "Read(.env.*)",
+      "Write(.env*)"
+    ]
+  },
   "hooks": {
     "Stop": [
       {
