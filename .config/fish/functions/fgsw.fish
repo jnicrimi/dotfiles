@@ -3,7 +3,7 @@ function fgsw
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l target_branch (git branch | fzf | awk '{print $NF}')
+  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   if test -n "$target_branch"
     git switch "$target_branch"
   else

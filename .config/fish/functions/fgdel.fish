@@ -3,7 +3,7 @@ function fgdel
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l target_branch (git branch | fzf | awk '{print $NF}')
+  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   if test -z "$target_branch"
     return 0
   end

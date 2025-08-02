@@ -5,7 +5,7 @@ function fgdiff
   end
   argparse -n fgdiff 's/stat' -- $argv
   or return 1
-  set -l target_branch (git branch | fzf | awk '{print $NF}')
+  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   set -l current_branch (git rev-parse --abbrev-ref HEAD)
   if test -z "$target_branch"
     return 0

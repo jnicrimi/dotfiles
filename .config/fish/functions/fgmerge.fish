@@ -3,7 +3,7 @@ function fgmerge
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l target_branch (git branch | fzf | awk '{print $NF}')
+  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   set -l current_branch (git rev-parse --abbrev-ref HEAD)
   if test -z "$target_branch"
     return 0
