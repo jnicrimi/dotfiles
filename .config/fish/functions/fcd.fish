@@ -1,12 +1,15 @@
 function fcd
-  if not git rev-parse --git-dir >/dev/null 2>&1
-    echo "Error: Not in a git repository" >&2
-    return 1
-  end
-  set -l selected_directory (git ls-files | sed -e '/^[^\/]*$/d' -e 's/\/[^\/]*$//g' | sort | uniq | fzf)
+
+  _assert_in_git_repository
+  or return 1
+
+  set -l selected_directory (git ls-files | sed -e '/^[^\/]*$/d' -e 's/\/[^\/]*$//g' | sort | uniq | fzf --preview 'ls -la {}')
+
   if test -z "$selected_directory"
     echo "No directory selected"
+
     return 0
   end
+
   cd "$selected_directory"
 end
