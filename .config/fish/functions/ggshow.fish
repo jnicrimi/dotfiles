@@ -1,9 +1,9 @@
-function fgshow
+function ggshow
 
   _assert_in_git_repository
   or return 1
 
-  argparse -n fgshow 'p/path=' -- $argv
+  argparse -n ggshow 'p/path=' -- $argv
   or return 1
 
   set -l commit_hash

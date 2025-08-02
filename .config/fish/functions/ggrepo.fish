@@ -1,4 +1,4 @@
-function fghq
+function ggrepo
 
   set -l repository (ghq list | fzf)
 

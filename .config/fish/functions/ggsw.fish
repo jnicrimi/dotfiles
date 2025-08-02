@@ -1,4 +1,4 @@
-function fgsw
+function ggsw
 
   _assert_in_git_repository
   or return 1
