@@ -7,7 +7,7 @@ function ggmerge
   or return 0
   set -l current_branch (git branch --show-current)
 
-  _confirm_operation "merge: $selected_branch > $current_branch"
+  _confirm_operation "Merge branch" "git merge $selected_branch"
   or return 0
 
   git merge "$selected_branch"

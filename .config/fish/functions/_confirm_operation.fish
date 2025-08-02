@@ -1,11 +1,16 @@
 function _confirm_operation
+  set -l description $argv[1]
+  set -l command $argv[2]
 
-  set -l prompt_message "[y/N] "
-  if test (count $argv) -gt 0
-    set prompt_message "$argv[1] [y/N] "
+  if test -n "$command"
+    echo "$description"
+    echo "  \$ $command"
+    echo ""
+  else
+    echo "$argv[1]"
   end
 
-  read -P "$prompt_message" -l confirm
+  read -P "[y/N] " -l confirm
 
   if test "$confirm" != y -a "$confirm" != Y
     echo "Operation cancelled"

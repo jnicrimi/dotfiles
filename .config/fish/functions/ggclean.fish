@@ -11,6 +11,7 @@ function ggclean
   echo "Changes to discard:"
   git status --short
 
+  echo ""
   read -l -P "Discard all changes? (y/N) " confirm
   if test "$confirm" != "y" -a "$confirm" != "Y"
     echo "Cancelled"

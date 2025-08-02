@@ -8,7 +8,7 @@ function ggpush
   set -l branch $git_info[1]
   set -l remote $git_info[2]
 
-  _confirm_operation "push: $branch > $remote/$branch"
+  _confirm_operation "Push to remote" "git push $remote $branch"
   or return 0
 
   git push "$remote" "$branch"
