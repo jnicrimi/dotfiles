@@ -1,16 +1,12 @@
 function ggpull
-  if not git rev-parse --git-dir >/dev/null 2>&1
-    echo "Error: Not in a git repository" >&2
-    return 1
-  end
-  set -l branch (git rev-parse --abbrev-ref HEAD)
-  set -l remote (git config --get branch.$branch.remote 2>/dev/null)
-  if test -z "$remote"
-    set remote (git remote | head -1)
-  end
-  if test -z "$remote"
-    echo "Error: No remote repository configured" >&2
-    return 1
-  end
+
+  _assert_in_git_repository
+  or return 1
+
+  set -l git_info (_get_git_remote)
+  or return 1
+  set -l branch $git_info[1]
+  set -l remote $git_info[2]
+
   git pull "$remote" "$branch"
 end
