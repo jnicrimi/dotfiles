@@ -72,6 +72,7 @@
   pull-dry-run = !git diff --stat --summary $(git rev-parse --abbrev-ref HEAD)..origin/$(git rev-parse --abbrev-ref HEAD)
   s = status --short --branch
   stash-all = stash save --include-untracked
+  wt = worktree
 
 [include]
   path = ~/.gitconfig.local
