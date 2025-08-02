@@ -34,8 +34,8 @@ delete_symlink() {
   echo "unlink: $_dst_path"
 }
 
-read -rp "Setup dotfiles? (yes/no) " answer
-if [ "$answer" != "yes" ]; then
+read -rp "Setup dotfiles? (y/N) " answer
+if [ "$answer" != "y" ] && [ "$answer" != "Y" ]; then
   exit
 fi
 
