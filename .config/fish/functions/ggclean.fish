@@ -18,8 +18,7 @@ function ggclean
     return 0
   end
 
-  git add -A
-  git stash push -m "Temporary stash by ggclean"
+  git stash push -u -m "Temporary stash by ggclean"
   git stash drop
   echo "All changes discarded"
 end
