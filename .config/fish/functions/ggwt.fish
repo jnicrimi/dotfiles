@@ -24,7 +24,7 @@ function ggwt
         return 1
       end
 
-      _confirm_operation "create worktree: $worktree_name at $worktree_path"
+      _confirm_operation "Create worktree" "git worktree add $worktree_path $selected_branch"
       or return 0
 
       git worktree add "$worktree_path" "$selected_branch"
@@ -35,7 +35,7 @@ function ggwt
 
       echo "Worktree created: $worktree_path"
 
-      if _confirm_operation "cd: $worktree_path"
+      if _confirm_operation "Change directory" "cd $worktree_path"
         cd "$worktree_path"
       end
 
@@ -61,7 +61,7 @@ function ggwt
         return 0
       end
 
-      _confirm_operation "remove worktree: $selected_worktree"
+      _confirm_operation "Remove worktree" "git worktree remove $selected_worktree"
       or return 0
 
       git worktree remove "$selected_worktree"
