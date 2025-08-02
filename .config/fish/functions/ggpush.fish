@@ -7,8 +7,8 @@ function ggpush
   set -l repository (git remote show)
   set -l prompt "push: $branch > origin/$branch"
   echo "$prompt"
-  read -P "(yes/no) " -l confirm
-  if test "$confirm" != "yes"
+  read -P "[y/N] " -l confirm
+  if test "$confirm" != "y" -a "$confirm" != "Y"
     return 0
   end
   git push "$repository" "$branch"
