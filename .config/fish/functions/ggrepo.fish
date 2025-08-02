@@ -1,6 +1,6 @@
 function ggrepo
 
-  set -l repository (ghq list | fzf)
+  set -l repository (ghq list | fzf --prompt="Repository: ")
 
   if test -z "$repository"
     echo "No repository selected"
