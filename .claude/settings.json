@@ -6,7 +6,17 @@
   },
   "permissions": {
     "allow": [
+      "Bash(cat:*)",
+      "Bash(cd:*)",
+      "Bash(diff:*)",
+      "Bash(find:*)",
       "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(ls:*)",
+      "Bash(pwd:*)",
+      "Bash(tail:*)",
+      "Bash(which:*)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:stackoverflow.com)"
