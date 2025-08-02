@@ -10,7 +10,7 @@ function ggwt
   set -l selected_branch (_select_other_branch)
   or return 0
 
-  set -l safe_branch_name (string replace -a -r '[/:]' '-' "$selected_branch")
+  set -l safe_branch_name (string replace -a '/' '-' "$selected_branch")
   set -l worktree_name "$original_dir_name-$safe_branch_name"
   set -l worktree_path "$parent_dir/$worktree_name"
 
