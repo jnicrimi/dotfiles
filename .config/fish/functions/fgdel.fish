@@ -9,8 +9,8 @@ function fgdel
   end
   set -l prompt "delete: $target_branch"
   echo "$prompt"
-  read -P "(yes/no) " -l confirm
-  if test "$confirm" != "yes"
+  read -P "[y/N] " -l confirm
+  if test "$confirm" != "y" -a "$confirm" != "Y"
     return 0
   end
   git branch -D "$target_branch"
