@@ -7,7 +7,6 @@ function ggcd
 
   if test -z "$selected_directory"
     echo "No directory selected"
-
     return 0
   end
 

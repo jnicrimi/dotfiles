@@ -9,7 +9,6 @@ function _get_git_remote
 
   if test -z "$remote"
     echo "Error: No remote repository configured" >&2
-
     return 1
   end
 

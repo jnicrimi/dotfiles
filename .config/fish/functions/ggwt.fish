@@ -16,7 +16,6 @@ function ggwt
 
   if test -d "$worktree_path"
     echo "Error: Worktree '$worktree_name' already exists at $worktree_path" >&2
-
     return 1
   end
 
