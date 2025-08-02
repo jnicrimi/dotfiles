@@ -4,7 +4,6 @@ function ggrepo
 
   if test -z "$repository"
     echo "No repository selected"
-
     return 0
   end
 
@@ -12,7 +11,6 @@ function ggrepo
 
   if test -z "$repository_full_path"
     echo "Error: Failed to get repository path" >&2
-
     return 1
   end
 

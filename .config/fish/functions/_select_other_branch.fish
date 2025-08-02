@@ -6,7 +6,6 @@ function _select_other_branch
 
   if test -z "$branches"
     echo "No other branches found" >&2
-
     return 1
   end
 
@@ -14,7 +13,6 @@ function _select_other_branch
 
   if test -z "$selected_branch"
     echo "No branch selected" >&2
-
     return 1
   end
 
