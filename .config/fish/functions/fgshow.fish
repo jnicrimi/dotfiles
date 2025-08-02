@@ -1,4 +1,8 @@
 function fgshow
+  if not git rev-parse --git-dir >/dev/null 2>&1
+    echo "Error: Not in a git repository" >&2
+    return 1
+  end
   argparse -n fgshow 'p/path=' -- $argv
   or return 1
   set -l hash
