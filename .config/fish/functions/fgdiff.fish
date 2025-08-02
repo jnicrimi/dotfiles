@@ -6,7 +6,7 @@ function fgdiff
   argparse -n fgdiff 's/stat' -- $argv
   or return 1
   set -l current_branch (git rev-parse --abbrev-ref HEAD)
-  set -l branches (git branch --format="%(refname:short)" | string match -v -x "$current_branch")
+  set -l branches (git branch --format="%(refname:short)" | string match -r -v "^$current_branch\$")
   if test -z "$branches"
     echo "No other branches found"
     return 0
