@@ -5,14 +5,20 @@ function fgdiff
   end
   argparse -n fgdiff 's/stat' -- $argv
   or return 1
-  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   set -l current_branch (git rev-parse --abbrev-ref HEAD)
-  if test -z "$target_branch"
+  set -l branches (git branch --format="%(refname:short)" | string match -v -x "$current_branch")
+  if test -z "$branches"
+    echo "No other branches found"
+    return 0
+  end
+  set -l selected_branch (echo "$branches" | fzf)
+  if test -z "$selected_branch"
+    echo "No branch selected"
     return 0
   end
   if set -lq _flag_stat
-    git diff --stat "$target_branch..$current_branch"
+    git diff --stat "$selected_branch..$current_branch"
   else
-    git diff "$target_branch..$current_branch"
+    git diff "$selected_branch..$current_branch"
   end
 end

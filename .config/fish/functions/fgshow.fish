@@ -5,15 +5,16 @@ function fgshow
   end
   argparse -n fgshow 'p/path=' -- $argv
   or return 1
-  set -l hash
+  set -l commit_hash
   if set -lq _flag_path
-    set hash (git log --no-merges --pretty=format:"%H - %an : %s" "$_flag_path" | fzf | cut -d " " -f1)
+    set commit_hash (git log --no-merges --pretty=format:"%H - %an : %s" "$_flag_path" | fzf | cut -d " " -f1)
   else
-    set hash (git log --no-merges --pretty=format:"%H - %an : %s" | fzf | cut -d " " -f1)
+    set commit_hash (git log --no-merges --pretty=format:"%H - %an : %s" | fzf | cut -d " " -f1)
   end
-  if test -n "$hash"
-    git show "$hash"
+  if test -n "$commit_hash"
+    git show "$commit_hash"
   else
+    echo "No commit selected"
     return 0
   end
 end
