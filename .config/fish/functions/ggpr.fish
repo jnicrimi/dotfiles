@@ -1,4 +1,4 @@
-function fgpr
+function ggpr
 
   _assert_in_git_repository
   or return 1

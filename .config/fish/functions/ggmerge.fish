@@ -1,4 +1,4 @@
-function fgmerge
+function ggmerge
 
   _assert_in_git_repository
   or return 1

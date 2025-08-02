@@ -1,9 +1,9 @@
-function fgdiff
+function ggdiff
 
   _assert_in_git_repository
   or return 1
 
-  argparse -n fgdiff 's/stat' -- $argv
+  argparse -n ggdiff 's/stat' -- $argv
   or return 1
 
   set -l selected_branch (_select_other_branch)

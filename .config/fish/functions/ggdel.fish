@@ -1,4 +1,4 @@
-function fgdel
+function ggdel
 
   _assert_in_git_repository
   or return 1
