@@ -69,9 +69,7 @@
   f = fetch
   l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph
-  pull-dry-run = !git diff --stat --summary $(git rev-parse --abbrev-ref HEAD)..origin/$(git rev-parse --abbrev-ref HEAD)
   s = status --short --branch
-  stash-all = stash save --include-untracked
   wt = worktree
 
 [include]
