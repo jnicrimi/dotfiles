@@ -8,5 +8,5 @@
 
 ## Coding Conventions
 
-- Always follow the project's .editorconfig settings if present.
-- Respect indentation style, line endings, charset, and other formatting rules defined in .editorconfig.
+- **MUST**: ALWAYS read .editorconfig file BEFORE editing ANY file
+- **MUST**: Follow ALL .editorconfig settings exactly without exception
