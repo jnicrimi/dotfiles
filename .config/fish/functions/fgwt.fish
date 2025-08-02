@@ -7,7 +7,7 @@ function fgwt
   set -l original_dir_name (basename "$git_root")
   set -l parent_dir (dirname "$git_root")
   set -l current_branch (git branch --show-current)
-  set -l branches (git branch --format="%(refname:short)" | string match -v -x "$current_branch")
+  set -l branches (git branch --format="%(refname:short)" | string match -r -v "^$current_branch\$")
   if test -z "$branches"
     echo "No other branches found"
     return 0

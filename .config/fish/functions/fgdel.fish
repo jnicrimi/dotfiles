@@ -4,7 +4,7 @@ function fgdel
     return 1
   end
   set -l current_branch (git branch --show-current)
-  set -l branches (git branch --format="%(refname:short)" | string match -v -x "$current_branch")
+  set -l branches (git branch --format="%(refname:short)" | string match -r -v "^$current_branch\$")
   if test -z "$branches"
     echo "No other branches found"
     return 0
