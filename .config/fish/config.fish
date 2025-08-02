@@ -1,5 +1,5 @@
 set -gx EDITOR vim
-set -gx FZF_DEFAULT_OPTS "--border --height 30% --reverse --no-sort --exit-0"
+set -gx FZF_DEFAULT_OPTS "--height 100% --reverse --border --no-sort --exit-0 --ansi --info=inline --preview-window=right:50%:wrap"
 set -gx LANG ja_JP.UTF-8
 set -gx VOLTA_HOME $HOME/.volta
 set -gx XDG_CONFIG_HOME $HOME/.config
