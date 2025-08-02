@@ -7,7 +7,7 @@ function ggdiff
   or return 0
   set -l current_branch (git branch --show-current)
 
-  set -l action (echo -e "diff\nstat" | fzf --prompt="Select action: ")
+  set -l action (echo -e "diff\nstat" | fzf --prompt="Action: ")
   or return 0
 
   switch "$action"
