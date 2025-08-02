@@ -3,10 +3,12 @@ function fgmerge
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l target_branch (git branch --format="%(refname:short)" | fzf)
-  set -l current_branch (git rev-parse --abbrev-ref HEAD)
+  set -l current_branch (git branch --show-current)
+  set -l target_branch (git branch --format="%(refname:short)" | \
+    string match -v "$current_branch" | fzf)
   if test -z "$target_branch"
-    return 0
+    echo "No branch selected"
+    return 1
   end
   set -l prompt "merge: $target_branch > $current_branch"
   echo "$prompt"
