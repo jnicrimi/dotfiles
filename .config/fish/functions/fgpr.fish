@@ -3,10 +3,11 @@ function fgpr
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l hash (git log --no-merges --pretty=format:"%H - %an : %s" | fzf | cut -d " " -f1)
-  if test -n "$hash"
-    gh pr list -s all -S "$hash" -w
+  set -l commit_hash (git log --no-merges --pretty=format:"%H - %an : %s" | fzf | cut -d " " -f1)
+  if test -n "$commit_hash"
+    gh pr list -s all -S "$commit_hash" -w
   else
+    echo "No commit selected"
     return 0
   end
 end

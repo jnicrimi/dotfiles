@@ -1,6 +1,7 @@
 function fghq
   set -l repository (ghq list | fzf)
   if test -z "$repository"
+    echo "No repository selected"
     return 0
   end
   set -l repository_full_path (ghq list --full-path --exact "$repository")
