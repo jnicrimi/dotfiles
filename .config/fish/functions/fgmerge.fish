@@ -3,16 +3,16 @@ function fgmerge
     echo "Error: Not in a git repository" >&2
     return 1
   end
-  set -l target_branch (git branch | fzf | sed -e "s/\* //g" | sed -e 's/^ *//' | awk "{print \$1}")
+  set -l target_branch (git branch --format="%(refname:short)" | fzf)
   set -l current_branch (git rev-parse --abbrev-ref HEAD)
   if test -z "$target_branch"
     return 0
   end
   set -l prompt "merge: $target_branch > $current_branch"
-  echo -e $prompt
+  echo "$prompt"
   read -P "(yes/no) " -l confirm
-  if test $confirm  != "yes"
+  if test "$confirm" != "yes"
     return 0
   end
-  git merge $target_branch
+  git merge "$target_branch"
 end

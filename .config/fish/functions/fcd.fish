@@ -3,5 +3,5 @@ function fcd
   if test -z "$target_directory"
     return 0
   end
-  cd $target_directory
+  cd "$target_directory"
 end

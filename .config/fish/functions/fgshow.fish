@@ -12,6 +12,8 @@ function fgshow
     set hash (git log --no-merges --pretty=format:"%H - %an : %s" | fzf | cut -d " " -f1)
   end
   if test -n "$hash"
-    git show $hash
+    git show "$hash"
+  else
+    return 0
   end
 end
