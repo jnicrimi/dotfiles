@@ -13,13 +13,11 @@ function ggpush
 
   switch $push_type
     case "push"
-      set -l push_command "git push $remote $branch"
-      _confirm_operation "Push to remote" "$push_command"
+      _confirm_operation "Push to remote" "git push $remote $branch"
       or return 0
       git push "$remote" "$branch"
     case "force push"
-      set -l push_command "git push -f $remote $branch"
-      _confirm_operation "Force push to remote" "$push_command"
+      _confirm_operation "Force push to remote" "git push -f $remote $branch"
       or return 0
       git push -f "$remote" "$branch"
     case '*'
