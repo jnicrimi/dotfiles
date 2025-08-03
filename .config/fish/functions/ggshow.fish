@@ -3,7 +3,7 @@ function ggshow
   _assert_in_git_repository
   or return 1
 
-  set -l action (echo -e "commit\nfile" | fzf --prompt="Action: ")
+  set -l action (_select_menu "Action" "commit" "file")
   or return 0
 
   set -l commit_hash

@@ -7,7 +7,7 @@ function ggmerge
   or return 0
   set -l current_branch (git branch --show-current)
 
-  set -l merge_type (echo -e "merge\nsquash merge" | fzf --prompt="Merge type: ")
+  set -l merge_type (_select_menu "Merge type" "merge" "squash merge")
   or return 0
 
   switch $merge_type
@@ -21,5 +21,7 @@ function ggmerge
       _confirm_operation "Squash merge branch" "$merge_command"
       or return 0
       git merge --squash "$selected_branch"
+    case '*'
+      return 0
   end
 end
