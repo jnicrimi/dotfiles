@@ -1,13 +1,13 @@
-function ggshow --description "Show commit details"
+function ggcommit --description "Manage git commits and pull requests"
 
   _assert_in_git_repository
   or return 1
 
-  set -l action (_select_menu "Action" "commit" "file")
+  set -l select_type (_select_menu "Select type" "commit" "file")
   or return 0
 
   set -l commit_hash
-  switch "$action"
+  switch "$select_type"
     case "commit"
       set commit_hash (_select_commit)
     case "file"
@@ -21,5 +21,15 @@ function ggshow --description "Show commit details"
   end
   or return 0
 
-  git show "$commit_hash"
+  set -l action (_select_menu "Action" "show" "browse")
+  or return 0
+
+  switch "$action"
+    case "show"
+      git show "$commit_hash"
+    case "browse"
+      gh pr list -s all -S "commit:$commit_hash" -w
+    case '*'
+      return 0
+  end
 end
