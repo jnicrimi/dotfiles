@@ -3,7 +3,7 @@ function ggbr --description "Manage git branches"
   _assert_in_git_repository
   or return 1
 
-  set -l action (_select_menu "Action" "switch" "merge" "create" "delete")
+  set -l action (_select_menu "Action" "switch" "merge" "create" "rename" "delete")
   or return 0
 
   switch $action
@@ -13,6 +13,8 @@ function ggbr --description "Manage git branches"
       _ggbr_merge
     case create
       _ggbr_create
+    case rename
+      _ggbr_rename
     case delete
       _ggbr_delete
     case '*'
@@ -57,22 +59,28 @@ function _ggbr_create
   read -P "Enter branch name: " branch_name
   or return 0
 
-  if test -z "$branch_name"
-    echo "No branch name entered"
-    return 0
-  end
+  _ggbr_validate_branch_name "$branch_name"
+  or return $status
 
-  if not string match -q -r '^[a-zA-Z0-9._-]+$' "$branch_name"
-    echo "Error: Invalid branch name" >&2
-    return 1
-  end
-
-  set -l full_branch "$prefix/$branch_name"
-
-  _confirm_operation "Create branch" "git switch -c $full_branch"
+  _confirm_operation "Create branch" "git switch -c $prefix/$branch_name"
   or return 0
 
-  git switch -c "$full_branch"
+  git switch -c "$prefix/$branch_name"
+end
+
+function _ggbr_rename
+  set -l current_branch (git branch --show-current)
+
+  read -P "Enter new branch name: " -c "$current_branch" new_branch
+  or return 0
+
+  _ggbr_validate_branch_name "$new_branch"
+  or return $status
+
+  _confirm_operation "Rename branch" "git branch -m $new_branch"
+  or return 0
+
+  git branch -m "$new_branch"
 end
 
 function _ggbr_delete
@@ -83,4 +91,20 @@ function _ggbr_delete
   or return 0
 
   git branch -D "$selected_branch"
+end
+
+function _ggbr_validate_branch_name
+  set -l branch_name $argv[1]
+
+  if test -z "$branch_name"
+    echo "Error: No branch name entered" >&2
+    return 1
+  end
+
+  if not git check-ref-format --branch "$branch_name" 2>/dev/null
+    echo "Error: Invalid branch name" >&2
+    return 1
+  end
+
+  return 0
 end
