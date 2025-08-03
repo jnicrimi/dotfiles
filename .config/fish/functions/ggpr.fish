@@ -1,4 +1,4 @@
-function ggpr
+function ggpr --description "Find pull requests"
 
   _assert_in_git_repository
   or return 1

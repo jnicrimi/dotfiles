@@ -1,4 +1,4 @@
-function ggpull
+function ggpull --description "Pull from remote"
 
   _assert_in_git_repository
   or return 1

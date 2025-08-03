@@ -1,4 +1,4 @@
-function ggbr
+function ggbr --description "Manage git branches"
 
   _assert_in_git_repository
   or return 1

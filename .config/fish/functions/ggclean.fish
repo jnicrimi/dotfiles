@@ -1,4 +1,4 @@
-function ggclean
+function ggclean --description "Discard all git changes"
 
   _assert_in_git_repository
   or return 1

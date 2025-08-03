@@ -1,4 +1,4 @@
-function ggcd
+function ggcd --description "Navigate to git directories"
 
   _assert_in_git_repository
   or return 1
