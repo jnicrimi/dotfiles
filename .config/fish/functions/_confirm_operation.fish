@@ -3,14 +3,12 @@ function _confirm_operation
   set -l command $argv[2]
 
   if test -n "$command"
-    echo "$description"
+    echo "Command:"
     echo "  \$ $command"
     echo ""
-  else
-    echo "$argv[1]"
   end
 
-  read -P "[y/N] " -l confirm
+  read -P "$description [y/N] " -l confirm
 
   if test "$confirm" != y -a "$confirm" != Y
     echo "Operation cancelled"
