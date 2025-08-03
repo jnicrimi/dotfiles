@@ -8,9 +8,9 @@ function _select_commit
   set -l commit_hash
 
   if test -n "$path_filter"
-    set commit_hash (git log --pretty=format:"%H - %an : %s" -- "$path_filter" | fzf --prompt="Commit: " --preview 'git show --color=always {1}' | cut -d " " -f1)
+    set commit_hash (git log --color=never --pretty=format:"%H - %an : %s" -- "$path_filter" | fzf --prompt="Commit: " --preview 'git show --color=always {1}' | cut -d " " -f1)
   else
-    set commit_hash (git log --pretty=format:"%H - %an : %s" | fzf --prompt="Commit: " --preview 'git show --color=always {1}' | cut -d " " -f1)
+    set commit_hash (git log --color=never --pretty=format:"%H - %an : %s" | fzf --prompt="Commit: " --preview 'git show --color=always {1}' | cut -d " " -f1)
   end
 
   if test -z "$commit_hash"
