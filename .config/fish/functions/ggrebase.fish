@@ -6,7 +6,6 @@ function ggrebase
   set -l commit_hash (git log --oneline | fzf --prompt="Commit for rebase: " --preview 'git show --color=always {1}' --preview-window=right:60% | awk '{print $1}')
 
   if test -z "$commit_hash"
-    echo "No commit selected" >&2
     return 0
   end
 

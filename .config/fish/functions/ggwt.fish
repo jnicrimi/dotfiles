@@ -42,7 +42,7 @@ function ggwt
     case remove
       set -l worktrees (git worktree list --porcelain | grep "^worktree" | cut -d' ' -f2-)
       set -l current_worktree (git rev-parse --show-toplevel)
-      
+
       set -l available_worktrees
       for worktree in $worktrees
         if test "$worktree" != "$current_worktree"
@@ -57,7 +57,6 @@ function ggwt
 
       set -l selected_worktree (printf '%s\n' $available_worktrees | fzf --prompt="Worktree to remove: ")
       if test -z "$selected_worktree"
-        echo "No worktree selected"
         return 0
       end
 

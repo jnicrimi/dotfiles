@@ -14,7 +14,6 @@ function _select_commit
   end
 
   if test -z "$commit_hash"
-    echo "No commit selected" >&2
     return 1
   end
 
