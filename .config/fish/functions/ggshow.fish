@@ -13,7 +13,6 @@ function ggshow
     case "file"
       set -l selected_file (git ls-files | fzf --prompt="File: " --preview 'bat --color=always {} 2>/dev/null || cat {}')
       if test -z "$selected_file"
-        echo "No file selected" >&2
         return 0
       end
       set commit_hash (_select_commit "$selected_file")

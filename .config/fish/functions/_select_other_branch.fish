@@ -12,7 +12,6 @@ function _select_other_branch
   set -l selected_branch (printf '%s\n' $branches | fzf --prompt="Branch: " --preview 'git log --oneline -10 {}')
 
   if test -z "$selected_branch"
-    echo "No branch selected" >&2
     return 1
   end
 
