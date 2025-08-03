@@ -15,7 +15,6 @@ function ggclean
   _confirm_operation "Discard all changes?"
   or return 0
 
-  git stash push -u -m "Temporary stash by ggclean"
-  git stash drop
+  git stash push -u && git stash drop
   echo "All changes discarded"
 end

@@ -3,7 +3,7 @@ function ggcd
   _assert_in_git_repository
   or return 1
 
-  set -l selected_directory (git ls-files | sed -e '/^[^\/]*$/d' -e 's/\/[^\/]*$//g' | sort | uniq | fzf --prompt="Directory: " --preview 'ls -la {}')
+  set -l selected_directory (git ls-files | sed -e '/^[^\/]*$/d' -e 's/\/[^\/]*$//g' | sort | uniq | fzf --prompt="Directory: " --preview 'ls -la {q}')
 
   if test -z "$selected_directory"
     return 0
