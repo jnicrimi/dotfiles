@@ -8,8 +8,19 @@ function ggpush
   set -l branch $git_info[1]
   set -l remote $git_info[2]
 
-  _confirm_operation "Push to remote" "git push $remote $branch"
+  set -l push_type (echo -e "push\nforce push" | fzf --prompt="Push type: ")
   or return 0
 
-  git push "$remote" "$branch"
+  switch $push_type
+    case "push"
+      set -l push_command "git push $remote $branch"
+      _confirm_operation "Push to remote" "$push_command"
+      or return 0
+      git push "$remote" "$branch"
+    case "force push"
+      set -l push_command "git push -f $remote $branch"
+      _confirm_operation "Force push to remote" "$push_command"
+      or return 0
+      git push -f "$remote" "$branch"
+  end
 end
