@@ -10,13 +10,10 @@ function ggclean
 
   echo "Changes to discard:"
   git status --short
-
   echo ""
-  read -l -P "Discard all changes? (y/N) " confirm
-  if test "$confirm" != "y" -a "$confirm" != "Y"
-    echo "Cancelled"
-    return 0
-  end
+
+  _confirm_operation "Discard all changes?"
+  or return 0
 
   git stash push -u -m "Temporary stash by ggclean"
   git stash drop
