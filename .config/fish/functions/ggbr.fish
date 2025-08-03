@@ -36,13 +36,11 @@ function _ggbr_merge
 
   switch $merge_type
     case "merge"
-      set -l merge_command "git merge $selected_branch"
-      _confirm_operation "Merge branch" "$merge_command"
+      _confirm_operation "Merge branch" "git merge $selected_branch"
       or return 0
       git merge "$selected_branch"
     case "squash merge"
-      set -l merge_command "git merge --squash $selected_branch"
-      _confirm_operation "Squash merge branch" "$merge_command"
+      _confirm_operation "Squash merge branch" "git merge --squash $selected_branch"
       or return 0
       git merge --squash "$selected_branch"
     case '*'
