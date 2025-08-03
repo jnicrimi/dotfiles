@@ -1,4 +1,4 @@
-function ggrepo
+function ggrepo --description "Navigate to repositories"
 
   set -l repository (ghq list | fzf --prompt="Repository: ")
 

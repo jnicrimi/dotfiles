@@ -1,4 +1,4 @@
-function ggdiff
+function ggdiff --description "Show git differences"
 
   _assert_in_git_repository
   or return 1

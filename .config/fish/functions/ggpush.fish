@@ -1,4 +1,4 @@
-function ggpush
+function ggpush --description "Push to remote"
 
   _assert_in_git_repository
   or return 1

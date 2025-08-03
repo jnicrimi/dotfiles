@@ -1,4 +1,4 @@
-function ggshow
+function ggshow --description "Show commit details"
 
   _assert_in_git_repository
   or return 1

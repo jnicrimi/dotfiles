@@ -1,4 +1,4 @@
-function ggwt
+function ggwt --description "Manage git worktrees"
 
   _assert_in_git_repository
   or return 1
