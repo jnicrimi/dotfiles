@@ -3,7 +3,18 @@ function ggcommit --description "Create conventional commit"
   _assert_in_git_repository
   or return 1
 
-  set -l commit_types "feat" "fix" "refactor" "chore" "docs" "test" "style" "build" "ci" "perf" "revert"
+  set -l commit_types \
+      "feat" \
+      "fix" \
+      "refactor" \
+      "chore" \
+      "docs" \
+      "test" \
+      "style" \
+      "build" \
+      "ci" \
+      "perf" \
+      "revert"
   set -l type (_select_menu "Commit type" $commit_types)
   or return 0
 
