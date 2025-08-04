@@ -5,8 +5,7 @@ function ggrebase --description "Interactive rebase"
 
   set -l commit_hash (git log --color=never --oneline -n 30 | \
       fzf --prompt="Commit [recent 30]: " \
-          --preview 'git show --color=always {1}' \
-          --preview-window=right:60% | \
+          --preview 'git show --color=always {1}' | \
       awk '{print $1}')
 
   if test -z "$commit_hash"
