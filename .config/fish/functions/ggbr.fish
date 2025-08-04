@@ -3,12 +3,10 @@ function ggbr --description "Manage git branches"
   _assert_in_git_repository
   or return 1
 
-  set -l action (_select_menu "Action" "switch" "merge" "create" "rename" "delete")
+  set -l action (_select_menu "Action" "merge" "create" "rename" "delete")
   or return 0
 
   switch $action
-    case switch
-      _ggbr_switch
     case merge
       _ggbr_merge
     case create
@@ -20,13 +18,6 @@ function ggbr --description "Manage git branches"
     case '*'
       return 0
   end
-end
-
-function _ggbr_switch
-  set -l selected_branch (_select_other_branch)
-  or return 0
-
-  git switch "$selected_branch"
 end
 
 function _ggbr_merge
