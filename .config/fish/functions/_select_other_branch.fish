@@ -9,7 +9,7 @@ function _select_other_branch
     return 1
   end
 
-  set -l selected_branch (printf '%s\n' $branches | fzf --prompt="Branch: " --preview 'git log --color=always --oneline {}')
+  set -l selected_branch (printf '%s\n' $branches | fzf --prompt="Branch: " --preview 'git log --color=always --oneline -n 30 {}')
 
   if test -z "$selected_branch"
     return 1
