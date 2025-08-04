@@ -42,7 +42,14 @@ function _ggbr_merge
 end
 
 function _ggbr_create
-  set -l prefixes "feature" "fix" "refactor" "chore" "docs" "hotfix" "release"
+  set -l prefixes \
+      "feature" \
+      "fix" \
+      "refactor" \
+      "chore" \
+      "docs" \
+      "hotfix" \
+      "release"
 
   set -l prefix (_select_menu "Prefix type" $prefixes)
   or return 0

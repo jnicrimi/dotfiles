@@ -52,7 +52,8 @@ function _ggwt_remove
     return 0
   end
 
-  set -l selected_worktree (printf '%s\n' $available_worktrees | fzf --prompt="Worktree to remove: ")
+  set -l selected_worktree (printf '%s\n' $available_worktrees | \
+      fzf --prompt="Worktree to remove: ")
   if test -z "$selected_worktree"
     return 0
   end
