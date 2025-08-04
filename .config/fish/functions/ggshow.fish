@@ -1,4 +1,4 @@
-function ggcommit --description "Manage git commits and pull requests"
+function ggshow --description "Show git commits and related pull requests"
 
   _assert_in_git_repository
   or return 1
