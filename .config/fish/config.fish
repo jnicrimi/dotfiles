@@ -8,6 +8,7 @@ fish_add_path $VOLTA_HOME/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
+alias c "claude"
 alias cat "bat --paging=never"
 alias chrome "open -a 'Google Chrome'"
 alias cp "cp -i"
