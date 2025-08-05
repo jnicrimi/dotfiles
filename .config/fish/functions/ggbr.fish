@@ -69,6 +69,11 @@ end
 function _ggbr_rename
   set -l current_branch (git branch --show-current)
 
+  if test -z "$current_branch"
+    echo "Error: Cannot rename branch in detached HEAD state" >&2
+    return 1
+  end
+
   read -P "Enter new branch name: " -c "$current_branch" new_branch
   or return 0
 

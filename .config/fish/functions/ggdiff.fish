@@ -7,6 +7,11 @@ function ggdiff --description "Show git differences"
   or return 0
   set -l current_branch (git branch --show-current)
 
+  if test -z "$current_branch"
+    echo "Error: Cannot show diff in detached HEAD state" >&2
+    return 1
+  end
+
   set -l action (_select_menu "Action" "diff" "stat")
   or return 0
 
