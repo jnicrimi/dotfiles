@@ -47,6 +47,7 @@ for dot_file in "${dot_files[@]}"; do
 done
 
 create_directory .claude
+create_directory .claude/commands
 create_directory .config/alacritty
 create_directory .config/bat
 create_directory .config/fish
@@ -79,4 +80,16 @@ symlinks=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish")
 for symlink in $symlinks; do
   fish_file_name=$(basename "$symlink")
   delete_symlink .config/fish/functions/"$fish_file_name"
+done
+
+for command_file_path in "$DOTFILES"/.claude/commands/*.md; do
+  command_file_name=$(basename "$command_file_path")
+  create_symlink .claude/commands/"$command_file_name"
+done
+
+symlinks=$(find -L "$HOME"/.claude/commands -type l -name "*.md")
+
+for symlink in $symlinks; do
+  command_file_name=$(basename "$symlink")
+  delete_symlink .claude/commands/"$command_file_name"
 done
