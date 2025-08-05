@@ -46,50 +46,62 @@ for dot_file in "${dot_files[@]}"; do
   create_symlink "$dot_file"
 done
 
-create_directory .claude
-create_directory .claude/commands
-create_directory .config/alacritty
-create_directory .config/bat
-create_directory .config/fish
-create_directory .config/fish/functions
-create_directory .config/gh
-create_directory .config/git
-create_directory .config/nvim
-create_directory .config/zellij
+directories=(
+  ".claude"
+  ".claude/commands"
+  ".config/alacritty"
+  ".config/bat"
+  ".config/fish"
+  ".config/fish/functions"
+  ".config/gh"
+  ".config/git"
+  ".config/nvim"
+  ".config/zellij"
+)
 
-create_symlink .claude/CLAUDE.md
-create_symlink .claude/settings.json
-create_symlink .config/alacritty/alacritty.toml
-create_symlink .config/bat/config
-create_symlink .config/fish/config.fish
-create_symlink .config/fish/fish_plugins
-create_symlink .config/gh/config.yml
-create_symlink .config/git/attributes
-create_symlink .config/git/ignore
-create_symlink .config/nvim/init.vim
-create_symlink .config/starship.toml
-create_symlink .config/zellij/config.kdl
-
-for fish_file_path in "$DOTFILES"/.config/fish/functions/*.fish; do
-  fish_file_name=$(basename "$fish_file_path")
-  create_symlink .config/fish/functions/"$fish_file_name"
+for dir in "${directories[@]}"; do
+  create_directory "$dir"
 done
 
-symlinks=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish")
+config_files=(
+  ".claude/CLAUDE.md"
+  ".claude/settings.json"
+  ".config/alacritty/alacritty.toml"
+  ".config/bat/config"
+  ".config/fish/config.fish"
+  ".config/fish/fish_plugins"
+  ".config/gh/config.yml"
+  ".config/git/attributes"
+  ".config/git/ignore"
+  ".config/nvim/init.vim"
+  ".config/starship.toml"
+  ".config/zellij/config.kdl"
+)
 
-for symlink in $symlinks; do
-  fish_file_name=$(basename "$symlink")
-  delete_symlink .config/fish/functions/"$fish_file_name"
+for config_file in "${config_files[@]}"; do
+  create_symlink "$config_file"
+done
+
+for fish_file_path in "$DOTFILES"/.config/fish/functions/*.fish; do
+  file_name=$(basename "$fish_file_path")
+  create_symlink ".config/fish/functions/$file_name"
+done
+
+broken_fish_links=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish")
+
+for symlink in $broken_fish_links; do
+  file_name=$(basename "$symlink")
+  delete_symlink ".config/fish/functions/$file_name"
 done
 
 for command_file_path in "$DOTFILES"/.claude/commands/*.md; do
-  command_file_name=$(basename "$command_file_path")
-  create_symlink .claude/commands/"$command_file_name"
+  file_name=$(basename "$command_file_path")
+  create_symlink ".claude/commands/$file_name"
 done
 
-symlinks=$(find -L "$HOME"/.claude/commands -type l -name "*.md")
+broken_command_links=$(find -L "$HOME"/.claude/commands -type l -name "*.md")
 
-for symlink in $symlinks; do
-  command_file_name=$(basename "$symlink")
-  delete_symlink .claude/commands/"$command_file_name"
+for symlink in $broken_command_links; do
+  file_name=$(basename "$symlink")
+  delete_symlink ".claude/commands/$file_name"
 done
