@@ -8,7 +8,7 @@
 
 ## Code Implementation Policy
 
-- **MUST**: When the user describes a problem or asks questions, focus on understanding and analysis first
+- **MUST**: When the user describes a problem or asks questions, focus on understanding and analysis first.
 
 ### Existing Code Adaptation
 
@@ -54,7 +54,7 @@
 - **SHOULD**: Optimize only when clear bottlenecks are identified
 - **MONITOR**: Memory usage when processing large datasets
 - **AVOID**: Premature optimization
-- **MEASURE**: Benchmark performance before and after improvements
+- **MEASURE**: Performance before and after improvements
 
 ## Error Handling
 
@@ -76,6 +76,6 @@
   - Making breaking changes to APIs
   - Modifying configuration files
   - Installing new dependencies
-- **SHOULD**: Report task progress as: "タスク名: 完了" or "タスク名: 進行中"
+- **SHOULD**: Report task progress as: "Task name: Completed" or "Task name: In Progress"
 - **AVOID**: Excessive explanations unless user requests details
 - **PREFER**: Use bullet points for listing multiple items or results
