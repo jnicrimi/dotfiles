@@ -82,11 +82,11 @@ git diff ${selected_branch}...HEAD
 
 ### 5. レビュー観点の整理
 
-選択された思考レベルに応じて、以下の指示に従ってください：
+code-reviewer agentを使用して専門的な分析を実施します。選択された思考レベルに応じて以下の指示に従ってください：
 
-- Level 1 (Basic) を選択した場合: **think** を使用してレビューを実行してください
-- Level 2 (Detailed) を選択した場合: **think more** を使用してレビューを実行してください
-- Level 3 (Deep) を選択した場合: **think harder** を使用してレビューを実行してください
+- Level 1 (Basic) を選択した場合: code-reviewer agentで分析後、**think**でレビューを整理
+- Level 2 (Detailed) を選択した場合: code-reviewer agentで分析後、**think more**でレビューを整理
+- Level 3 (Deep) を選択した場合: code-reviewer agentで分析後、**think harder**でレビューを整理
 
 変更内容を分析し、以下の形式でレビューポイントを整理してください：
 
