@@ -48,6 +48,7 @@ done
 
 directories=(
   ".claude"
+  ".claude/agents"
   ".claude/commands"
   ".config/alacritty"
   ".config/bat"
@@ -104,4 +105,16 @@ broken_command_links=$(find -L "$HOME"/.claude/commands -type l -name "*.md")
 for symlink in $broken_command_links; do
   file_name=$(basename "$symlink")
   delete_symlink ".claude/commands/$file_name"
+done
+
+for agent_file_path in "$DOTFILES"/.claude/agents/*.md; do
+  file_name=$(basename "$agent_file_path")
+  create_symlink ".claude/agents/$file_name"
+done
+
+broken_agent_links=$(find -L "$HOME"/.claude/agents -type l -name "*.md")
+
+for symlink in $broken_agent_links; do
+  file_name=$(basename "$symlink")
+  delete_symlink ".claude/agents/$file_name"
 done
