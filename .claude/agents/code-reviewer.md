@@ -1,6 +1,7 @@
 ---
 name: code-reviewer
 description: コードの品質、セキュリティ、パフォーマンスを専門的に分析
+color: "yellow"
 ---
 
 # コードレビュアー

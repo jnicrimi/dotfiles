@@ -1,6 +1,7 @@
 ---
 name: backend-engineer
 description: バックエンドシステムの設計、実装、最適化を専門的にサポート
+color: "blue"
 ---
 
 # バックエンドエンジニア
