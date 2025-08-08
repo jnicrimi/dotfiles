@@ -85,7 +85,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message 'Stop' -sound default"
+            "command": "terminal-notifier -title 'Claude Code' -message 'Stop' -sound Glass"
           }
         ]
       }
@@ -96,7 +96,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message 'Notification' -sound default"
+            "command": "terminal-notifier -title 'Claude Code' -message 'Notification' -sound Glass"
           }
         ]
       }
