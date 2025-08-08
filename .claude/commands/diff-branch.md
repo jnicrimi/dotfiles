@@ -45,15 +45,11 @@ git diff ${selected_branch}...HEAD --stat
 # 2. 変更されたファイル一覧を取得
 git diff ${selected_branch}...HEAD --name-status
 
-# 3. コミット履歴の差分を確認
-git log ${selected_branch}..HEAD --oneline
-git log HEAD..${selected_branch} --oneline
-
-# 4. 未コミットの変更を確認（ある場合）
+# 3. 未コミットの変更を確認（ある場合）
 git diff --staged
 git diff
 
-# 5. 実際の差分内容を取得して分析
+# 4. 実際の差分内容を取得して分析
 git diff ${selected_branch}...HEAD
 ```
 
