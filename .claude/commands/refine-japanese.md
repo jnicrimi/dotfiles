@@ -1,4 +1,4 @@
-# 日本語文書整形
+# refine-japanese
 
 ## 概要
 

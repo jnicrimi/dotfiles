@@ -1,4 +1,4 @@
-# 変更要約
+# summarize-changes
 
 ## 概要
 
