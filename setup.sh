@@ -10,6 +10,9 @@ DOTFILES=$(cd "$SCRIPT_DIRECTORY"; pwd)
 
 readonly DOTFILES
 
+created_links=()
+unlinked_files=()
+
 create_directory() {
   local _dir_path="$HOME"/"$1"
   if [ ! -e "$_dir_path" ]; then
@@ -21,17 +24,16 @@ create_symlink() {
   local _src_path="$DOTFILES"/"$1"
   local _dst_path="$HOME"/"$1"
   if [ -L "$_dst_path" ]; then
-    echo "exists: $_dst_path"
     return 0
   fi
   ln -s "$_src_path" "$_dst_path"
-  echo "create: $_dst_path"
+  created_links+=("$_dst_path")
 }
 
 delete_symlink() {
   local _dst_path="$HOME"/"$1"
   unlink "$_dst_path"
-  echo "unlink: $_dst_path"
+  unlinked_files+=("$_dst_path")
 }
 
 read -rp "Setup dotfiles? (y/N) " answer
@@ -118,3 +120,27 @@ for symlink in $broken_agent_links; do
   file_name=$(basename "$symlink")
   delete_symlink ".claude/agents/$file_name"
 done
+
+echo "========================================="
+echo "Setup Summary"
+echo "========================================="
+
+if [ ${#created_links[@]} -gt 0 ]; then
+  echo ""
+  echo "Created symlinks (${#created_links[@]}):"
+  for link in "${created_links[@]}"; do
+    echo "  ✓ $link"
+  done
+fi
+
+if [ ${#unlinked_files[@]} -gt 0 ]; then
+  echo ""
+  echo "Removed broken links (${#unlinked_files[@]}):"
+  for link in "${unlinked_files[@]}"; do
+    echo "  ✗ $link"
+  done
+fi
+
+if [ ${#created_links[@]} -eq 0 ] && [ ${#unlinked_files[@]} -eq 0 ]; then
+  echo "  No changes made (all symlinks already exist)"
+fi
