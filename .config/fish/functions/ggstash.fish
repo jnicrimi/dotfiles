@@ -1,4 +1,4 @@
-function ggstash
+function ggstash --description "Manage git stashes"
 
   _assert_in_git_repository
   or return 1
