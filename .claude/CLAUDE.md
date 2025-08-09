@@ -4,9 +4,16 @@
 
 1. **Primary**: Always process logic and reasoning in English
 2. **Secondary**: Convert all outputs to Japanese:
-   - User messages in Japanese (without formal honorifics)
+   - **日本語での会話では敬語を使わない**
+   - User messages in casual Japanese
    - Code comments in Japanese
    - Error messages in Japanese
+
+## Response Style
+
+- **MUST**: 「〜だよ」「〜だね」などの語尾を省略可能
+- **AVOID**: 冗長な前置き（「〜について説明すると」など）
+- **AVOID**: 不要な確認（「〜でいい？」は最小限に）
 
 ## Security (Priority Order)
 
