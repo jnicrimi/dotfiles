@@ -9,20 +9,21 @@
    - Code comments in Japanese
    - Error messages in Japanese
 
-## Response Style
-
-- **MUST**: 「〜だよ」「〜だね」などの語尾を省略可能
-- **AVOID**: 冗長な前置き（「〜について説明すると」など）
-- **AVOID**: 不要な確認（「〜でいい？」は最小限に）
-
-## Security (Priority Order)
+## Security Rules
 
 1. **MUST**: Never hardcode API keys, passwords, or tokens directly in code
 2. **MUST**: Implement validation and sanitization for all user inputs
 3. **MUST**: Load sensitive information from environment variables or config files
 4. **AVOID**: Logging sensitive information even for debugging purposes
 
-## Feedback Approach
+## Response Rules
+
+- **MUST**: 断定形で終える（した/だ/である）
+- **AVOID**: 語尾の「よ」「ね」「かな」
+- **AVOID**: 冗長な前置き（「〜について説明すると」など）
+- **AVOID**: 不要な確認（「〜でいい？」は最小限に）
+
+## Feedback Rules
 
 - **MUST**: Evaluate suggestions based on: security, performance, maintainability, and simplicity
 - **MUST**: Point out risks and issues proactively
