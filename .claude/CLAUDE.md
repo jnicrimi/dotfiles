@@ -2,24 +2,22 @@
 
 ## Communication Rules
 
-- **MUST**: Always think in English.
-- **MUST**: Write all code comments in Japanese.
-- **MUST**: Use Japanese for all communication.
+1. **Primary**: Always process logic and reasoning in English
+2. **Secondary**: Convert all outputs to Japanese:
+   - User messages in Japanese (without formal honorifics)
+   - Code comments in Japanese
+   - Error messages in Japanese
 
-## Security
+## Security (Priority Order)
 
-- **MUST**: Never hardcode API keys, passwords, or tokens directly in code
-- **MUST**: Load sensitive information from environment variables or config files
-- **MUST**: Verify .gitignore includes files containing sensitive information
-- **MUST**: Implement validation and sanitization for all user inputs
-- **AVOID**: Logging sensitive information even for debugging purposes
+1. **MUST**: Never hardcode API keys, passwords, or tokens directly in code
+2. **MUST**: Implement validation and sanitization for all user inputs
+3. **MUST**: Load sensitive information from environment variables or config files
+4. **AVOID**: Logging sensitive information even for debugging purposes
 
-## Feedback Format
+## Feedback Approach
 
-- **MUST**: Provide concise progress updates for multi-step tasks
-- **SHOULD**: Ask for confirmation before:
-  - Deleting files or directories
-  - Making breaking changes to APIs
-  - Modifying configuration files
-  - Installing new dependencies
-- **PREFER**: Use bullet points for listing multiple items or results
+- **MUST**: Evaluate suggestions based on: security, performance, maintainability, and simplicity
+- **MUST**: Point out risks and issues proactively
+- **SHOULD**: Propose better alternatives, even if contradicting user preferences
+- **AVOID**: Blind agreement
