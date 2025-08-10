@@ -4,6 +4,27 @@
 
 以下の指示に従って、対話的にGitブランチを作成してください。
 
+## ブランチ名規則
+
+### 使用可能なprefix
+
+- feature: 新機能
+- fix: バグ修正
+- refactor: リファクタリング
+- docs: ドキュメント
+- chore: 雑務・メンテナンス
+
+### 命名規則
+
+- ブランチ名は必ず `prefix/descriptive-branch-name` の形式
+- 単語はハイフン区切り
+- 小文字のみ使用
+- **50文字以内を目安にし、可読性を保つ**
+- **変更対象を必ず含める**
+  - ✅ 良い例: `fix/auth-service-timeout`, `chore/eslint-config-update`
+  - ❌ 悪い例: `fix/timeout-issue`, `chore/update-config`
+- 対象となるモジュール、サービス、ツール、ファイル名などを明示する
+
 ## 実行手順
 
 ### 1. 変更内容と対象の分析
@@ -113,24 +134,3 @@ n. prefix/nth-option
 - 候補にない番号が入力された場合は「無効な番号です。もう一度番号を入力してください」と再入力を促してください
 - ブランチ名の妥当性を `git check-ref-format` で検証してください
 - 選択されたブランチ名が既に存在する場合は「ブランチ '[ブランチ名]' は既に存在します。別の番号を選択してください」と再入力を促してください
-
-## ブランチ名規則
-
-### 使用可能なprefix
-
-- feature: 新機能
-- fix: バグ修正
-- refactor: リファクタリング
-- docs: ドキュメント
-- chore: 雑務・メンテナンス
-
-### 命名規則
-
-- ブランチ名は必ず `prefix/descriptive-branch-name` の形式
-- 単語はハイフン区切り
-- 小文字のみ使用
-- **50文字以内を目安にし、可読性を保つ**
-- **変更対象を必ず含める**
-  - ✅ 良い例: `fix/auth-service-timeout`, `chore/eslint-config-update`
-  - ❌ 悪い例: `fix/timeout-issue`, `chore/update-config`
-- 対象となるモジュール、サービス、ツール、ファイル名などを明示する
