@@ -12,7 +12,7 @@ function _select_other_branch
 
   set -l selected_branch (printf '%s\n' $branches | \
       fzf --prompt="Branch: " \
-          --header="Current branch: $current_branch" \
+          --header="$current_branch" \
           --preview 'git log --color=always --oneline -n 30 {}')
 
   if test -z "$selected_branch"
