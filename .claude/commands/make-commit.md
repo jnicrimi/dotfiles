@@ -42,11 +42,13 @@
 
 ### メッセージ形式
 
-- `type: description` の1行形式を基本とする
-- typeは常に英語（feat, fix等）を使用
-- 英語の場合: descriptionは現在形・命令形で記述（例: "add" not "added" nor "adds"）
-- 日本語の場合: descriptionは簡潔な説明文で記述（例: `feat: 新機能を追加`）
-- 1行目は72文字以内に収める
+| 項目 | ルール | 例 |
+|---|---|---|
+| 基本形式 | `type: description` | `feat: add user authentication` |
+| type | 常に英語 | `feat`, `fix`, `docs` |
+| description（英語） | 現在形・命令形で記述 | `add` (not `added` nor `adds`) |
+| description（日本語） | 簡潔な説明文で記述 | `feat: 新機能を追加` |
+| 文字数制限 | 1行目は72文字以内 | - |
 
 ## 実行手順
 

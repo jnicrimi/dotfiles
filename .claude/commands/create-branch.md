@@ -16,14 +16,13 @@
 
 ### 命名規則
 
-- ブランチ名は必ず `prefix/descriptive-branch-name` の形式
-- 単語はハイフン区切り
-- 小文字のみ使用
-- **50文字以内を目安にし、可読性を保つ**
-- **変更対象を必ず含める**
-  - ✅ 良い例: `fix/auth-service-timeout`, `chore/eslint-config-update`
-  - ❌ 悪い例: `fix/timeout-issue`, `chore/update-config`
-- 対象となるモジュール、サービス、ツール、ファイル名などを明示する
+| ルール | 説明 | 例 |
+|---|---|---|
+| 形式 | `prefix/descriptive-branch-name` | `feature/user-authentication` |
+| 区切り文字 | ハイフン使用 | `add-oauth-login` |
+| 文字種 | 小文字のみ | ✅ `fix/auth-service` (❌ `Fix/Auth-Service`) |
+| 文字数制限 | 50文字以内を目安 | - |
+| **対象の明示** | モジュール、サービス、ツール、ファイル名を含める | ✅ `fix/auth-service-timeout` (❌ `fix/timeout-issue`) |
 
 ## 実行手順
 
