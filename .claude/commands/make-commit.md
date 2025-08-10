@@ -2,7 +2,7 @@
 
 ## 概要
 
-Conventional Commits形式に従って、対話的にGitコミットを作成してください。
+変更内容を分析し、Conventional Commits形式でコミットを作成する。
 
 ## Conventional Commits規則
 
