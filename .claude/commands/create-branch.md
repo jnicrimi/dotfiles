@@ -8,13 +8,13 @@
 
 ### 使用可能なprefix
 
-| prefix | 説明 | 使用例 |
-|---|---|---|
-| feature | 新機能 | `feature/user-authentication` |
-| fix | バグ修正 | `fix/login-error` |
-| refactor | リファクタリング | `refactor/auth-module` |
-| docs | ドキュメント | `docs/api-guide` |
-| chore | 雑務・メンテナンス | `chore/update-deps` |
+| prefix | 説明 |
+|---|---|
+| feature | 新機能 |
+| fix | バグ修正 |
+| refactor | リファクタリング |
+| docs | ドキュメント |
+| chore | 雑務・メンテナンス |
 
 ### 命名規則
 

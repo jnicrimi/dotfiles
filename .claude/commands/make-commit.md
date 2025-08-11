@@ -10,18 +10,18 @@
 
 **SHOULD**: 複数のtypeに該当する場合は、上位のtypeを優先して選択する
 
-| type | 説明 | 使用例 |
+| type | 説明 | 詳細 |
 |---|---|---|
-| feat | 新機能（新しい機能の追加） | `feat: add user authentication` |
-| fix | バグ修正（バグの修正） | `fix: resolve login error` |
-| refactor | リファクタリング（バグ修正でも機能追加でもないコード変更） | `refactor: improve auth logic` |
-| docs | ドキュメント（ドキュメントのみの変更） | `docs: update API guide` |
-| test | テスト（不足しているテストの追加や既存のテストの修正） | `test: add unit tests` |
-| style | スタイル（コードの意味に影響しない変更） | `style: format code` |
-| build | ビルド（ビルドシステムや外部依存関係に影響する変更） | `build: update webpack config` |
-| ci | CI（CI設定ファイルやスクリプトの変更） | `ci: add GitHub Actions` |
-| perf | パフォーマンス（パフォーマンスを向上させるコード変更） | `perf: optimize queries` |
-| chore | 雑務（srcやtestファイルを変更しないその他の変更） | `chore: update dependencies` |
+| feat | 新機能 | - |
+| fix | バグ修正 | - |
+| refactor | リファクタリング | バグ修正でも機能追加でもないコード変更 |
+| docs | ドキュメント | - |
+| test | テスト | - |
+| style | スタイル | コードの意味に影響しない変更 |
+| build | ビルド | ビルドシステムや外部依存関係に影響する変更 |
+| ci | CI | CI設定ファイルやスクリプトの変更 |
+| perf | パフォーマンス | パフォーマンスを向上させるコード変更 |
+| chore | 雑務 | srcやtestファイルを変更しないその他の変更 |
 
 ### メッセージ形式
 
