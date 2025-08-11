@@ -101,7 +101,7 @@ git diff ${selected_branch}...HEAD
 📋 変更要約
 ════════════════════════════════════════
 
-【変更カテゴリ】
+🏷️ [変更カテゴリ]
 
 ◆ [具体的な変更内容]
   • [関連ファイルパス]
@@ -112,7 +112,7 @@ git diff ${selected_branch}...HEAD
 
 ────────────────────────────────────────
 
-【変更カテゴリ】
+🏷️ [変更カテゴリ]
 
 ◆ [具体的な変更内容]
   • [関連ファイルパス]
@@ -128,7 +128,7 @@ git diff ${selected_branch}...HEAD
 📋 変更要約
 ════════════════════════════════════════
 
-【機能追加】
+🏷️ [機能追加]
 
 ◆ usersテーブルにphoneカラムを追加
   • db/schema.rb
@@ -148,7 +148,7 @@ git diff ${selected_branch}...HEAD
 
 ────────────────────────────────────────
 
-【機能改善】
+🏷️ [機能改善]
 
 ◆ メール再送機能を実装
   • app/controllers/password_resets_controller.rb
@@ -163,7 +163,7 @@ git diff ${selected_branch}...HEAD
 
 ────────────────────────────────────────
 
-【リファクタリング】
+🏷️ [リファクタリング]
 
 ◆ 全エンドポイントで{success, data, message}形式に統一
   • app/controllers/application_controller.rb
