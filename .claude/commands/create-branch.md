@@ -8,11 +8,13 @@
 
 ### 使用可能なprefix
 
-- feature: 新機能
-- fix: バグ修正
-- refactor: リファクタリング
-- docs: ドキュメント
-- chore: 雑務・メンテナンス
+| prefix | 説明 | 使用例 |
+|---|---|---|
+| feature | 新機能 | `feature/user-authentication` |
+| fix | バグ修正 | `fix/login-error` |
+| refactor | リファクタリング | `refactor/auth-module` |
+| docs | ドキュメント | `docs/api-guide` |
+| chore | 雑務・メンテナンス | `chore/update-deps` |
 
 ### 命名規則
 
@@ -20,9 +22,9 @@
 |---|---|---|
 | 形式 | `prefix/descriptive-branch-name` | `feature/user-authentication` |
 | 区切り文字 | ハイフン使用 | `add-oauth-login` |
-| 文字種 | 小文字のみ | ✅ `fix/auth-service` (❌ `Fix/Auth-Service`) |
+| 文字種 | 小文字のみ | `fix/auth-service` |
 | 文字数制限 | 50文字以内を目安 | - |
-| **対象の明示** | モジュール、サービス、ツール、ファイル名を含める | ✅ `fix/auth-service-timeout` (❌ `fix/timeout-issue`) |
+| **対象の明示** | モジュール、サービス、ツール、ファイル名を含める | `fix/auth-service-timeout` |
 
 ## 実行手順
 
