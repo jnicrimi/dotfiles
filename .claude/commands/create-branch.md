@@ -71,7 +71,7 @@ n. prefix/nth-option
 
 #### 出力例
 
-**新機能の場合:**
+##### 新機能の場合
 
 ```text
 1. feature/user-authentication-system
@@ -81,7 +81,7 @@ n. prefix/nth-option
    理由: OAuth loginモジュールという対象を具体的に表現
 ```
 
-**バグ修正の場合:**
+##### バグ修正の場合
 
 ```text
 1. fix/auth-service-error-handling
@@ -91,7 +91,7 @@ n. prefix/nth-option
    理由: ユーザー検証ロジックという対象を技術的に表現
 ```
 
-**リファクタリングの場合:**
+##### リファクタリングの場合
 
 ```text
 1. refactor/auth-module-structure
@@ -101,7 +101,7 @@ n. prefix/nth-option
    理由: ユーザー認証ロジックという対象と目的を明示
 ```
 
-**ドキュメントの場合:**
+##### ドキュメントの場合
 
 ```text
 1. docs/update-project-readme
@@ -114,7 +114,7 @@ n. prefix/nth-option
    理由: Dockerセットアップガイドという対象を明示
 ```
 
-**雑務・メンテナンスの場合:**
+##### 雑務・メンテナンスの場合
 
 ```text
 1. chore/update-npm-dependencies
@@ -129,7 +129,7 @@ n. prefix/nth-option
 
 ### 3. ブランチ作成と切り替え
 
-ユーザーが番号を選択したら、以下の順番で処理してください：
+#### ユーザーが番号を選択した場合
 
 1. 候補にない番号が入力された場合は「無効な番号です。もう一度番号を入力してください」と再入力を促す
 2. 選択されたブランチ名が既に存在するか確認（`git branch --list`）
