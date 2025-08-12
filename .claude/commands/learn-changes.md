@@ -23,13 +23,13 @@ git status --short
 git branch --format='%(refname:short)'
 ```
 
-取得したローカルブランチ一覧からカレントブランチを除外
-
 #### 比較可能なブランチが存在しない場合
 
 「比較可能なブランチがありません」と出力して処理を終了
 
 #### 比較可能なブランチが存在する場合
+
+取得したローカルブランチ一覧から、選択肢を表示する際にカレントブランチを除外
 
 ```text
 ════════════════════════════════════════
@@ -45,12 +45,12 @@ git branch --format='%(refname:short)'
 ▶ 選択してください
 ```
 
-ユーザーが番号を選択したら以下の項目を実行
+ユーザーが番号を選択したら以下を実行
 
 - 有効な番号が選択された場合
   - 選択されたベースブランチを記録
 - 無効な番号が選択された場合
-  - 「無効な番号です。もう一度番号を入力してください」と再入力を促す
+  - 「無効な番号です。もう一度番号を選択してください」と再入力を促す
 
 ### 3. 差分の取得と分析
 
@@ -141,15 +141,6 @@ git diff ${selected_branch}...HEAD
 ◆ Userモデルにphone属性を追加
   • app/models/user.rb
 
-◆ SMSによる認証コード送信機能を実装
-  • app/services/sms_service.rb
-  • app/services/twilio_client.rb
-  • config/credentials.yml
-
-◆ 電話番号でのログインAPIエンドポイントを作成
-  • app/controllers/api/auth_controller.rb
-  • config/routes.rb
-
 ────────────────────────────────────────
 
 🏷️ [機能改善]
@@ -161,21 +152,3 @@ git diff ${selected_branch}...HEAD
 ◆ レート制限を追加（1分間に1回まで）
   • app/models/password_reset_request.rb
   • config/initializers/rate_limit.rb
-
-◆ 再送時のエラーメッセージを改善
-  • config/locales/ja.yml
-
-────────────────────────────────────────
-
-🏷️ [リファクタリング]
-
-◆ 全エンドポイントで{success, data, message}形式に統一
-  • app/controllers/application_controller.rb
-  • app/controllers/concerns/api_response.rb
-
-◆ エラー時のHTTPステータスコードを適切に設定
-  • app/controllers/concerns/error_handler.rb
-
-◆ レスポンスのバリデーションを追加
-  • spec/support/api_schema_matcher.rb
-  • spec/requests/**/*_spec.rb
