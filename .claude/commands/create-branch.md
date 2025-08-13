@@ -73,7 +73,7 @@ git diff
 3. feature/dark-mode (簡潔版)
 4. feature/settings-page-dark-mode-toggle (詳細版)
 
-▶ 選択してください
+(1-4):
 ```
 
 ### 3. ブランチの作成
