@@ -9,7 +9,7 @@
 ### 1. 思考レベルの選択
 
 ```text
-🧠 思考レベル
+🧠 思考レベルの選択
 ────────────────────────────────────────
 1. ⚫⚪⚪ Basic (基本) - 素早い基本的なレビュー
 2. ⚫⚫⚪ Detailed (詳細) - 詳細な分析とレビュー
@@ -25,15 +25,10 @@
 - 無効な番号が選択された場合
   - 「無効な番号です。もう一度番号を選択してください」と再入力を促す
 
-### 2. 現在の状態確認
-
-現在のブランチと作業状況を把握
+### 2. カレントブランチの確認
 
 ```bash
-# 現在のブランチを確認
 git branch --show-current
-
-# 未コミットの変更を確認
 git status --short
 ```
 
@@ -42,10 +37,7 @@ git status --short
 #### 3.1 データ取得
 
 ```bash
-# ローカルブランチ一覧を取得
 git branch --format='%(refname:short)'
-
-# 未コミットの変更を確認
 git status --short
 ```
 
@@ -95,13 +87,8 @@ git status --short
 - `${review_target}` に <選択されたブランチ名> を設定
 
 ```bash
-# 差分の統計情報を取得
 git diff ${selected_branch}...HEAD --stat
-
-# 変更されたファイル一覧を取得
 git diff ${selected_branch}...HEAD --name-status
-
-# 実際の差分内容を取得して分析
 git diff ${selected_branch}...HEAD
 ```
 
@@ -113,18 +100,11 @@ git diff ${selected_branch}...HEAD
 - `${review_target}` に「未コミットの変更」を設定する
 
 ```bash
-# 変更の統計情報を取得
-git diff --staged --stat
-git diff --stat
-
-# ステージされた変更を確認
-git diff --staged
-
-# ステージされていない変更を確認
-git diff
-
-# 変更ファイルの一覧
 git status --short
+git diff --staged --stat
+git diff --staged
+git diff --stat
+git diff
 ```
 
 #### 4.3 差分の分析
@@ -229,11 +209,11 @@ code-reviewerエージェントを使用してレビューを実施する
 #### 出力テンプレート
 
 ```text
-📊 レビュー結果
+🤖 レビュー結果
 ────────────────────────────────────────
 🧠 思考レベル: [選択されたレベル] {{! ⚫⚫⚪ Detailed }}
-📌 対象: ${current_branch} → ${review_target}
-🔍 変更: [統計情報] {{! 5ファイル (+120行 -45行) }}
+📌 レビュー対象: ${current_branch} → ${review_target}
+📊 統計情報: [統計情報] {{! 5ファイル (+120行 -45行) }}
 
 🟥 Critical ([総件数]) {{! 1件 }}
 ────────────────────────────────────────
