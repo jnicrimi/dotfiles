@@ -6,20 +6,16 @@
 
 ## 実行手順
 
-### 1. 現在の状態確認
+### 1. カレントブランチの確認
 
 ```bash
-# 現在のブランチを確認
 git branch --show-current
-
-# 未コミットの変更を確認
 git status --short
 ```
 
 ### 2. ベースブランチの選択
 
 ```bash
-# ローカルブランチ一覧を取得
 git branch --format='%(refname:short)'
 ```
 
@@ -55,17 +51,10 @@ git branch --format='%(refname:short)'
 選択されたベースブランチとの差分を取得
 
 ```bash
-# 差分の統計情報を取得
 git diff ${selected_branch}...HEAD --stat
-
-# 変更されたファイル一覧を取得
 git diff ${selected_branch}...HEAD --name-status
-
-# 未コミットの変更を確認
-git diff --staged
 git diff
-
-# 実際の差分内容を取得して分析
+git diff --staged
 git diff ${selected_branch}...HEAD
 ```
 
@@ -80,7 +69,7 @@ git diff ${selected_branch}...HEAD
 - 変更された機能
 - 削除された機能
 
-### 4. 変更要約の生成
+### 4. 変更要約の出力
 
 変更内容を開発者が理解しやすい形式にまとめる
 
@@ -97,10 +86,10 @@ git diff ${selected_branch}...HEAD
 #### 出力テンプレート
 
 ```text
-📊 変更要約
+🤖 変更要約
 ────────────────────────────────────────
 🔀 ブランチ: ${current_branch} → ${selected_branch}
-🔍 変更: [統計情報] {{! 5ファイル (+120行 -45行) }}
+📊 統計情報: [統計情報] {{! 5ファイル (+120行 -45行) }}
 
 📋 [変更カテゴリ] ([総件数]) {{! 機能追加 (2件) }}
 ────────────────────────────────────────
