@@ -1,4 +1,4 @@
-# summarize
+# show-summary
 
 ## 概要
 
