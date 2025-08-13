@@ -18,15 +18,15 @@ project_name=$(basename "$cwd")
 case "$event_name" in
   "Stop")
     terminal-notifier \
-      -title "Claude Code ✅" \
-      -message "$project_name" \
+      -title "Claude Code" \
+      -message "🔴 $project_name" \
       -group "$project_name" \
       -sound Glass
     ;;
   "Notification")
     terminal-notifier \
-      -title "Claude Code 📢" \
-      -message "$project_name" \
+      -title "Claude Code" \
+      -message "🔵 $project_name" \
       -group "$project_name" \
       -sound Glass
     ;;
