@@ -8,12 +8,17 @@ function _confirm_operation
     echo ""
   end
 
-  read -P "$description [y/N] " -l confirm
+  while true
+    read -P "$description [y/n] " -l confirm
 
-  if test "$confirm" != y -a "$confirm" != Y
-    echo "Operation cancelled"
-    return 1
+    switch $confirm
+      case y Y
+        return 0
+      case n N
+        echo "Operation cancelled"
+        return 1
+      case '*'
+        continue
+    end
   end
-
-  return 0
 end
