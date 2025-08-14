@@ -36,10 +36,20 @@ delete_symlink() {
   unlinked_files+=("$_dst_path")
 }
 
-read -rp "Setup dotfiles? (y/N) " answer
-if [ "$answer" != "y" ] && [ "$answer" != "Y" ]; then
-  exit
-fi
+while true; do
+  read -rp "Setup dotfiles? (y/N) " answer
+  case "$answer" in
+    y|Y)
+      break
+      ;;
+    N)
+      exit
+      ;;
+    *)
+      continue
+      ;;
+  esac
+done
 
 echo -n -e "\n"
 
