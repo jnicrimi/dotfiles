@@ -37,12 +37,12 @@ delete_symlink() {
 }
 
 while true; do
-  read -rp "Setup dotfiles? (y/N) " answer
+  read -rp "[y/n] " answer
   case "$answer" in
     y|Y)
       break
       ;;
-    N)
+    n|N)
       exit
       ;;
     *)
@@ -131,12 +131,7 @@ for symlink in $broken_agent_links; do
   delete_symlink ".claude/agents/$file_name"
 done
 
-echo "========================================="
-echo "Setup Summary"
-echo "========================================="
-
 if [ ${#created_links[@]} -gt 0 ]; then
-  echo ""
   echo "Created symlinks (${#created_links[@]}):"
   for link in "${created_links[@]}"; do
     echo "  ✓ $link"
@@ -144,7 +139,6 @@ if [ ${#created_links[@]} -gt 0 ]; then
 fi
 
 if [ ${#unlinked_files[@]} -gt 0 ]; then
-  echo ""
   echo "Removed broken links (${#unlinked_files[@]}):"
   for link in "${unlinked_files[@]}"; do
     echo "  ✗ $link"
@@ -152,5 +146,5 @@ if [ ${#unlinked_files[@]} -gt 0 ]; then
 fi
 
 if [ ${#created_links[@]} -eq 0 ] && [ ${#unlinked_files[@]} -eq 0 ]; then
-  echo "  No changes made (all symlinks already exist)"
+  echo "No changes"
 fi
