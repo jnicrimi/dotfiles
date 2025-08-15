@@ -16,3 +16,8 @@ pre-commit:
     yamllint:
       glob: "*.{yml,yaml}"
       run: yamllint --strict {staged_files}
+
+pre-push:
+  commands:
+    scan-git-secrets:
+      run: git secrets --scan
