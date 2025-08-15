@@ -69,6 +69,9 @@ directories=(
   ".config/gh"
   ".config/git"
   ".config/nvim"
+  ".config/nvim/lua"
+  ".config/nvim/lua/config"
+  ".config/nvim/lua/plugins"
   ".config/zellij"
 )
 
@@ -86,7 +89,8 @@ config_files=(
   ".config/gh/config.yml"
   ".config/git/attributes"
   ".config/git/ignore"
-  ".config/nvim/init.vim"
+  ".config/nvim/init.lua"
+  ".config/nvim/lua/config/lazy.lua"
   ".config/starship.toml"
   ".config/zellij/config.kdl"
 )
@@ -105,6 +109,18 @@ broken_fish_links=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish
 for symlink in $broken_fish_links; do
   file_name=$(basename "$symlink")
   delete_symlink ".config/fish/functions/$file_name"
+done
+
+for plugin_file_path in "$DOTFILES"/.config/nvim/lua/plugins/*.lua; do
+  file_name=$(basename "$plugin_file_path")
+  create_symlink ".config/nvim/lua/plugins/$file_name"
+done
+
+broken_plugin_links=$(find -L "$HOME"/.config/nvim/lua/plugins -type l -name "*.lua")
+
+for symlink in $broken_plugin_links; do
+  file_name=$(basename "$symlink")
+  delete_symlink ".config/nvim/lua/plugins/$file_name"
 done
 
 for command_file_path in "$DOTFILES"/.claude/commands/*.md; do

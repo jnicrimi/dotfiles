@@ -24,3 +24,6 @@ indent_size = 2
 
 [*.fish]
 indent_size = 2
+
+[*.lua]
+indent_size = 2
