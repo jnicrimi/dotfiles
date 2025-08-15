@@ -5,7 +5,6 @@ function _confirm_operation
   if test -n "$command"
     echo "Command:"
     echo "  \$ $command"
-    echo ""
   end
 
   while true

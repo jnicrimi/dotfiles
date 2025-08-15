@@ -34,7 +34,6 @@ function ggstash --description "Manage git stashes"
       for file in $changed_files
         echo "  $file"
       end
-      echo ""
 
       read -P "Stash message: " -l stash_message
 
@@ -67,7 +66,6 @@ function ggstash --description "Manage git stashes"
 
       echo "Selected stash:"
       echo "  $selected_stash"
-      echo ""
 
       _confirm_operation "Pop this stash?"
       or return 0
@@ -92,7 +90,6 @@ function ggstash --description "Manage git stashes"
 
       echo "Selected stash:"
       echo "  $selected_stash"
-      echo ""
 
       _confirm_operation "Drop this stash? (This cannot be undone)"
       or return 0
