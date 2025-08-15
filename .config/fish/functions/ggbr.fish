@@ -42,7 +42,7 @@ function _ggbr_merge
 end
 
 function _ggbr_create
-  set -l prefixes \
+  set -l branch_prefixes \
       "feature" \
       "fix" \
       "refactor" \
@@ -51,19 +51,19 @@ function _ggbr_create
       "hotfix" \
       "release"
 
-  set -l prefix (_select_menu "Prefix type" $prefixes)
+  set -l branch_prefix (_select_menu "Prefix type" $branch_prefixes)
   or return 0
 
-  read -P "Branch name: " branch_name
+  read -P "Branch name: " -c "$branch_prefix/" branch_name
   or return 0
 
   _ggbr_validate_branch_name "$branch_name"
   or return $status
 
-  _confirm_operation "Create branch" "git switch -c $prefix/$branch_name"
+  _confirm_operation "Create branch" "git switch -c $branch_name"
   or return 0
 
-  git switch -c "$prefix/$branch_name"
+  git switch -c "$branch_name"
 end
 
 function _ggbr_rename
@@ -74,16 +74,16 @@ function _ggbr_rename
     return 1
   end
 
-  read -P "Branch name: " -c "$current_branch" new_branch
+  read -P "Branch name: " -c "$current_branch" branch_name
   or return 0
 
-  _ggbr_validate_branch_name "$new_branch"
+  _ggbr_validate_branch_name "$branch_name"
   or return $status
 
-  _confirm_operation "Rename branch" "git branch -m $new_branch"
+  _confirm_operation "Rename branch" "git branch -m $branch_name"
   or return 0
 
-  git branch -m "$new_branch"
+  git branch -m "$branch_name"
 end
 
 function _ggbr_delete
