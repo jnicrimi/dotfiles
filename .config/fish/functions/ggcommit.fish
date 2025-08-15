@@ -15,18 +15,18 @@ function ggcommit --description "Create conventional commit"
       "ci" \
       "perf" \
       "revert"
-  set -l type (_select_menu "Commit type" $commit_types)
+  set -l commit_type (_select_menu "Commit type" $commit_types)
   or return 0
 
-  read -P "Commit message: " message
+  read -P "Commit message: " -c "$commit_type: " commit_message
   or return 0
 
-  if test -z "$message"
+  if test -z "$commit_message"
     echo "Error: No commit message entered" >&2
     return 1
   end
 
-  if string match -qr '["\\\]' -- "$message"
+  if string match -qr '["\\\]' -- "$commit_message"
     echo "Error: Commit message contains invalid characters" >&2
     return 1
   end
@@ -34,17 +34,17 @@ function ggcommit --description "Create conventional commit"
   set -l commit_option (_select_menu "Commit option" "commit" "commit --no-verify")
   or return 0
 
-  set -l commit_command "git commit -m \"$type: $message\""
+  set -l commit_command "git commit -m \"$commit_message\""
   if test "$commit_option" = "commit --no-verify"
-    set commit_command "git commit --no-verify -m \"$type: $message\""
+    set commit_command "git commit --no-verify -m \"$commit_message\""
   end
 
   _confirm_operation "Create commit" "$commit_command"
   or return 0
 
   if test "$commit_option" = "commit --no-verify"
-    git commit --no-verify -m "$type: $message"
+    git commit --no-verify -m "$commit_message"
   else
-    git commit -m "$type: $message"
+    git commit -m "$commit_message"
   end
 end
