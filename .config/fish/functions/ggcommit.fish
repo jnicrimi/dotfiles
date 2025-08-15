@@ -18,7 +18,7 @@ function ggcommit --description "Create conventional commit"
   set -l type (_select_menu "Commit type" $commit_types)
   or return 0
 
-  read -P "Enter commit message: " message
+  read -P "Commit message: " message
   or return 0
 
   if test -z "$message"

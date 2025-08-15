@@ -54,7 +54,7 @@ function _ggbr_create
   set -l prefix (_select_menu "Prefix type" $prefixes)
   or return 0
 
-  read -P "Enter branch name: " branch_name
+  read -P "Branch name: " branch_name
   or return 0
 
   _ggbr_validate_branch_name "$branch_name"
@@ -74,7 +74,7 @@ function _ggbr_rename
     return 1
   end
 
-  read -P "Enter new branch name: " -c "$current_branch" new_branch
+  read -P "Branch name: " -c "$current_branch" new_branch
   or return 0
 
   _ggbr_validate_branch_name "$new_branch"
