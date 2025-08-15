@@ -28,7 +28,6 @@ function ggadd --description "Add unstaged files interactively with fzf"
   for file in $selected_files
     echo "  $file"
   end
-  echo ""
 
   _confirm_operation "Add these files?"
   or return 0

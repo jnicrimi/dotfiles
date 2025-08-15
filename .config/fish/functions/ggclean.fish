@@ -11,7 +11,6 @@ function ggclean --description "Discard all git changes"
 
   echo "Changes to discard:"
   git status --short
-  echo ""
 
   _confirm_operation "Discard all changes?"
   or return 0
