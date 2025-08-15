@@ -95,8 +95,6 @@ let g:polyglot_disabled = ['vue']
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'Raimondi/delimitMate'
-Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish'
@@ -110,6 +108,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 
@@ -139,3 +138,8 @@ let g:ale_fixers = {
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" nvim-autopairs
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
