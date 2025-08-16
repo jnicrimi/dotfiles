@@ -71,6 +71,7 @@ directories=(
   ".config/nvim"
   ".config/nvim/lua"
   ".config/nvim/lua/config"
+  ".config/nvim/lua/core"
   ".config/nvim/lua/plugins"
   ".config/zellij"
 )
@@ -91,6 +92,7 @@ config_files=(
   ".config/git/ignore"
   ".config/nvim/init.lua"
   ".config/nvim/lua/config/lazy.lua"
+  ".config/nvim/lua/core/options.lua"
   ".config/starship.toml"
   ".config/zellij/config.kdl"
 )
