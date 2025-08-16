@@ -93,6 +93,7 @@ config_files=(
   ".config/nvim/init.lua"
   ".config/nvim/lua/config/lazy.lua"
   ".config/nvim/lua/core/options.lua"
+  ".config/nvim/lua/core/keymaps.lua"
   ".config/starship.toml"
   ".config/zellij/config.kdl"
 )
