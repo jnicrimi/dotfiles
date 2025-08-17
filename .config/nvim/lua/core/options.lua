@@ -1,18 +1,11 @@
 local opt = vim.opt
 
--- インデント
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.smartindent = true
-
--- 検索
-opt.ignorecase = true
-opt.smartcase = true
-opt.wrapscan = true
-
--- 表示
 opt.background = "dark"
+opt.backup = false
+opt.clipboard = "unnamedplus"
 opt.cursorline = true
+opt.ignorecase = true
+opt.linebreak = true
 opt.list = true
 opt.listchars = {
   trail = "-",
@@ -22,25 +15,21 @@ opt.listchars = {
   precedes = "«"
 }
 opt.number = true
+opt.shiftwidth = 2
+opt.shortmess:append "Ic"
 opt.showbreak = "↪"
 opt.showmatch = true
 opt.signcolumn = "yes"
-opt.termguicolors = true
-opt.wrap = true
-opt.linebreak = true
-
--- ファイル
-opt.backup = false
+opt.smartcase = true
+opt.smartindent = true
 opt.swapfile = false
-opt.writebackup = false
-
--- クリップボード
-opt.clipboard = "unnamedplus"
-
--- その他
-opt.shortmess:append "Ic"
+opt.tabstop = 2
+opt.termguicolors = true
 opt.timeout = true
 opt.timeoutlen = 1000
 opt.ttimeoutlen = 10
 opt.updatetime = 500
 opt.whichwrap = "b,s,[,],<,>"
+opt.wrap = true
+opt.wrapscan = true
+opt.writebackup = false
