@@ -11,8 +11,7 @@ return {
         vim.keymap.set(mode, l, r, opts)
       end
 
-      -- Git blame
-      map("n", "<leader>hb", function()
+      map("n", "<leader>gb", function()
         gs.blame_line({ full = true })
       end, { desc = "Git blame" })
     end,
