@@ -5,8 +5,6 @@ return {
   config = function()
     local wk = require("which-key")
     wk.setup({})
-
-    -- キーマップのグループ設定
     wk.add({
       { "<leader>f", group = "file" },
       { "<leader>g", group = "git" },
