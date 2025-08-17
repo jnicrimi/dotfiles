@@ -4,7 +4,9 @@ return {
   ft = { "markdown" },
   config = function()
     require("render-markdown").setup({
-      -- Configuration here, or leave empty to use defaults
+      heading = {
+        backgrounds = {},
+      },
     })
   end,
 }
