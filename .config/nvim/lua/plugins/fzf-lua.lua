@@ -3,8 +3,6 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("fzf-lua").setup({})
-
-    -- キーマップ設定
     local map = vim.keymap.set
     map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files" })
     map("n", "<leader>gf", "<cmd>FzfLua git_files<cr>", { desc = "Git files" })
