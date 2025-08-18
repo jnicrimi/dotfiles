@@ -43,13 +43,13 @@ end
 
 function _ggbr_create
   set -l branch_prefixes \
-      "feature" \
-      "fix" \
-      "refactor" \
-      "chore" \
-      "docs" \
-      "hotfix" \
-      "release"
+    "feature" \
+    "fix" \
+    "refactor" \
+    "chore" \
+    "docs" \
+    "hotfix" \
+    "release"
 
   set -l branch_prefix (_select_menu "Prefix type" $branch_prefixes)
   or return 0
