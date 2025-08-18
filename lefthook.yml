@@ -16,6 +16,15 @@ pre-commit:
     yamllint:
       glob: "*.{yml,yaml}"
       run: yamllint --strict {staged_files}
+    fish:
+      glob: "**/*.fish"
+      run: fish -n {staged_files}
+    shellcheck:
+      glob: "**/*.sh"
+      run: shellcheck {staged_files}
+    luacheck:
+      glob: "**/*.lua"
+      run: luacheck {staged_files}
 
 pre-push:
   commands:
