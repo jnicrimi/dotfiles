@@ -3,6 +3,8 @@ function ggadd --description "Add unstaged files interactively with fzf"
   _assert_in_git_repository
   or return 1
 
+  set -l git_root (git rev-parse --show-toplevel)
+
   set -l unstaged_files (git status --porcelain -z | \
       string split0 | \
       grep -E "^.[ACDMRT]|^\?\?" | \
@@ -16,9 +18,9 @@ function ggadd --description "Add unstaged files interactively with fzf"
   set -l selected_files (printf '%s\n' $unstaged_files | \
     fzf --multi \
         --prompt="Select files: " \
-        --preview 'git diff --color=always {} 2>/dev/null || \
-                   bat --color=always {} 2>/dev/null || \
-                   cat {}')
+        --preview "git -C $git_root diff --color=always {} 2>/dev/null || \
+                   bat --color=always $git_root/{} 2>/dev/null || \
+                   cat $git_root/{}")
 
   if test (count $selected_files) -eq 0
     return 0
