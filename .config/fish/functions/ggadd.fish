@@ -34,6 +34,5 @@ function ggadd --description "Add unstaged files interactively with fzf"
   _confirm_operation "Add these files?"
   or return 0
 
-  set -l git_root (git rev-parse --show-toplevel)
   git -C $git_root add -- $selected_files
 end
