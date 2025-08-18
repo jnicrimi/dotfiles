@@ -15,7 +15,9 @@ opt.listchars = {
   precedes = "«"
 }
 opt.number = true
+opt.scrolloff = 8
 opt.shiftwidth = 2
+opt.sidescrolloff = 8
 opt.shortmess:append "Ic"
 opt.showbreak = "↪"
 opt.showmatch = true
