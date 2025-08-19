@@ -103,6 +103,17 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.dotfiles/.claude/hooks/editorconfig-autofix.sh"
+          }
+        ]
+      }
     ]
   }
 }
