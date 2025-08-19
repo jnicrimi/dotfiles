@@ -1,6 +1,7 @@
 [core]
   quotepath = false
   editor = vim
+  pager = delta
 
 [fetch]
   prune = true
@@ -13,6 +14,7 @@
 
 [merge]
   tool = vimdiff
+  conflictStyle = zdiff3
 
 [color]
   ui = auto
@@ -33,26 +35,13 @@
   root = ~/.ghq
   root = ~/.go/src
 
-[pager]
-  diff = delta
-  log = delta
-  reflog = delta
-  show = delta
-
 [interactive]
   diffFilter = delta --color-only
 
 [delta]
-  features = line-numbers decorations
-  whitespace-error-style = 22 reverse
+  navigate = true
   side-by-side = true
   syntax-theme = gruvbox-dark
-
-[delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
-  hunk-header-decoration-style = yellow box
 
 [alias]
   a = add
