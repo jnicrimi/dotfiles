@@ -8,6 +8,7 @@ keymap.set('n', '<Up>', 'gk')
 keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', { silent = true })
 
 -- Buffer operations
+keymap.set('n', '<leader>bb', '<Cmd>BufferLinePick<CR>', { desc = 'Pick buffer' })
 keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Delete buffer' })
 keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
 keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
