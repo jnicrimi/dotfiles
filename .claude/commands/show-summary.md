@@ -53,9 +53,9 @@ git branch --format='%(refname:short)'
 ```bash
 git diff ${selected_branch}...HEAD --stat
 git diff ${selected_branch}...HEAD --name-status
-git diff
-git diff --staged
-git diff ${selected_branch}...HEAD
+git diff --ignore-all-space --ignore-blank-lines
+git diff --staged --ignore-all-space --ignore-blank-lines
+git diff ${selected_branch}...HEAD --ignore-all-space --ignore-blank-lines
 ```
 
 - 変更がない場合

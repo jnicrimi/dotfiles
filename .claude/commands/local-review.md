@@ -89,7 +89,7 @@ git status --short
 ```bash
 git diff ${selected_branch}...HEAD --stat
 git diff ${selected_branch}...HEAD --name-status
-git diff ${selected_branch}...HEAD
+git diff ${selected_branch}...HEAD --ignore-all-space --ignore-blank-lines
 ```
 
 #### 4.2 未コミットの変更が選択された場合
@@ -102,9 +102,9 @@ git diff ${selected_branch}...HEAD
 ```bash
 git status --short
 git diff --staged --stat
-git diff --staged
+git diff --staged --ignore-all-space --ignore-blank-lines
 git diff --stat
-git diff
+git diff --ignore-all-space --ignore-blank-lines
 ```
 
 #### 4.3 差分の分析
