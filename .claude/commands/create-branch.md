@@ -35,8 +35,8 @@
 
 ```bash
 git status
-git diff
-git diff --staged
+git diff --ignore-all-space --ignore-blank-lines
+git diff --staged --ignore-all-space --ignore-blank-lines
 ```
 
 - 変更がない場合
