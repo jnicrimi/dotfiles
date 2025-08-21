@@ -15,8 +15,9 @@ function ggdiff --description "Show git differences"
   set -l action (_select_menu "Action" "diff" "stat" "edit")
   or return 0
 
+  set -l diff_options
   if test "$action" != "edit"
-    set -l diff_options (_select_menu "Options" "空白・空行無視" "指定なし")
+    set diff_options (_select_menu "Options" "空白・空行無視" "指定なし")
     or return 0
   end
 
@@ -24,16 +25,16 @@ function ggdiff --description "Show git differences"
     case "diff"
       switch "$diff_options"
         case "空白・空行無視"
-          git diff --ignore-all-space --ignore-blank-lines "$selected_branch..$current_branch"
+          _set_commandline "git diff --ignore-all-space --ignore-blank-lines $selected_branch..$current_branch"
         case "指定なし"
-          git diff "$selected_branch..$current_branch"
+          _set_commandline "git diff $selected_branch..$current_branch"
       end
     case "stat"
       switch "$diff_options"
         case "空白・空行無視"
-          git diff --stat --ignore-all-space --ignore-blank-lines "$selected_branch..$current_branch"
+          _set_commandline "git diff --stat --ignore-all-space --ignore-blank-lines $selected_branch..$current_branch"
         case "指定なし"
-          git diff --stat "$selected_branch..$current_branch"
+          _set_commandline "git diff --stat $selected_branch..$current_branch"
       end
     case "edit"
       set -l files (git diff --name-only "$selected_branch..$current_branch" | \
@@ -42,7 +43,7 @@ function ggdiff --description "Show git differences"
             --preview="git diff '$selected_branch..$current_branch' -- {}")
 
       if test -n "$files"
-        vim $files
+        _set_commandline "vim $files"
       end
     case '*'
       return 0

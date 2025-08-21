@@ -13,13 +13,9 @@ function ggpush --description "Push to remote"
 
   switch $push_type
     case "push"
-      _confirm_operation "Push to remote" "git push $remote $branch"
-      or return 0
-      git push "$remote" "$branch"
+      _set_commandline "git push $remote $branch"
     case "force push"
-      _confirm_operation "Force push to remote" "git push -f $remote $branch"
-      or return 0
-      git push -f "$remote" "$branch"
+      _set_commandline "git push -f $remote $branch"
     case '*'
       return 0
   end

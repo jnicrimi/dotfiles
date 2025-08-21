@@ -28,20 +28,7 @@ function _ggwt_add
     return 1
   end
 
-  _confirm_operation "Create worktree" "git worktree add $worktree_path $selected_branch"
-  or return 0
-
-  git worktree add "$worktree_path" "$selected_branch"
-  or begin
-    echo "Error: Failed to create worktree" >&2
-    return 1
-  end
-
-  echo "Worktree created: $worktree_path"
-
-  if _confirm_operation "Change directory" "cd $worktree_path"
-    cd "$worktree_path"
-  end
+  _set_commandline "git worktree add $worktree_path $selected_branch"
 end
 
 function _ggwt_remove
@@ -58,16 +45,7 @@ function _ggwt_remove
     return 0
   end
 
-  _confirm_operation "Remove worktree" "git worktree remove $selected_worktree"
-  or return 0
-
-  git worktree remove "$selected_worktree"
-  or begin
-    echo "Error: Failed to remove worktree" >&2
-    return 1
-  end
-
-  echo "Worktree removed: $selected_worktree"
+  _set_commandline "git worktree remove $selected_worktree"
 end
 
 function _ggwt_generate_path

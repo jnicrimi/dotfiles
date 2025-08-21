@@ -42,11 +42,7 @@ function ggstash --description "Manage git stashes"
         return 1
       end
 
-      set -l stash_command "git stash push -m \"$stash_message\""
-      _confirm_operation "Create stash" "$stash_command"
-      or return 0
-
-      git stash push -m "$stash_message"
+      _set_commandline "git stash push -m \"$stash_message\""
 
     case pop
       if test (count $stash_list) -eq 0
@@ -67,10 +63,7 @@ function ggstash --description "Manage git stashes"
       echo "Selected stash:"
       echo "  $selected_stash"
 
-      _confirm_operation "Pop this stash?"
-      or return 0
-
-      git stash pop $stash_id
+      _set_commandline "git stash pop $stash_id"
 
     case drop
       if test (count $stash_list) -eq 0
@@ -91,9 +84,6 @@ function ggstash --description "Manage git stashes"
       echo "Selected stash:"
       echo "  $selected_stash"
 
-      _confirm_operation "Drop this stash? (This cannot be undone)"
-      or return 0
-
-      git stash drop $stash_id
+      _set_commandline "git stash drop $stash_id"
   end
 end

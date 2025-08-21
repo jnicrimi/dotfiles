@@ -21,8 +21,8 @@ function ggrestore --description "Restore file changes interactively with fzf"
     fzf --multi \
         --prompt="Select files: " \
         --preview "git -C $git_root diff HEAD --color=always {} 2>/dev/null || \
-                   bat --color=always $git_root/{} 2>/dev/null || \
-                   cat $git_root/{}")
+                  bat --color=always $git_root/{} 2>/dev/null || \
+                  cat $git_root/{}")
 
   if test (count $selected_files) -eq 0
     return 0
@@ -33,9 +33,5 @@ function ggrestore --description "Restore file changes interactively with fzf"
     echo "  $file"
   end
 
-  _confirm_operation "Restore these files to their original state?"
-  or return 0
-
-  git -C $git_root restore --staged --worktree -- $selected_files
-  echo "Files restored"
+  _set_commandline "git -C $git_root restore --staged --worktree -- $selected_files"
 end

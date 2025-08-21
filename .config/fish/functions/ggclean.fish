@@ -12,9 +12,5 @@ function ggclean --description "Discard all git changes"
   echo "Changes to discard:"
   git status --short
 
-  _confirm_operation "Discard all changes?"
-  or return 0
-
-  git stash push -u && git stash drop
-  echo "All changes discarded"
+  _set_commandline "git stash push -u && git stash drop"
 end
