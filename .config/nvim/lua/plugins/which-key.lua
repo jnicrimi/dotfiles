@@ -8,6 +8,7 @@ return {
     wk.add({
       { "<leader>b", group = "buffer" },
       { "<leader>g", group = "git" },
+      { "<leader>x", group = "trouble/diagnostics" },
     })
   end,
   keys = {
