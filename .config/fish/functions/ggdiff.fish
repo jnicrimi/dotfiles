@@ -15,11 +15,24 @@ function ggdiff --description "Show git differences"
   set -l action (_select_menu "Action" "diff" "stat")
   or return 0
 
+  set -l diff_options (_select_menu "Options" "空白・空行無視" "指定なし")
+  or return 0
+
   switch "$action"
     case "diff"
-      git diff "$selected_branch..$current_branch"
+      switch "$diff_options"
+        case "空白・空行無視"
+          git diff --ignore-all-space --ignore-blank-lines "$selected_branch..$current_branch"
+        case "指定なし"
+          git diff "$selected_branch..$current_branch"
+      end
     case "stat"
-      git diff --stat "$selected_branch..$current_branch"
+      switch "$diff_options"
+        case "空白・空行無視"
+          git diff --stat --ignore-all-space --ignore-blank-lines "$selected_branch..$current_branch"
+        case "指定なし"
+          git diff --stat "$selected_branch..$current_branch"
+      end
     case '*'
       return 0
   end
