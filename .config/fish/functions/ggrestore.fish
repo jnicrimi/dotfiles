@@ -19,7 +19,7 @@ function ggrestore --description "Restore file changes interactively with fzf"
 
   set -l selected_files (printf '%s\n' $changed_files | \
     fzf --multi \
-        --prompt="Select files to restore: " \
+        --prompt="Select files: " \
         --preview "git -C $git_root diff HEAD --color=always {} 2>/dev/null || \
                    bat --color=always $git_root/{} 2>/dev/null || \
                    cat $git_root/{}")
