@@ -34,17 +34,9 @@ function ggcommit --description "Create conventional commit"
   set -l commit_option (_select_menu "Commit option" "commit" "commit --no-verify")
   or return 0
 
-  set -l commit_command "git commit -m \"$commit_message\""
   if test "$commit_option" = "commit --no-verify"
-    set commit_command "git commit --no-verify -m \"$commit_message\""
-  end
-
-  _confirm_operation "Create commit" "$commit_command"
-  or return 0
-
-  if test "$commit_option" = "commit --no-verify"
-    git commit --no-verify -m "$commit_message"
+    _set_commandline "git commit --no-verify -m \"$commit_message\""
   else
-    git commit -m "$commit_message"
+    _set_commandline "git commit -m \"$commit_message\""
   end
 end

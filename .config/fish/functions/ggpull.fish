@@ -8,5 +8,5 @@ function ggpull --description "Pull from remote"
   set -l branch $git_info[1]
   set -l remote $git_info[2]
 
-  git pull "$remote" "$branch"
+  _set_commandline "git pull $remote $branch"
 end

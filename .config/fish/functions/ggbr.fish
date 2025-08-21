@@ -29,13 +29,9 @@ function _ggbr_merge
 
   switch $merge_type
     case "merge"
-      _confirm_operation "Merge branch" "git merge $selected_branch"
-      or return 0
-      git merge "$selected_branch"
+      _set_commandline "git merge $selected_branch"
     case "squash merge"
-      _confirm_operation "Squash merge branch" "git merge --squash $selected_branch"
-      or return 0
-      git merge --squash "$selected_branch"
+      _set_commandline "git merge --squash $selected_branch"
     case '*'
       return 0
   end
@@ -60,10 +56,7 @@ function _ggbr_create
   _ggbr_validate_branch_name "$branch_name"
   or return $status
 
-  _confirm_operation "Create branch" "git switch -c $branch_name"
-  or return 0
-
-  git switch -c "$branch_name"
+  _set_commandline "git switch -c $branch_name"
 end
 
 function _ggbr_rename
@@ -80,20 +73,14 @@ function _ggbr_rename
   _ggbr_validate_branch_name "$branch_name"
   or return $status
 
-  _confirm_operation "Rename branch" "git branch -m $branch_name"
-  or return 0
-
-  git branch -m "$branch_name"
+  _set_commandline "git branch -m $branch_name"
 end
 
 function _ggbr_delete
   set -l selected_branch (_select_other_branch)
   or return 0
 
-  _confirm_operation "Delete branch" "git branch -D $selected_branch"
-  or return 0
-
-  git branch -D "$selected_branch"
+  _set_commandline "git branch -D $selected_branch"
 end
 
 function _ggbr_validate_branch_name

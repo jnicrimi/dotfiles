@@ -27,9 +27,9 @@ function ggshow --description "Show git commits and related pull requests"
 
   switch "$action"
     case "show"
-      git show "$commit_hash"
+      _set_commandline "git show $commit_hash"
     case "browse"
-      gh pr list -s all -S "commit:$commit_hash" -w
+      _set_commandline "gh pr list -s all -S commit:$commit_hash -w"
     case '*'
       return 0
   end

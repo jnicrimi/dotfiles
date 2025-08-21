@@ -13,7 +13,7 @@ function ggrebase --description "Interactive rebase"
   end
 
   if git rev-parse --quiet "$commit_hash^" >/dev/null 2>&1
-    git rebase -i "$commit_hash^"
+    _set_commandline "git rebase -i $commit_hash^"
   else
     echo "Selected commit has no parent – nothing to rebase" >&2
     return 1
