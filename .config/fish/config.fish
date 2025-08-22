@@ -4,6 +4,8 @@ set -gx LANG ja_JP.UTF-8
 set -gx VOLTA_HOME $HOME/.volta
 set -gx XDG_CONFIG_HOME $HOME/.config
 
+set -g fish_greeting ""
+
 fish_add_path $VOLTA_HOME/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
