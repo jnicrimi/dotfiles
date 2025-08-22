@@ -33,7 +33,6 @@
 
 [ghq]
   root = ~/.ghq
-  root = ~/.go/src
 
 [interactive]
   diffFilter = delta --color-only
@@ -43,9 +42,9 @@
   side-by-side = true
   syntax-theme = gruvbox-dark
 
-
 [include]
   path = ~/.gitconfig.local
+
 [secrets]
   providers = git secrets --aws-provider
   patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
