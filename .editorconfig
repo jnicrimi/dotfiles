@@ -5,25 +5,33 @@ root = true
 charset = utf-8
 end_of_line = lf
 indent_style = space
-indent_size = 4
+indent_size = unset
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.fish]
+indent_size = 2
+
+[*.js]
+indent_size = 2
 
 [*.json]
 indent_size = 2
 
-[*.{yml,yaml}]
+[*.kdl]
+indent_size = 2
+
+[*.lua]
 indent_size = 2
 
 [*.md]
-indent_size = unset
 trim_trailing_whitespace = false
 
 [*.sh]
 indent_size = 2
 
-[*.fish]
+[*.toml]
 indent_size = 2
 
-[*.lua]
+[*.{yml,yaml}]
 indent_size = 2
