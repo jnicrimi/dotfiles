@@ -45,4 +45,9 @@ abbr --add p 'pwd'
 abbr --add u 'cd ..'
 abbr --add x 'exit'
 
+function starship_transient_prompt_func
+  starship module character
+end
+
 starship init fish | source
+enable_transience
