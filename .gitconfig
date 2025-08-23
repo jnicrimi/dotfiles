@@ -12,6 +12,9 @@
 [push]
   default = nothing
 
+[rebase]
+  autoStash = true
+
 [merge]
   tool = vimdiff
   conflictStyle = zdiff3
