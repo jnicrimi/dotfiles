@@ -53,10 +53,7 @@ done
 
 echo -n -e "\n"
 
-dot_files=( .gitconfig .hushlogin )
-for dot_file in "${dot_files[@]}"; do
-  create_symlink "$dot_file"
-done
+create_symlink ".hushlogin"
 
 directories=(
   ".claude"
@@ -89,6 +86,7 @@ config_files=(
   ".config/fish/config.fish"
   ".config/fish/fish_plugins"
   ".config/gh/config.yml"
+  ".config/git/config"
   ".config/git/attributes"
   ".config/git/ignore"
   ".config/karabiner/karabiner.json"
