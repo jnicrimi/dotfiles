@@ -3,12 +3,6 @@ return {
   version = "*",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    require("bufferline").setup({
-      options = {
-        pick = {
-          alphabet = "abcdefghijklmnopqrstuvwxyz"
-        }
-      }
-    })
+    require("bufferline").setup({})
   end,
 }
