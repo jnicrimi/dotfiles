@@ -9,6 +9,7 @@ return {
       "css",
       "diff",
       "dockerfile",
+      "fish",
       "git_config",
       "git_rebase",
       "gitcommit",
