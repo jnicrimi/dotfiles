@@ -1,4 +1,4 @@
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--height 100% --reverse --border=rounded --no-sort --exit-0 --ansi --info=inline --preview-window=right:50%:wrap --bind 'ctrl-/:preview-page-down,ctrl-\:preview-page-up'"
 set -gx LANG ja_JP.UTF-8
 set -gx VOLTA_HOME $HOME/.volta
@@ -14,7 +14,7 @@ alias cat "bat --paging=never"
 alias chrome "open -a 'Google Chrome'"
 alias cp "cp -i"
 alias la "eza -al --icons --git"
-alias less "bat"
+alias less "bat --paging=always"
 alias ll "eza -l --icons --git"
 alias ls "eza"
 alias mv "mv -i"
