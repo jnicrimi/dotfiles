@@ -25,6 +25,9 @@ action = "ToggleFullscreen"
 key = "Return"
 mods = "Command"
 
+[cursor]
+style = { shape = "Beam", blinking = "Never" }
+
 [mouse]
 hide_when_typing = true
 
