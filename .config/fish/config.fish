@@ -1,13 +1,11 @@
 set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--height 100% --reverse --border=rounded --no-sort --exit-0 --ansi --info=inline --preview-window=right:50%:wrap --bind 'ctrl-/:preview-page-down,ctrl-\:preview-page-up'"
 set -gx LANG ja_JP.UTF-8
-set -gx VOLTA_HOME $HOME/.volta
 set -gx XDG_CONFIG_HOME $HOME/.config
 
 set -g fish_greeting ""
 
 fish_add_path $HOME/.local/bin
-fish_add_path $VOLTA_HOME/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
