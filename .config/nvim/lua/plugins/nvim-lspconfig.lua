@@ -16,6 +16,7 @@ return {
 
       local on_attach = function(_, bufnr)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr })
       end
 
       require("mason-lspconfig").setup({
