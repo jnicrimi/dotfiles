@@ -72,7 +72,6 @@ cask "orbstack"
 cask "raycast"
 cask "slack"
 cask "tableplus"
-cask "zoom"
 mas "EdgeView", id: 1580323719
 mas "Kindle", id: 302584613
 mas "Messenger", id: 1480068668
