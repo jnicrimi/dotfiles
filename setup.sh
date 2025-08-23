@@ -24,7 +24,11 @@ create_symlink() {
   local _src_path="$DOTFILES"/"$1"
   local _dst_path="$HOME"/"$1"
   if [ -L "$_dst_path" ]; then
-    return 0
+    if [ "$(readlink "$_dst_path")" = "$_src_path" ]; then
+      return 0
+    fi
+    unlink "$_dst_path"
+    unlinked_files+=("$_dst_path")
   fi
   ln -s "$_src_path" "$_dst_path"
   created_links+=("$_dst_path")
