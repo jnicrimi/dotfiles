@@ -6,6 +6,7 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 
 set -g fish_greeting ""
 
+fish_add_path $HOME/.local/bin
 fish_add_path $VOLTA_HOME/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
