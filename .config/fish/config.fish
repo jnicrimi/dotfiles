@@ -40,8 +40,6 @@ abbr --add gl "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %
 abbr --add glg "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph"
 abbr --add gs 'git status --short --branch'
 abbr --add gwt 'git worktree'
-abbr --add h 'history'
-abbr --add hc 'history clear'
 abbr --add p 'pwd'
 abbr --add u 'cd ..'
 abbr --add x 'exit'
