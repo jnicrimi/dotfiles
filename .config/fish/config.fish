@@ -52,3 +52,5 @@ starship init fish | source
 enable_transience
 
 mise activate fish | source
+
+zoxide init fish | source
