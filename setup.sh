@@ -57,8 +57,6 @@ done
 
 echo -n -e "\n"
 
-create_symlink ".hushlogin"
-
 directories=(
   ".claude"
   ".claude/agents"
