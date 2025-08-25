@@ -1,5 +1,6 @@
 set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--height 100% --reverse --border=rounded --no-sort --exit-0 --ansi --info=inline --preview-window=right:50%:wrap --bind 'ctrl-/:preview-page-down,ctrl-\:preview-page-up'"
+set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx LANG ja_JP.UTF-8
 set -gx XDG_CONFIG_HOME $HOME/.config
 
@@ -44,13 +45,12 @@ abbr --add p 'pwd'
 abbr --add u 'cd ..'
 abbr --add x 'exit'
 
+mise activate fish | source
+
 function starship_transient_prompt_func
   starship module character
 end
-
 starship init fish | source
 enable_transience
-
-mise activate fish | source
 
 zoxide init fish | source
