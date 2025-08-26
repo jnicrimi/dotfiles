@@ -7,13 +7,13 @@ function ggcommit --description "Create conventional commit"
       "feat" \
       "fix" \
       "refactor" \
-      "chore" \
       "docs" \
       "test" \
       "style" \
       "build" \
       "ci" \
       "perf" \
+      "chore" \
       "revert"
   set -l commit_type (_select_menu "Commit type" $commit_types)
   or return 0
