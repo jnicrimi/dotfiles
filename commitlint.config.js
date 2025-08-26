@@ -7,13 +7,13 @@ module.exports = {
         'feat',
         'fix',
         'refactor',
-        'chore',
         'docs',
         'test',
         'style',
         'build',
         'ci',
         'perf',
+        'chore',
         'revert'
       ]
     ],
