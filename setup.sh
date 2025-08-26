@@ -40,6 +40,27 @@ delete_symlink() {
   unlinked_files+=("$_dst_path")
 }
 
+sync_symlinks() {
+  local dir_path="$1"
+  local file_pattern="$2"
+
+  for file_path in "$DOTFILES"/"$dir_path"/$file_pattern; do
+    [ -e "$file_path" ] || continue
+    file_name=$(basename "$file_path")
+    create_symlink "$dir_path/$file_name"
+  done
+
+  local broken_links
+  broken_links=$(find -L "$HOME"/"$dir_path" -type l -name "$file_pattern" 2>/dev/null)
+
+  if [ -n "$broken_links" ]; then
+    for symlink in $broken_links; do
+      file_name=$(basename "$symlink")
+      delete_symlink "$dir_path/$file_name"
+    done
+  fi
+}
+
 while true; do
   read -rp "[y/n] " answer
   case "$answer" in
@@ -104,53 +125,10 @@ for config_file in "${config_files[@]}"; do
   create_symlink "$config_file"
 done
 
-for fish_file_path in "$DOTFILES"/.config/fish/functions/*.fish; do
-  file_name=$(basename "$fish_file_path")
-  create_symlink ".config/fish/functions/$file_name"
-done
-
-broken_fish_links=$(find -L "$HOME"/.config/fish/functions -type l -name "*.fish")
-
-for symlink in $broken_fish_links; do
-  file_name=$(basename "$symlink")
-  delete_symlink ".config/fish/functions/$file_name"
-done
-
-for plugin_file_path in "$DOTFILES"/.config/nvim/lua/plugins/*.lua; do
-  file_name=$(basename "$plugin_file_path")
-  create_symlink ".config/nvim/lua/plugins/$file_name"
-done
-
-broken_plugin_links=$(find -L "$HOME"/.config/nvim/lua/plugins -type l -name "*.lua")
-
-for symlink in $broken_plugin_links; do
-  file_name=$(basename "$symlink")
-  delete_symlink ".config/nvim/lua/plugins/$file_name"
-done
-
-for command_file_path in "$DOTFILES"/.claude/commands/*.md; do
-  file_name=$(basename "$command_file_path")
-  create_symlink ".claude/commands/$file_name"
-done
-
-broken_command_links=$(find -L "$HOME"/.claude/commands -type l -name "*.md")
-
-for symlink in $broken_command_links; do
-  file_name=$(basename "$symlink")
-  delete_symlink ".claude/commands/$file_name"
-done
-
-for agent_file_path in "$DOTFILES"/.claude/agents/*.md; do
-  file_name=$(basename "$agent_file_path")
-  create_symlink ".claude/agents/$file_name"
-done
-
-broken_agent_links=$(find -L "$HOME"/.claude/agents -type l -name "*.md")
-
-for symlink in $broken_agent_links; do
-  file_name=$(basename "$symlink")
-  delete_symlink ".claude/agents/$file_name"
-done
+sync_symlinks ".config/fish/functions" "*.fish"
+sync_symlinks ".config/nvim/lua/plugins" "*.lua"
+sync_symlinks ".claude/commands" "*.md"
+sync_symlinks ".claude/agents" "*.md"
 
 if [ ${#created_links[@]} -gt 0 ]; then
   echo "Created symlinks (${#created_links[@]}):"
