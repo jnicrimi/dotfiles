@@ -36,7 +36,7 @@ option_as_alt = "Both"
 
 [general]
 import = [
-    "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
+  "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
 ]
 
 [terminal]
