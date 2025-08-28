@@ -32,6 +32,7 @@
   root = ~/.ghq
 
 [diff]
+  algorithm = histogram
   colorMoved = default
 
 [interactive]
@@ -44,6 +45,9 @@
 
 [include]
   path = ~/.gitconfig.local
+
+[commit]
+  verbose = true
 
 [secrets]
   providers = git secrets --aws-provider
