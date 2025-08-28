@@ -1,11 +1,6 @@
 git_protocol: https
-editor:
 prompt: enabled
-pager:
 aliases:
-    co: pr checkout
-    mypr: pr list --state open --assignee @me
-    rrme: pr list --search 'review-requested:@me'
-http_unix_socket:
-browser:
-version: "1"
+  co: pr checkout
+  mypr: pr list --state open --assignee @me
+  rrme: pr list --search 'review-requested:@me'
