@@ -1,7 +1,13 @@
 [core]
-  quotepath = false
   editor = nvim
   pager = delta
+  quotepath = false
+
+[commit]
+  verbose = true
+
+[status]
+  showUntrackedFiles = all
 
 [fetch]
   prune = true
@@ -16,20 +22,8 @@
   autoStash = true
 
 [merge]
-  tool = vimdiff
   conflictStyle = zdiff3
-
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-
-[status]
-  showUntrackedFiles = all
-
-[ghq]
-  root = ~/.ghq
+  tool = vimdiff
 
 [diff]
   algorithm = histogram
@@ -43,11 +37,14 @@
   side-by-side = true
   syntax-theme = gruvbox-dark
 
-[include]
-  path = ~/.gitconfig.local
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  required = true
+  smudge = git-lfs smudge -- %f
 
-[commit]
-  verbose = true
+[ghq]
+  root = ~/.ghq
 
 [secrets]
   providers = git secrets --aws-provider
@@ -56,3 +53,6 @@
   patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
   allowed = AKIAIOSFODNN7EXAMPLE
   allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+[include]
+  path = ~/.gitconfig.local
