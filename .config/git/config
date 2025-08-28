@@ -31,6 +31,9 @@
 [ghq]
   root = ~/.ghq
 
+[diff]
+  colorMoved = default
+
 [interactive]
   diffFilter = delta --color-only
 
