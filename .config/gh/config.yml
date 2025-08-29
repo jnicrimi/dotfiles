@@ -4,3 +4,4 @@ aliases:
   co: pr checkout
   mypr: pr list --state open --assignee @me
   rrme: pr list --search 'review-requested:@me'
+version: "1"
