@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -Ceu
+set -Ceuo pipefail
 
 SCRIPT_DIRECTORY=$(dirname "$0")
 
