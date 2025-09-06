@@ -127,6 +127,8 @@ for config_file in "${config_files[@]}"; do
   create_symlink "$config_file"
 done
 
+create_symlink ".default-npm-packages"
+
 sync_symlinks ".config/fish/functions" "*.fish"
 sync_symlinks ".config/nvim/lua/plugins" "*.lua"
 sync_symlinks ".claude/commands" "*.md"
