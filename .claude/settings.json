@@ -9,7 +9,9 @@
   "permissions": {
     "defaultMode": "plan",
     "allow": [
+      "Bash(cp:*)",
       "Bash(date)",
+      "Bash(echo:*)",
       "Bash(git add:*)",
       "Bash(git branch:*)",
       "Bash(git check-ref-format:*)",
@@ -22,8 +24,10 @@
       "Bash(git status:*)",
       "Bash(git switch:*)",
       "Bash(ls:*)",
+      "Bash(mkdir:*)",
       "Bash(npm run:*)",
       "Bash(pwd)",
+      "Bash(which:*)",
       "Bash(whoami)",
       "Bash(yarn:*)",
       "WebFetch(domain:caniuse.com)",
@@ -36,9 +40,7 @@
     ],
     "deny": [
       "Bash(alias:*)",
-      "Bash(chmod:*)",
       "Bash(chown:*)",
-      "Bash(curl:*)",
       "Bash(dd:*)",
       "Bash(export:*)",
       "Bash(function:*)",
@@ -51,7 +53,6 @@
       "Bash(git reset:*)",
       "Bash(git submodule:*)",
       "Bash(kill:*)",
-      "Bash(ln -s:*)",
       "Bash(mkfs:*)",
       "Bash(mysql:*)",
       "Bash(nc:*)",
