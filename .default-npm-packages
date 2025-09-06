@@ -1,2 +1,5 @@
 typescript
 tsx
+@commitlint/cli
+@commitlint/config-conventional
+markdownlint-cli
