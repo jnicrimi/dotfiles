@@ -4,6 +4,16 @@ set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx LANG ja_JP.UTF-8
 set -gx XDG_CONFIG_HOME $HOME/.config
 
+set -g fish_color_command 8aadf4
+set -g fish_color_error ed8796
+set -g fish_color_param 8bd5ca
+set -g fish_color_valid_path a6da95
+set -g fish_color_quote eed49f
+set -g fish_color_operator fab387
+set -g fish_color_redirection f5c2e7
+set -g fish_color_end a6da95
+set -g fish_color_selection --background=494d64
+set -g fish_color_search_match --background=494d64
 set -g fish_greeting ""
 
 fish_add_path $HOME/.local/bin

@@ -36,11 +36,11 @@ option_as_alt = "Both"
 
 [general]
 import = [
-  "~/.dotfiles/.config/alacritty/themes/gruvbox_dark.toml"
+  "~/.dotfiles/.config/alacritty/themes/catppuccin-mocha.toml"
 ]
 
 [terminal]
 
 [terminal.shell]
 program = "/opt/homebrew/bin/fish"
-args = ["-c", "zellij options --theme gruvbox-dark"]
+args = ["-c", "zellij"]

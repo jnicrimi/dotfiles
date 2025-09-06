@@ -84,6 +84,7 @@ directories=(
   ".claude/commands"
   ".config/alacritty"
   ".config/bat"
+  ".config/bat/themes"
   ".config/fish"
   ".config/fish/functions"
   ".config/gh"
@@ -133,6 +134,7 @@ sync_symlinks ".config/fish/functions" "*.fish"
 sync_symlinks ".config/nvim/lua/plugins" "*.lua"
 sync_symlinks ".claude/commands" "*.md"
 sync_symlinks ".claude/agents" "*.md"
+sync_symlinks ".config/bat/themes" "*.tmTheme"
 
 if [ ${#created_links[@]} -gt 0 ]; then
   echo "Created symlinks (${#created_links[@]}):"
