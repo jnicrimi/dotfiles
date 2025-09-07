@@ -16,11 +16,7 @@ function ggadd --description "Add unstaged files interactively with fzf"
   end
 
   set -l selected_files (printf '%s\n' $unstaged_files | \
-    fzf --multi \
-        --prompt="Select files: " \
-        --preview "git -C $git_root diff --color=always {} 2>/dev/null || \
-                  bat --color=always $git_root/{} 2>/dev/null || \
-                  cat $git_root/{}")
+    fzf --multi --prompt="Select files: ")
 
   if test (count $selected_files) -eq 0
     return 0
@@ -31,5 +27,9 @@ function ggadd --description "Add unstaged files interactively with fzf"
     echo "  $file"
   end
 
-  _set_commandline "git -C $git_root add -- $selected_files"
+  set -l escaped_files
+  for file in $selected_files
+    set -a escaped_files (string escape -- $file)
+  end
+  _set_commandline "git -C $git_root add -- $escaped_files"
 end

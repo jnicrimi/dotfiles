@@ -4,6 +4,7 @@ function _set_commandline
     return 1
   end
 
-  commandline -r $argv
+  set -l cmd (string join ' ' -- $argv)
+  commandline -r $cmd
   commandline -f repaint
 end

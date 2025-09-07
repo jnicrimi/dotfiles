@@ -38,12 +38,14 @@ function ggdiff --description "Show git differences"
       end
     case "edit"
       set -l files (git diff --name-only "$selected_branch..$current_branch" | \
-        fzf --multi \
-            --prompt="Select files: " \
-            --preview="git diff '$selected_branch..$current_branch' -- {}")
+        fzf --multi --prompt="Select files: ")
 
       if test -n "$files"
-        _set_commandline "vim $files"
+        set -l escaped_files
+        for file in $files
+          set -a escaped_files (string escape -- $file)
+        end
+        _set_commandline "vim $escaped_files"
       end
     case '*'
       return 0
