@@ -11,8 +11,7 @@ function ggshow --description "Show git commits and related pull requests"
     case "commit"
       set commit_hash (_select_commit)
     case "file"
-      set -l selected_file (git ls-files | \
-          fzf --prompt="File: " --preview 'bat --color=always {} 2>/dev/null || cat {}')
+      set -l selected_file (git ls-files | fzf --prompt="File: ")
       if test -z "$selected_file"
         return 0
       end
