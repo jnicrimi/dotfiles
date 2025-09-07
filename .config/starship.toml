@@ -46,7 +46,7 @@ mantle = "#181825"
 crust = "#11111b"
 
 [directory]
-style = "bold fg:base bg:red"
+style = "fg:base bg:red"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -54,23 +54,23 @@ truncate_to_repo = true
 
 [git_branch]
 style = "bg:yellow"
-format = '[[ $symbol$branch ](bold fg:base bg:yellow)]($style)'
+format = '[[ $symbol$branch ](fg:base bg:yellow)]($style)'
 
 [git_status]
 style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](bold fg:base bg:yellow)]($style)'
+format = '[[($all_status$ahead_behind )](fg:base bg:yellow)]($style)'
 
 [git_metrics]
 disabled = false
-added_style = "bold fg:base bg:green"
-deleted_style = "bold fg:base bg:green"
-format = '[[ +$added/-$deleted ](bold fg:base bg:green)]($style)'
+added_style = "fg:base bg:green"
+deleted_style = "fg:base bg:green"
+format = '[[ +$added/-$deleted ](fg:base bg:green)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:blue"
-format = '[[  $time ](bold fg:base bg:blue)]($style)'
+format = '[[  $time ](fg:base bg:blue)]($style)'
 
 [line_break]
 disabled = false
