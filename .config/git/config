@@ -35,7 +35,7 @@
 [delta]
   navigate = true
   side-by-side = true
-  features = catppuccin-mocha
+  syntax-theme = Catppuccin Mocha
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -56,4 +56,3 @@
 
 [include]
   path = ~/.gitconfig.local
-  path = ~/.dotfiles/.config/git/delta/catppuccin.gitconfig
