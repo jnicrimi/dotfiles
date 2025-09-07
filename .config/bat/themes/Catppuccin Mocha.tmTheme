@@ -239,6 +239,8 @@
         <dict>
           <key>foreground</key>
           <string>#f38ba8</string>
+          <key>fontStyle</key>
+          <string></string>
         </dict>
       </dict>
       <dict>
