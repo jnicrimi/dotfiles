@@ -37,13 +37,14 @@ function ggdiff --description "Show git differences"
           _set_commandline "git diff --stat $selected_branch..$current_branch"
       end
     case "edit"
+      set -l root (git rev-parse --show-toplevel)
       set -l files (git diff --name-only "$selected_branch..$current_branch" | \
         fzf --multi --prompt="Select files: ")
 
       if test -n "$files"
         set -l escaped_files
         for file in $files
-          set -a escaped_files (string escape -- $file)
+          set -a escaped_files (string escape -- "$root/$file")
         end
         _set_commandline "vim $escaped_files"
       end
