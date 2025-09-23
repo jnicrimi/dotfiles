@@ -65,3 +65,8 @@ starship init fish | source
 enable_transience
 
 zoxide init fish | source
+
+bind \ca beginning-of-line
+bind \ce end-of-line
+bind -M insert \ca beginning-of-line
+bind -M insert \ce end-of-line
