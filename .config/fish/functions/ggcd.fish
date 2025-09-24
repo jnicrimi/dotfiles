@@ -5,10 +5,12 @@ function ggcd --description "Navigate to git directories"
 
   set -l git_root (git rev-parse --show-toplevel)
 
-  set -l selected_directory (cd $git_root && git ls-files | \
+  pushd $git_root > /dev/null
+  set -l selected_directory (git ls-files | \
       sed -e '/^[^\/]*$/d' -e 's/\/[^\/]*$//g' | \
       sort | uniq | \
       fzf --prompt="Directory: ")
+  popd > /dev/null
 
   if test -z "$selected_directory"
     return 0

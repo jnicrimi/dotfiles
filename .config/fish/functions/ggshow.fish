@@ -11,11 +11,14 @@ function ggshow --description "Show git commits and related pull requests"
     case "commit"
       set commit_hash (_select_commit)
     case "file"
+      set -l git_root (git rev-parse --show-toplevel)
+      pushd $git_root > /dev/null
       set -l selected_file (git ls-files | fzf --prompt="File: ")
+      popd > /dev/null
       if test -z "$selected_file"
         return 0
       end
-      set commit_hash (_select_commit "$selected_file")
+      set commit_hash (_select_commit "$git_root/$selected_file")
     case '*'
       return 0
   end
