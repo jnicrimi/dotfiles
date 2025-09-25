@@ -6,6 +6,8 @@ brew-update:
 
 mise-update:
     mise upgrade
+    mise reshim
+    mise prune --yes
 
 npm-update:
     npm update -g npm
