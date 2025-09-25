@@ -77,10 +77,11 @@ function _ggbr_rename
 end
 
 function _ggbr_delete
-  set -l selected_branch (_select_other_branch)
+  set -l selected_branches (_select_other_branches_multi)
   or return 0
 
-  _set_commandline "git branch -D $selected_branch"
+  set -l target_branches (string join ' ' $selected_branches)
+  _set_commandline "git branch -D $target_branches"
 end
 
 function _ggbr_validate_branch_name
