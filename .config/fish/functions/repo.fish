@@ -1,17 +1,17 @@
 function repo --description "Navigate to repositories using ghq"
 
-  set -l repository (ghq list | fzf --prompt="Repository: ")
+    set -l repository (ghq list | fzf --prompt="Repository: ")
 
-  if test -z "$repository"
-    return 0
-  end
+    if test -z "$repository"
+        return 0
+    end
 
-  set -l repository_full_path (ghq list --full-path --exact "$repository")
+    set -l repository_full_path (ghq list --full-path --exact "$repository")
 
-  if test -z "$repository_full_path"
-    echo "Error: Failed to get repository path" >&2
-    return 1
-  end
+    if test -z "$repository_full_path"
+        echo "Error: Failed to get repository path" >&2
+        return 1
+    end
 
-  cd "$repository_full_path"
+    cd "$repository_full_path"
 end
