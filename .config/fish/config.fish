@@ -26,17 +26,17 @@ alias cp "cp -i"
 alias la "eza -al --icons --git --group-directories-first"
 alias less "bat --paging=always"
 alias ll "eza -l --icons --git --group-directories-first"
-alias ls "eza"
+alias ls eza
 alias mv "mv -i"
 alias rm "rm -i"
 alias tree "eza -aT --icons --git-ignore"
-alias vi "nvim"
-alias vim "nvim"
+alias vi nvim
+alias vim nvim
 
-abbr --add c 'claude'
-abbr --add d 'docker'
+abbr --add c claude
+abbr --add d docker
 abbr --add dc 'docker compose'
-abbr --add g 'git'
+abbr --add g git
 abbr --add ga 'git add'
 abbr --add gaa 'git add --all'
 abbr --add gb 'git branch'
@@ -51,15 +51,15 @@ abbr --add gl "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %
 abbr --add glg "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --graph"
 abbr --add gs 'git status --short --branch'
 abbr --add gwt 'git worktree'
-abbr --add p 'pwd'
-abbr --add pn 'pnpm'
+abbr --add p pwd
+abbr --add pn pnpm
 abbr --add u 'cd ..'
-abbr --add x 'exit'
+abbr --add x exit
 
 mise activate fish | source
 
 function starship_transient_prompt_func
-  starship module character
+    starship module character
 end
 starship init fish | source
 enable_transience
