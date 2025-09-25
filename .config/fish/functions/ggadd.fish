@@ -6,9 +6,9 @@ function ggadd --description "Add unstaged files interactively with fzf"
     set -l git_root (git rev-parse --show-toplevel)
 
     set -l unstaged_files (git status --porcelain -z | \
-      string split0 | \
-      grep -E "^.[ACDMRT]|^\?\?" | \
-      sed 's/^...//')
+        string split0 | \
+        grep -E '^.[ACDMRT]|^\?\?' | \
+        sed 's/^...//')
 
     if test (count $unstaged_files) -eq 0
         echo "No unstaged files"

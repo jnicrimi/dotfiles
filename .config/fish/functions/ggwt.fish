@@ -59,7 +59,7 @@ function _ggwt_generate_path
 end
 
 function _ggwt_list_removable_worktrees
-    set -l worktrees (git worktree list --porcelain | grep "^worktree" | cut -d' ' -f2-)
+    set -l worktrees (git worktree list --porcelain | grep '^worktree' | cut -d ' ' -f2-)
     set -l current_worktree (git rev-parse --show-toplevel)
 
     for worktree in $worktrees

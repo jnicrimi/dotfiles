@@ -52,13 +52,13 @@ function ggstash --description "Manage git stashes"
 
             set -l selected_stash (printf '%s\n' $stash_list | \
                 fzf --prompt="Select stash to pop: " \
-                    --preview 'echo {} | cut -d":" -f1 | xargs git stash show -p --color=always')
+                    --preview 'echo {} | cut -d ':' -f1 | xargs git stash show -p --color=always')
 
             if test -z "$selected_stash"
                 return 0
             end
 
-            set -l stash_id (echo $selected_stash | cut -d":" -f1)
+            set -l stash_id (echo $selected_stash | cut -d ':' -f1)
 
             echo "Selected stash:"
             echo "  $selected_stash"
@@ -73,13 +73,13 @@ function ggstash --description "Manage git stashes"
 
             set -l selected_stash (printf '%s\n' $stash_list | \
                 fzf --prompt="Select stash to drop: " \
-                    --preview 'echo {} | cut -d":" -f1 | xargs git stash show -p --color=always')
+                    --preview 'echo {} | cut -d ':' -f1 | xargs git stash show -p --color=always')
 
             if test -z "$selected_stash"
                 return 0
             end
 
-            set -l stash_id (echo $selected_stash | cut -d":" -f1)
+            set -l stash_id (echo $selected_stash | cut -d ':' -f1)
 
             echo "Selected stash:"
             echo "  $selected_stash"
