@@ -2,4 +2,5 @@ typescript
 tsx
 @commitlint/cli
 @commitlint/config-conventional
+@openai/codex
 markdownlint-cli
