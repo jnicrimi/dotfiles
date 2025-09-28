@@ -5,10 +5,14 @@ function ggadd --description "Add unstaged files interactively with fzf"
 
     set -l git_root (git rev-parse --show-toplevel)
 
-    set -l unstaged_files (git status --porcelain -z | \
-        string split0 | \
-        grep -E '^.[ACDMRT]|^\?\?' | \
-        sed 's/^...//')
+    set -l modified_files (git diff --name-only --diff-filter=AMRT)
+    set -l deleted_files (git diff --name-only --diff-filter=D --no-renames)
+    set -l untracked_files (git ls-files --others --exclude-standard)
+
+    set -l unstaged_files
+    test -n "$modified_files" && set -a unstaged_files $modified_files
+    test -n "$deleted_files" && set -a unstaged_files $deleted_files
+    test -n "$untracked_files" && set -a unstaged_files $untracked_files
 
     if test (count $unstaged_files) -eq 0
         echo "No unstaged files"
