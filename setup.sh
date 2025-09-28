@@ -130,7 +130,6 @@ for config_file in "${config_files[@]}"; do
   create_symlink "$config_file"
 done
 
-create_symlink "AGENTS.md"
 ln -sf "$DOTFILES/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 
 create_symlink ".default-npm-packages"
