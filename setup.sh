@@ -82,6 +82,7 @@ directories=(
   ".claude"
   ".claude/agents"
   ".claude/commands"
+  ".codex"
   ".config/alacritty"
   ".config/bat"
   ".config/bat/themes"
@@ -106,6 +107,7 @@ done
 config_files=(
   "AGENTS.md"
   ".claude/settings.json"
+  ".codex/config.toml"
   ".config/alacritty/alacritty.toml"
   ".config/bat/config"
   ".config/fish/config.fish"
