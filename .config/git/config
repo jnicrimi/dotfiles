@@ -44,7 +44,7 @@
   smudge = git-lfs smudge -- %f
 
 [ghq]
-  root = ~/.ghq
+  root = ~/ghq
 
 [secrets]
   providers = git secrets --aws-provider
