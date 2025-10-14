@@ -33,7 +33,6 @@ alias tree "eza -aT --icons --git-ignore"
 alias vi nvim
 alias vim nvim
 
-abbr --add c claude
 abbr --add d docker
 abbr --add dc 'docker compose'
 abbr --add g git
