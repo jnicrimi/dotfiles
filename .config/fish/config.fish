@@ -4,6 +4,8 @@ set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx LANG ja_JP.UTF-8
 set -gx XDG_CONFIG_HOME $HOME/.config
 
+fish_vi_key_bindings
+
 set -g fish_color_command 8aadf4
 set -g fish_color_error ed8796
 set -g fish_color_param 8bd5ca
