@@ -1,3 +1,8 @@
+---
+name: create-branch
+description: 変更内容を分析し、適切なGitブランチを作成する
+---
+
 # create-branch
 
 ## 概要
@@ -9,7 +14,7 @@
 ### prefix
 
 | prefix | 説明 |
-|---|---|
+| --- | --- |
 | feature | 新機能 |
 | fix | バグ修正 |
 | refactor | リファクタリング |
@@ -19,7 +24,7 @@
 ### ルール
 
 | ルール | 説明 |
-|---|---|
+| --- | --- |
 | 形式 | `prefix/descriptive-branch-name` |
 | 区切り文字 | ハイフン |
 | 文字数制限 | prefixを含むブランチ名で40文字以内 |

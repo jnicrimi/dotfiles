@@ -1,3 +1,8 @@
+---
+name: make-commit
+description: 変更内容を分析し、Conventional Commits形式でコミットを作成する
+---
+
 # make-commit
 
 ## 概要
@@ -9,7 +14,7 @@
 ### type
 
 | type | 説明 | 詳細 |
-|---|---|---|
+| --- | --- | --- |
 | feat | 新機能 | - |
 | fix | バグ修正 | - |
 | refactor | リファクタリング | バグ修正でも機能追加でもないコード変更 |
@@ -24,7 +29,7 @@
 ### メッセージ形式
 
 | 項目 | ルール | 例 |
-|---|---|---|
+| --- | --- | --- |
 | 基本形式 | `type: description` | `feat: add user authentication` |
 | type | 常に英語 | `feat`, `fix`, `docs` |
 | description（英語） | 現在形・命令形で記述 | `add` (not `added` nor `adds`) |

@@ -1,3 +1,8 @@
+---
+name: show-summary
+description: ローカルブランチ間の差分を分析し、変更内容を要約する
+---
+
 # show-summary
 
 ## 概要
