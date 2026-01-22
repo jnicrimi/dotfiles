@@ -1,6 +1,7 @@
 ---
 name: show-summary
 description: ローカルブランチ間の差分を分析し、変更内容を要約する
+disable-model-invocation: true
 ---
 
 # show-summary
