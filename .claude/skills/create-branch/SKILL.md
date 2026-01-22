@@ -1,6 +1,7 @@
 ---
 name: create-branch
 description: 変更内容を分析し、適切なGitブランチを作成する
+disable-model-invocation: true
 ---
 
 # create-branch

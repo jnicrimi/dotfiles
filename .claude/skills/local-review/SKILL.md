@@ -1,6 +1,7 @@
 ---
 name: local-review
 description: ローカルリポジトリの変更を分析し、コードレビューを実施する
+disable-model-invocation: true
 ---
 
 # local-review

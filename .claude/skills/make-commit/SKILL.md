@@ -1,6 +1,7 @@
 ---
 name: make-commit
 description: 変更内容を分析し、Conventional Commits形式でコミットを作成する
+disable-model-invocation: true
 ---
 
 # make-commit
