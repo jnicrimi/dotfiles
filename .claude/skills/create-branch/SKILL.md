@@ -1,10 +1,17 @@
 ---
 name: create-branch
 description: 変更内容を分析し、適切なGitブランチを作成する
+allowed-tools: Read, Grep, Glob
 disable-model-invocation: true
 ---
 
 # create-branch
+
+## Context
+
+- Status: !`git status --short`
+- Changes: !`git diff --stat`
+- Staged: !`git diff --staged --stat`
 
 ## 概要
 
@@ -12,41 +19,23 @@ disable-model-invocation: true
 
 ## ブランチ名規則
 
-### prefix
+[git-conventions.md](../_shared/git-conventions.md) の以下を参照:
 
-| prefix | 説明 |
-| --- | --- |
-| feature | 新機能 |
-| fix | バグ修正 |
-| refactor | リファクタリング |
-| docs | ドキュメント |
-| chore | 雑務・メンテナンス |
-
-### ルール
-
-| ルール | 説明 |
-| --- | --- |
-| 形式 | `prefix/descriptive-branch-name` |
-| 区切り文字 | ハイフン |
-| 文字数制限 | prefixを含むブランチ名で40文字以内 |
-| 対象の明示 | モジュール、サービス、ツール、ファイル名を含める |
-
-### サンプル
-
-`feature/user-auth-api`
+- Branch Prefix
+- Branch Name Format
 
 ## 実行手順
 
-### 1. 変更内容の取得
+### 1. 変更内容の確認
+
+Contextセクションを確認。変更がない場合は会話履歴から作業内容を推測。
+
+変更がある場合は、詳細な差分を取得。
 
 ```bash
-git status
 git diff --ignore-all-space --ignore-blank-lines
 git diff --staged --ignore-all-space --ignore-blank-lines
 ```
-
-- 変更がない場合
-  - 会話履歴から作業内容を推測
 
 ### 2. ブランチの選択
 
