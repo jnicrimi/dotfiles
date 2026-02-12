@@ -102,7 +102,6 @@
     "defaultMode": "plan"
   },
   "model": "opus",
-  "language": "japanese",
   "hooks": {
     "Stop": [
       {
@@ -138,5 +137,6 @@
       }
     ]
   },
+  "language": "japanese",
   "alwaysThinkingEnabled": true
 }
