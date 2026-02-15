@@ -15,7 +15,7 @@ function ggpush --description "Push to remote"
         case push
             _set_commandline "git push $remote $branch"
         case "force push"
-            _set_commandline "git push -f $remote $branch"
+            _set_commandline "git push --force-with-lease $remote $branch"
         case '*'
             return 0
     end
