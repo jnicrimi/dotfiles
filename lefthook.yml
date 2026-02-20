@@ -6,8 +6,8 @@ commit-msg:
 pre-commit:
   parallel: true
   commands:
-    scan-git-secrets:
-      run: git secrets --scan
+    gitleaks:
+      run: gitleaks protect --staged
     markdownlint:
       glob: "*.md"
       run: markdownlint {staged_files}
@@ -29,5 +29,5 @@ pre-commit:
 
 pre-push:
   commands:
-    scan-git-secrets:
-      run: git secrets --scan
+    gitleaks:
+      run: gitleaks detect
