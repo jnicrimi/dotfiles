@@ -1,7 +1,7 @@
 ---
 name: local-review
 description: ローカルリポジトリの変更を分析し、コードレビューを実施する
-allowed-tools: Read, Grep, Glob, Task
+allowed-tools: Read, Grep, Glob
 disable-model-invocation: true
 ---
 
@@ -158,17 +158,16 @@ git diff --ignore-all-space --ignore-blank-lines
 
 ### 5. レビューの実行
 
-code-reviewerエージェントを使用してレビューを実施する。
+差分とチェックリストに基づいてレビューを実施する。
 
 #### 基本要件
 
-- **MUST**: code-reviewerエージェントを使用
 - **MUST**: 選択されたスコープに応じたカテゴリのみを分析
 - **MUST**: スコープに含まれないカテゴリはスキップ
 
-#### エージェントへの指示要件
+#### 実行時の注意事項
 
-- **CRITICAL**: 以下の要件を必ずエージェントへの指示に含める
+- **CRITICAL**: 以下の要件を必ず遵守する
   - ファイル内容への言及時は必ず行番号を含める
   - 存在確認は実際に検証してから報告する
   - 推測や可能性による指摘は禁止（実際に確認できた問題のみ報告）
