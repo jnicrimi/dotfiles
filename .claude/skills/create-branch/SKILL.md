@@ -19,10 +19,7 @@ disable-model-invocation: true
 
 ## ブランチ名規則
 
-[git-conventions.md](../_shared/git-conventions.md) の以下を参照:
-
-- Branch Prefix
-- Branch Name Format
+[branch-conventions.md](../_shared/branch-conventions.md) を参照
 
 ## 実行手順
 

@@ -18,10 +18,7 @@ disable-model-invocation: true
 
 ## Conventional Commits規則
 
-[git-conventions.md](../_shared/git-conventions.md) の以下を参照:
-
-- Commit Type
-- Commit Message Format
+[commit-conventions.md](../_shared/commit-conventions.md) を参照
 
 ## 実行手順
 
