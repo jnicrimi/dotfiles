@@ -11,6 +11,7 @@ disable-model-invocation: true
 
 - Status: !`git status --short`
 - Staged: !`git diff --staged --stat`
+- Staged diff: !`git diff --staged --ignore-all-space --ignore-blank-lines`
 
 ## 概要
 
@@ -26,11 +27,7 @@ disable-model-invocation: true
 
 Contextセクションを確認し、ステージされた変更がない場合は「ステージされた変更がありません。」と出力して処理を終了。
 
-変更がある場合は、詳細な差分を取得。
-
-```bash
-git diff --staged --ignore-all-space --ignore-blank-lines
-```
+変更がある場合は、Contextセクションの `Staged diff` を参照して差分を確認。
 
 ### 2. 言語の選択
 

@@ -12,6 +12,8 @@ disable-model-invocation: true
 - Current branch: !`git branch --show-current`
 - Status: !`git status --short`
 - Branches: !`git branch --format='%(refname:short)'`
+- Staged diff: !`git diff --staged --ignore-all-space --ignore-blank-lines`
+- Unstaged diff: !`git diff --ignore-all-space --ignore-blank-lines`
 
 ## 概要
 
@@ -95,18 +97,10 @@ git diff ${selected_branch}...HEAD --ignore-all-space --ignore-blank-lines
 
 #### 3.2 未コミットの変更が選択された場合
 
-作業ディレクトリの変更を取得。
+Contextセクションの `Status`、`Staged diff`、`Unstaged diff` を参照して作業ディレクトリの変更を確認。
 
 - `${selected_branch}` は設定しない
 - `${review_target}` に「未コミットの変更」を設定する
-
-```bash
-git status --short
-git diff --staged --stat
-git diff --staged --ignore-all-space --ignore-blank-lines
-git diff --stat
-git diff --ignore-all-space --ignore-blank-lines
-```
 
 #### 3.3 差分の分析
 

@@ -12,6 +12,8 @@ disable-model-invocation: true
 - Status: !`git status --short`
 - Changes: !`git diff --stat`
 - Staged: !`git diff --staged --stat`
+- Changes diff: !`git diff --ignore-all-space --ignore-blank-lines`
+- Staged diff: !`git diff --staged --ignore-all-space --ignore-blank-lines`
 
 ## 概要
 
@@ -27,12 +29,7 @@ disable-model-invocation: true
 
 Contextセクションを確認。変更がない場合は会話履歴から作業内容を推測。
 
-変更がある場合は、詳細な差分を取得。
-
-```bash
-git diff --ignore-all-space --ignore-blank-lines
-git diff --staged --ignore-all-space --ignore-blank-lines
-```
+変更がある場合は、Contextセクションの `Changes diff` と `Staged diff` を参照して差分を確認。
 
 ### 2. ブランチの選択
 
