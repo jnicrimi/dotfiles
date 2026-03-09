@@ -1,7 +1,7 @@
 ---
 name: local-review
 description: ローカルリポジトリの変更を分析し、コードレビューを実施する
-allowed-tools: Read, Grep, Glob
+allowed-tools: Bash, Read, Grep, Glob
 disable-model-invocation: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: show-summary
 description: ローカルブランチ間の差分を分析し、変更内容を要約する
-allowed-tools: Read, Grep, Glob
+allowed-tools: Bash, Read, Grep, Glob
 disable-model-invocation: true
 ---
 
