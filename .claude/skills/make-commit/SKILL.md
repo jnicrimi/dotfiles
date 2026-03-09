@@ -1,7 +1,7 @@
 ---
 name: make-commit
 description: 変更内容を分析し、Conventional Commits形式でコミットを作成する
-allowed-tools: Read, Grep, Glob
+allowed-tools: Bash, Read, Grep, Glob
 disable-model-invocation: true
 ---
 
