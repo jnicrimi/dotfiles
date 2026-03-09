@@ -29,6 +29,7 @@
       "Bash(whoami)",
       "Bash(tree:*)",
       "Bash(yarn:*)",
+      "Read(.claude/skills/**)",
       "WebFetch(domain:caniuse.com)",
       "WebFetch(domain:developer.mozilla.org)",
       "WebFetch(domain:devdocs.io)",
