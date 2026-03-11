@@ -34,6 +34,20 @@ create_symlink() {
   created_links+=("$_dst_path")
 }
 
+create_named_symlink() {
+  local _src_path="$DOTFILES"/"$1"
+  local _dst_path="$HOME"/"$2"
+  if [ -L "$_dst_path" ]; then
+    if [ "$(readlink "$_dst_path")" = "$_src_path" ]; then
+      return 0
+    fi
+    unlink "$_dst_path"
+    unlinked_files+=("$_dst_path")
+  fi
+  ln -s "$_src_path" "$_dst_path"
+  created_links+=("$_dst_path")
+}
+
 delete_symlink() {
   local _dst_path="$HOME"/"$1"
   unlink "$_dst_path"
@@ -109,7 +123,6 @@ for dir in "${directories[@]}"; do
 done
 
 config_files=(
-  "AGENTS.md"
   ".claude/settings.json"
   ".codex/config.toml"
   ".config/bat/config"
@@ -133,7 +146,8 @@ for config_file in "${config_files[@]}"; do
   create_symlink "$config_file"
 done
 
-ln -sf "$DOTFILES/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+create_named_symlink "AGENTS.md" ".claude/CLAUDE.md"
+create_named_symlink "AGENTS.md" ".codex/AGENTS.md"
 
 create_symlink ".default-npm-packages"
 create_symlink ".hushlogin"
