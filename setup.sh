@@ -91,6 +91,7 @@ directories=(
   ".config/alacritty"
   ".config/bat"
   ".config/bat/themes"
+  ".config/ghostty"
   ".config/fish"
   ".config/fish/functions"
   ".config/gh"
@@ -115,6 +116,7 @@ config_files=(
   ".codex/config.toml"
   ".config/alacritty/alacritty.toml"
   ".config/bat/config"
+  ".config/ghostty/config"
   ".config/fish/config.fish"
   ".config/fish/fish_plugins"
   ".config/gh/config.yml"
@@ -138,6 +140,7 @@ done
 ln -sf "$DOTFILES/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 
 create_symlink ".default-npm-packages"
+create_symlink ".hushlogin"
 
 sync_symlinks ".config/fish/functions" "*.fish"
 sync_symlinks ".config/nvim/lua/plugins" "*.lua"

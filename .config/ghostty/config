@@ -1,0 +1,20 @@
+theme = Catppuccin Mocha
+
+font-size = 14
+
+window-padding-x = 16
+window-padding-y = 8
+window-padding-balance = true
+
+cursor-style = bar
+cursor-style-blink = false
+
+mouse-hide-while-typing = true
+
+macos-option-as-alt = true
+
+keybind = super+enter=toggle_fullscreen
+
+copy-on-select = clipboard
+
+quit-after-last-window-closed = true
