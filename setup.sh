@@ -88,7 +88,6 @@ directories=(
   ".claude/skills/make-commit"
   ".claude/skills/show-summary"
   ".codex"
-  ".config/alacritty"
   ".config/bat"
   ".config/bat/themes"
   ".config/ghostty"
@@ -103,7 +102,6 @@ directories=(
   ".config/nvim/lua/config"
   ".config/nvim/lua/core"
   ".config/nvim/lua/plugins"
-  ".config/zellij"
 )
 
 for dir in "${directories[@]}"; do
@@ -114,7 +112,6 @@ config_files=(
   "AGENTS.md"
   ".claude/settings.json"
   ".codex/config.toml"
-  ".config/alacritty/alacritty.toml"
   ".config/bat/config"
   ".config/ghostty/config"
   ".config/fish/config.fish"
@@ -130,7 +127,6 @@ config_files=(
   ".config/nvim/lua/core/options.lua"
   ".config/nvim/lua/core/keymaps.lua"
   ".config/starship.toml"
-  ".config/zellij/config.kdl"
 )
 
 for config_file in "${config_files[@]}"; do
