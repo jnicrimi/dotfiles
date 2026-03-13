@@ -21,7 +21,7 @@ disable-model-invocation: true
 
 ## ブランチ名規則
 
-[branch-conventions.md](../_shared/branch-conventions.md) を参照
+[branch-conventions.md](./branch-conventions.md) を参照
 
 ## 実行手順
 

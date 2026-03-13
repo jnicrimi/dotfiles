@@ -19,7 +19,7 @@ disable-model-invocation: true
 
 ## Conventional Commits規則
 
-[commit-conventions.md](../_shared/commit-conventions.md) を参照
+[commit-conventions.md](./commit-conventions.md) を参照
 
 ## 実行手順
 
