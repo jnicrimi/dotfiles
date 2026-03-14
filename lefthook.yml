@@ -7,7 +7,7 @@ pre-commit:
   parallel: true
   commands:
     gitleaks:
-      run: gitleaks protect --staged
+      run: gitleaks git --pre-commit --staged
     markdownlint:
       glob: "*.md"
       run: markdownlint {staged_files}
@@ -30,4 +30,4 @@ pre-commit:
 pre-push:
   commands:
     gitleaks:
-      run: gitleaks detect
+      run: gitleaks git --log-opts "origin/main..HEAD" .
