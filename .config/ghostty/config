@@ -1,26 +1,38 @@
+# Theme
 theme = Catppuccin Mocha
 
+# Font
 font-family = Monaspace Neon
 font-size = 14
 font-thicken = true
+adjust-cell-height = 4
 
+# Window
 window-padding-x = 16
 window-padding-y = 8
 window-padding-balance = true
-quit-after-last-window-closed = true
-confirm-close-surface = true
 unfocused-split-opacity = 0.5
 
+# Window behavior
+quit-after-last-window-closed = true
+confirm-close-surface = true
+
+# Cursor
 cursor-style = bar
 cursor-style-blink = false
 
+# Input
 mouse-hide-while-typing = true
+keybind = super+enter=toggle_fullscreen
+
+# Clipboard
 copy-on-select = clipboard
 clipboard-paste-protection = true
 clipboard-paste-bracketed-safe = false
-keybind = super+enter=toggle_fullscreen
 
+# macOS
 macos-option-as-alt = true
 macos-titlebar-style = tabs
 
+# Shell
 shell-integration = fish
