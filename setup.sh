@@ -151,6 +151,7 @@ create_named_symlink "AGENTS.md" ".codex/AGENTS.md"
 
 create_symlink ".default-npm-packages"
 create_symlink ".hushlogin"
+create_symlink ".mcp.json"
 
 sync_symlinks ".config/fish/functions" "*.fish"
 sync_symlinks ".config/nvim/lua/plugins" "*.lua"
