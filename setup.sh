@@ -94,9 +94,7 @@ echo -n -e "\n"
 
 directories=(
   ".claude"
-  ".claude/agents"
   ".claude/skills"
-  ".claude/skills/_shared"
   ".claude/skills/create-branch"
   ".claude/skills/local-review"
   ".claude/skills/make-commit"
@@ -159,8 +157,6 @@ sync_symlinks ".claude/skills/create-branch" "*.md"
 sync_symlinks ".claude/skills/local-review" "*.md"
 sync_symlinks ".claude/skills/make-commit" "*.md"
 sync_symlinks ".claude/skills/show-summary" "*.md"
-sync_symlinks ".claude/skills/_shared" "*.md"
-sync_symlinks ".claude/agents" "*.md"
 sync_symlinks ".config/bat/themes" "*.tmTheme"
 
 if [ ${#created_links[@]} -gt 0 ]; then
