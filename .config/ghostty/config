@@ -34,5 +34,9 @@ clipboard-paste-bracketed-safe = false
 macos-option-as-alt = true
 macos-titlebar-style = tabs
 
+# Tab/Split
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
 # Shell
 shell-integration = fish
