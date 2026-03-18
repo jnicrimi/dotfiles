@@ -1,10 +1,13 @@
 # Theme
-theme = Catppuccin Mocha
+theme = "Catppuccin Mocha"
 
 # Font
-font-family = Monaspace Neon
+font-family = "JetBrainsMono Nerd Font"
 font-size = 14
-font-codepoint-map = U+3000-U+303F,U+3040-U+309F,U+30A0-U+30FF,U+31F0-U+31FF,U+3400-U+4DBF,U+4E00-U+9FFF,U+F900-U+FAFF,U+FF00-U+FFEF=Noto Sans Mono CJK JP
+font-thicken = true
+font-thicken-strength = 90
+font-feature = "-calt,-liga,-dlig"
+font-codepoint-map = U+3000-U+303F,U+3040-U+309F,U+30A0-U+30FF,U+31F0-U+31FF,U+3400-U+4DBF,U+4E00-U+9FFF,U+F900-U+FAFF,U+FF00-U+FFEF="Noto Sans Mono CJK JP"
 
 # Window
 window-padding-x = 16
