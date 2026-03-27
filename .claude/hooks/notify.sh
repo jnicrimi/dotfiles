@@ -1,7 +1,6 @@
 #!/bin/bash
 
 command -v jq >/dev/null 2>&1 || { echo "jq is required but not installed." >&2; exit 1; }
-command -v terminal-notifier >/dev/null 2>&1 || { echo "terminal-notifier is required but not installed." >&2; exit 1; }
 
 json=$(cat)
 
@@ -17,17 +16,17 @@ project_name=$(basename "$cwd")
 
 case "$event_name" in
   "Stop")
-    terminal-notifier \
-      -title "Claude Code" \
-      -message "🔴 $project_name" \
-      -group "$project_name" \
-      -sound Glass
+    osascript - "$project_name" <<'APPLESCRIPT'
+      on run argv
+        display notification ("🔴 " & (item 1 of argv)) with title "Claude Code" sound name "Glass"
+      end run
+APPLESCRIPT
     ;;
   "Notification")
-    terminal-notifier \
-      -title "Claude Code" \
-      -message "🔵 $project_name" \
-      -group "$project_name" \
-      -sound Glass
+    osascript - "$project_name" <<'APPLESCRIPT'
+      on run argv
+        display notification ("🔵 " & (item 1 of argv)) with title "Claude Code" sound name "Glass"
+      end run
+APPLESCRIPT
     ;;
 esac
