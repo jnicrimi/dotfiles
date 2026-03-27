@@ -17,10 +17,18 @@ project_name=$(basename "$cwd")
 case "$event_name" in
   "Stop")
     afplay /System/Library/Sounds/Glass.aiff &
-    osascript -e "display notification \"🔴 $project_name\" with title \"Claude Code\""
+    osascript - "$project_name" <<'APPLESCRIPT'
+      on run argv
+        display notification ("🔴 " & (item 1 of argv)) with title "Claude Code"
+      end run
+APPLESCRIPT
     ;;
   "Notification")
     afplay /System/Library/Sounds/Glass.aiff &
-    osascript -e "display notification \"🔵 $project_name\" with title \"Claude Code\""
+    osascript - "$project_name" <<'APPLESCRIPT'
+      on run argv
+        display notification ("🔵 " & (item 1 of argv)) with title "Claude Code"
+      end run
+APPLESCRIPT
     ;;
 esac
