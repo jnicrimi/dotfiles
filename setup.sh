@@ -98,6 +98,7 @@ directories=(
   ".claude/skills/create-branch"
   ".claude/skills/local-review"
   ".claude/skills/make-commit"
+  ".claude/hooks"
   ".claude/skills/show-summary"
   ".codex"
   ".config/bat"
@@ -157,6 +158,7 @@ sync_symlinks ".claude/skills/create-branch" "*.md"
 sync_symlinks ".claude/skills/local-review" "*.md"
 sync_symlinks ".claude/skills/make-commit" "*.md"
 sync_symlinks ".claude/skills/show-summary" "*.md"
+sync_symlinks ".claude/hooks" "*.sh"
 sync_symlinks ".config/bat/themes" "*.tmTheme"
 
 if [ ${#created_links[@]} -gt 0 ]; then

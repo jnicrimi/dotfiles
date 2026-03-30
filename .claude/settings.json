@@ -105,7 +105,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.dotfiles/.claude/hooks/notify.sh"
+            "command": "~/.claude/hooks/notify.sh"
           }
         ]
       }
@@ -116,7 +116,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.dotfiles/.claude/hooks/notify.sh"
+            "command": "~/.claude/hooks/notify.sh"
           }
         ]
       }
@@ -127,7 +127,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.dotfiles/.claude/hooks/editorconfig-autofix.sh"
+            "command": "~/.claude/hooks/editorconfig-autofix.sh"
           }
         ]
       }
