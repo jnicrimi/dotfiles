@@ -134,5 +134,6 @@
     ]
   },
   "language": "japanese",
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "showThinkingSummaries": true
 }
