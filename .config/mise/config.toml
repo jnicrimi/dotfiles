@@ -1,3 +1,6 @@
 [tools]
 node = "lts"
 pnpm = "latest"
+terraform = "latest"
+"pipx:yamllint" = "latest"
+"pipx:localstack" = "latest"
