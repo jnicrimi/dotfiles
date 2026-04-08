@@ -2,5 +2,6 @@
 node = "lts"
 pnpm = "latest"
 terraform = "latest"
+"pipx:copier" = "latest"
 "pipx:yamllint" = "latest"
 "pipx:localstack" = "latest"
