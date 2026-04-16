@@ -3,11 +3,15 @@
   "extends": ["config:recommended"],
   "timezone": "Asia/Tokyo",
   "schedule": ["after 10am and before 1pm on saturday"],
-  "minimumReleaseAge": "7 days",
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
-      "minimumReleaseAge": "14 days"
+      "minimumReleaseAge": "7 days"
     }
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "minimumReleaseAge": "0 days",
+    "labels": ["security"]
+  }
 }
