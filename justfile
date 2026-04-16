@@ -4,6 +4,12 @@ brew-update:
     brew cleanup --prune=all
     brew autoremove
 
+brew-bundle-install:
+    brew bundle install --file ~/.dotfiles/Brewfile
+
+mas-update:
+    mas upgrade
+
 mise-update:
     mise upgrade
     mise reshim
@@ -26,6 +32,12 @@ update-all:
     @echo ""
     @echo "🍺 Updating Homebrew..."
     just brew-update
+    @echo ""
+    @echo "📋 Syncing Brewfile..."
+    just brew-bundle-install
+    @echo ""
+    @echo "🍎 Updating Mac App Store apps..."
+    just mas-update
     @echo ""
     @echo "🔧 Updating mise and Node.js..."
     just mise-update
