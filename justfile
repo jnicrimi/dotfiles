@@ -10,7 +10,7 @@ mise-update:
     mise prune --yes
 
 npm-update:
-    npm update -g
+    mise exec -- npm update -g
 
 fisher-update:
     fish -c "fisher update"
