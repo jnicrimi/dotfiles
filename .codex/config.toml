@@ -1,4 +1,4 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "high"
 hide_agent_reasoning = true
 network_access = true
@@ -16,3 +16,6 @@ args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-s
 
 [projects."/Users/jun/.dotfiles"]
 trust_level = "trusted"
+
+[tui]
+show_tooltips = false
