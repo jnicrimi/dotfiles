@@ -67,6 +67,7 @@ cask "raycast"
 cask "slack"
 cask "tableplus"
 cask "visual-studio-code"
+cask "zoom"
 mas "EdgeView", id: 1580323719
 mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
