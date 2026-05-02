@@ -12,10 +12,9 @@ reviews:
   estimate_code_review_effort: false
   related_prs: false
   auto_review:
-    enabled: false
-    ignore_title_keywords:
-      - "WIP"
-      - "DO NOT MERGE"
+    enabled: true
+    ignore_usernames:
+      - "renovate[bot]"
     drafts: false
   finishing_touches:
     docstrings:
