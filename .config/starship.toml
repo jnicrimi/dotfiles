@@ -49,7 +49,6 @@ crust = "#11111b"
 style = "fg:base bg:red"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
 truncate_to_repo = true
 
 [git_branch]
