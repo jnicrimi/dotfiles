@@ -4,6 +4,9 @@
 
 ```sh
 mise trust
+```
+
+```sh
 mise run setup
 ```
 
