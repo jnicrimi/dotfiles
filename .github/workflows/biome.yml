@@ -1,0 +1,27 @@
+name: biome
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  biome:
+    name: biome
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@dba19683ed58901619b14f395a24841710cb4925  # v4.1.0
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: biome
+        run: pnpm exec biome ci

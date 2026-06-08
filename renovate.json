@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":pinAllExceptPeerDependencies",
+    "customManagers:biomeVersions"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["* 10-21 * * *"],
+  "minimumReleaseAge": "3 days",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "matchUpdateTypes": ["pin", "pinDigest"],
+      "minimumReleaseAge": "0 days"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "minimumReleaseAge": "0 days",
+    "labels": ["security"]
+  }
+}
