@@ -1,0 +1,42 @@
+["update:brew"]
+description = "Homebrew パッケージを更新"
+run = [
+  "brew update",
+  "brew upgrade",
+  "brew bundle install --file {{config_root}}/Brewfile",
+  "brew cleanup --prune=all",
+  "brew autoremove",
+]
+
+["update:mas"]
+description = "Mac App Store アプリを更新"
+run = "mas upgrade"
+
+["update:fisher"]
+description = "fish プラグインを更新"
+run = 'fish -c "fisher update"'
+
+["update:nvim"]
+description = "Neovim プラグインを更新"
+run = 'nvim --headless "+Lazy! sync" +qa'
+
+[update]
+description = "すべての環境ツールを更新"
+quiet = true
+run = [
+  "echo '🔄 Starting environment update...'",
+  "echo ''",
+  "echo '🍺 Updating Homebrew...'",
+  "mise run update:brew",
+  "echo ''",
+  "echo '🍎 Updating Mac App Store apps...'",
+  "mise run update:mas",
+  "echo ''",
+  "echo '🐟 Updating fish plugins...'",
+  "mise run update:fisher",
+  "echo ''",
+  "echo '⚡ Updating Neovim plugins...'",
+  "mise run update:nvim",
+  "echo ''",
+  "echo '✅ All updates completed!'",
+]

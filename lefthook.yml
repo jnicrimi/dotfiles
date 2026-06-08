@@ -25,6 +25,21 @@ pre-commit:
     taplo:
       glob: "*.toml"
       run: pnpm exec taplo fmt --check {staged_files}
+    fish:
+      glob: "**/*.fish"
+      run: fish -n {staged_files}
+    fish_indent:
+      glob: "**/*.fish"
+      run: fish_indent --check {staged_files}
+    shellcheck:
+      glob: "**/*.sh"
+      run: shellcheck {staged_files}
+    selene:
+      glob: "**/*.lua"
+      run: selene {staged_files}
+    stylua:
+      glob: "**/*.lua"
+      run: stylua --check {staged_files}
 
 pre-push:
   commands:

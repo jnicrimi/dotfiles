@@ -1,11 +1,14 @@
-# template
+# dotfiles
 
 ## Setup
 
 ```sh
 mise trust
+mise run setup
 ```
 
+## Sync
+
 ```sh
-mise run setup
+mise run sync
 ```

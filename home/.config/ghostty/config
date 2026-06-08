@@ -1,0 +1,47 @@
+# Theme
+theme = "Catppuccin Mocha"
+window-colorspace = display-p3
+
+# Font
+font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "BIZ UDGothic"
+font-size = 14
+font-thicken = true
+font-thicken-strength = 90
+font-feature = "-calt,-liga,-dlig"
+
+# Window
+window-padding-x = 16
+window-padding-y = 8
+window-padding-balance = true
+unfocused-split-opacity = 0.75
+
+# Window behavior
+quit-after-last-window-closed = true
+confirm-close-surface = true
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+
+# Input
+mouse-hide-while-typing = true
+keybind = super+enter=toggle_fullscreen
+keybind = ctrl+[=text:\x1b
+
+# Clipboard
+copy-on-select = clipboard
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = false
+
+# macOS
+macos-option-as-alt = true
+macos-titlebar-style = tabs
+
+# Tab/Split
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+split-preserve-zoom = navigation
+
+# Shell
+shell-integration = fish

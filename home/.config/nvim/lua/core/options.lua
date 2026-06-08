@@ -1,0 +1,41 @@
+local opt = vim.opt
+
+opt.background = "dark"
+opt.backup = false
+opt.clipboard = "unnamedplus"
+opt.confirm = true
+opt.cursorline = true
+opt.ignorecase = true
+opt.linebreak = true
+opt.list = true
+opt.listchars = {
+  trail = "-",
+  eol = "¬",
+  tab = "▸ ",
+  extends = "»",
+  precedes = "«",
+}
+opt.number = true
+opt.scrolloff = 8
+opt.shiftwidth = 2
+opt.sidescrolloff = 8
+opt.shortmess:append("Ic")
+opt.showbreak = "↪"
+opt.showmatch = true
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.smartindent = true
+opt.splitbelow = true
+opt.splitright = true
+opt.swapfile = false
+opt.tabstop = 2
+opt.termguicolors = true
+opt.timeout = true
+opt.timeoutlen = 300
+opt.ttimeout = true
+opt.ttimeoutlen = 50
+opt.updatetime = 250
+opt.whichwrap = "b,s,[,],<,>"
+opt.wrap = true
+opt.wrapscan = true
+opt.writebackup = false

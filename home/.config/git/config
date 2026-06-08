@@ -1,0 +1,44 @@
+[core]
+  editor = nvim
+  pager = delta
+  quotepath = false
+
+[commit]
+  verbose = true
+
+[status]
+  showUntrackedFiles = all
+
+[fetch]
+  prune = true
+
+[pull]
+  rebase = false
+
+[push]
+  default = nothing
+
+[rebase]
+  autoStash = true
+
+[merge]
+  conflictStyle = zdiff3
+  tool = vimdiff
+
+[diff]
+  algorithm = histogram
+  colorMoved = default
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+  syntax-theme = Catppuccin Mocha
+
+[ghq]
+  root = ~/ghq
+
+[include]
+  path = ~/.gitconfig.local
