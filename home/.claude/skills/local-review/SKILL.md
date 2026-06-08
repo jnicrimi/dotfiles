@@ -1,0 +1,120 @@
+---
+name: local-review
+description: ローカルリポジトリの変更を分析し、コードレビューを実施する
+allowed-tools: Bash, Read, Grep, Glob
+disable-model-invocation: true
+---
+
+# local-review
+
+## Context
+
+- Current branch: !`git branch --show-current`
+- Status: !`git status --short`
+- Branches: !`git branch --format='%(refname:short)'`
+- Staged diff: !`git diff --staged --ignore-all-space --ignore-blank-lines`
+- Unstaged diff: !`git diff --ignore-all-space --ignore-blank-lines`
+
+## 概要
+
+ローカルリポジトリの変更を分析し、コードレビューを実施する。
+
+## 実行手順
+
+### 1. レビュー対象の選択
+
+#### 1.1 レビュー対象リストの作成
+
+Contextセクションを確認し、以下のリストを作成。
+
+1. Branchesからカレントブランチを除外
+2. 未コミットの変更（Status）がある場合はリストの最後に「未コミットの変更」オプションを追加
+
+#### 1.2 レビュー対象の判定と表示
+
+##### レビュー対象が存在しない場合
+
+「選択可能な項目がありません。」と出力して処理を終了。
+
+##### レビュー対象が存在する場合
+
+番号付きリストでブランチを出力。
+
+```text
+📌 レビュー対象の選択
+────────────────────────────────────────
+1. branch-name-1
+2. branch-name-2
+3. 未コミットの変更
+
+(1-3):
+```
+
+#### 1.3 ユーザー選択の処理
+
+ユーザーが番号を選択したら以下を実行。
+
+- 有効な番号が選択された場合
+  - 選択されたレビュー対象を記録
+- 無効な番号が選択された場合
+  - 「無効な番号です。もう一度番号を選択してください。」と再入力を促す
+
+### 2. 差分の調査と分析
+
+選択に応じて差分を調査し、以下の情報を収集。
+
+#### 2.1 ローカルブランチが選択された場合
+
+選択されたブランチとの差分を取得。
+
+- `${selected_branch}` に <選択されたブランチ名> を設定
+- `${review_target}` に <選択されたブランチ名> を設定
+
+```bash
+git diff ${selected_branch}...HEAD --stat
+git diff ${selected_branch}...HEAD --name-status
+git diff ${selected_branch}...HEAD --ignore-all-space --ignore-blank-lines
+```
+
+#### 2.2 未コミットの変更が選択された場合
+
+Contextセクションの `Status`、`Staged diff`、`Unstaged diff` を参照して作業ディレクトリの変更を確認。
+
+- `${selected_branch}` は設定しない
+- `${review_target}` に「未コミットの変更」を設定する
+
+#### 2.3 差分の分析
+
+収集した差分を整理して、以下の項目に分類。
+
+- 追加された機能
+- 変更された機能
+- 削除された機能
+
+### 3. レビューの準備
+
+以下の項目をレビュー実施前に記憶。
+
+#### 重要度の判断基準
+
+| 重要度 | アイコン | 説明 | 対応必要性 |
+| --- | --- | --- | --- |
+| Critical | 🟥 | セキュリティ脆弱性、データ損失リスク、システム停止を引き起こす問題 | 必須修正 |
+| Major | 🟧 | 不具合、不足している必須機能、パフォーマンス問題 | 要対応 |
+| Minor | 🟨 | コードスタイルの違反、軽微な問題 | 軽微な問題 |
+| Good | 🟩 | 優れた実装、適切なエラーハンドリング、良い設計判断 | 優れた実装 |
+
+### 4. レビューの実行
+
+差分に基づいてレビューを実施する。
+
+#### 実行時の注意事項
+
+- **CRITICAL**: 以下の要件を必ず遵守する
+  - ファイル内容への言及時は必ず行番号を含める
+  - 存在確認は実際に検証してから報告する
+  - 推測や可能性による指摘は禁止（実際に確認できた問題のみ報告）
+
+### 5. レビュー結果の出力
+
+[template.md](./template.md) を参照
