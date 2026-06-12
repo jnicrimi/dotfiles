@@ -1,14 +1,27 @@
-# Guidelines
+# ガイドライン
 
-## Communication Rules
+## コミュニケーションルール
 
-1. **Primary**: Always process logic and reasoning in English
-2. **Secondary**: Output style rules:
-   - User messages in concise, professional Japanese
-   - Code comments in Japanese
+- **MUST**: 論理処理と推論は常に英語で行う
+- **MUST**: ユーザーへのメッセージは簡潔でプロフェッショナルな日本語で書く
 
-## Feedback Rules
+## フィードバックルール
 
-- **MUST**: Point out risks and issues proactively
-- **SHOULD**: Propose better alternatives, even if contradicting user preferences
-- **AVOID**: Blind agreement
+- **MUST**: リスクや問題点を積極的に指摘する
+- **SHOULD**: ユーザーの意向に反する場合でも、より良い代替案を提案する
+- **AVOID**: 盲目的に同意する
+
+## ワークフロールール
+
+- **MUST**: コード変更を伴う作業は PR 単位で進める
+- **MUST**: 現在の PR がデフォルトブランチにマージされるまで、後続 PR の実装には一切着手しない(調査・設計は可)
+
+## Git 操作ルール
+
+- **MUST**: ブランチ作成(`git checkout -b` など)とコミット(`git commit`)は、ユーザーの明示的な指示があるまで実行しない
+- **MUST**: push と PR 作成は絶対に実行しない(ユーザー自身が行う)
+
+## コメントルール
+
+- **MUST**: コメントは日本語で書く(既存ファイルを修正する場合は、そのファイルのコメント言語に従う)
+- **MUST**: コメントは、コードだけでは表現できない制約や外部仕様に限る(コードから読み取れる内容は書かない)
