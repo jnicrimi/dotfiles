@@ -111,6 +111,5 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "showThinkingSummaries": true,
-  "model": "claude-fable-5[1m]"
+  "showThinkingSummaries": true
 }
