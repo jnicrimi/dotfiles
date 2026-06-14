@@ -6,9 +6,14 @@
     "customManagers:biomeVersions"
   ],
   "timezone": "Asia/Tokyo",
-  "schedule": ["* 10-21 * * *"],
+  "schedule": ["* 12-17 * * *"],
   "minimumReleaseAge": "3 days",
   "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "{{manager}} (non-major)",
+      "groupSlug": "{{manager}}-non-major"
+    },
     {
       "matchUpdateTypes": ["major"],
       "minimumReleaseAge": "7 days"
