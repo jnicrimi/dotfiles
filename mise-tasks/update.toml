@@ -20,6 +20,10 @@ run = 'fish -c "fisher update"'
 description = "Neovim プラグインを更新"
 run = 'nvim --headless "+Lazy! sync" +qa'
 
+["update:pnpm"]
+description = "pnpm ストアを整理"
+run = "pnpm store prune"
+
 [update]
 description = "すべての環境ツールを更新"
 quiet = true
@@ -37,6 +41,9 @@ run = [
   "echo ''",
   "echo '⚡ Updating Neovim plugins...'",
   "mise run update:nvim",
+  "echo ''",
+  "echo '📦 Pruning pnpm store...'",
+  "mise run update:pnpm",
   "echo ''",
   "echo '✅ All updates completed!'",
 ]
