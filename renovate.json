@@ -12,15 +12,17 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "{{manager}} (non-major)",
-      "groupSlug": "{{manager}}-non-major"
+      "groupSlug": "{{manager}}-non-major",
+      "automerge": true
     },
     {
       "matchUpdateTypes": ["major"],
       "minimumReleaseAge": "7 days"
     },
     {
-      "matchUpdateTypes": ["pin", "pinDigest"],
-      "minimumReleaseAge": "0 days"
+      "matchUpdateTypes": ["pin", "pinDigest", "digest"],
+      "minimumReleaseAge": "0 days",
+      "automerge": true
     }
   ],
   "vulnerabilityAlerts": {
