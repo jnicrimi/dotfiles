@@ -111,5 +111,6 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "showThinkingSummaries": true
+  "showThinkingSummaries": true,
+  "tui": "fullscreen"
 }
