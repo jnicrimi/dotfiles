@@ -23,7 +23,7 @@
 
 [merge]
   conflictStyle = zdiff3
-  tool = vimdiff
+  tool = nvimdiff
 
 [diff]
   algorithm = histogram
