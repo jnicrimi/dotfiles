@@ -27,7 +27,7 @@ pre-commit:
       run: pnpm exec taplo fmt --check {staged_files}
     fish:
       glob: "**/*.fish"
-      run: fish -n {staged_files}
+      run: for f in {staged_files}; do fish -n "$f" || exit 1; done
     fish_indent:
       glob: "**/*.fish"
       run: fish_indent --check {staged_files}
