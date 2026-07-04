@@ -18,14 +18,14 @@ return {
       function()
         require("illuminate").goto_next_reference()
       end,
-      desc = "次の参照へ移動",
+      desc = "Next reference",
     },
     {
       "[[",
       function()
         require("illuminate").goto_prev_reference()
       end,
-      desc = "前の参照へ移動",
+      desc = "Previous reference",
     },
   },
 }

@@ -1,19 +1,19 @@
 local keymap = vim.keymap
 
 -- Navigation
-keymap.set("n", "<Down>", "gj")
-keymap.set("n", "<Up>", "gk")
+keymap.set("n", "<Down>", "gj", { desc = "Down (display line)" })
+keymap.set("n", "<Up>", "gk", { desc = "Up (display line)" })
 
 -- Search
-keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { silent = true })
+keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { silent = true, desc = "Clear search highlight" })
 
 -- Line movement
-keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+keymap.set("x", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move line down" })
+keymap.set("x", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move line up" })
 
 -- Buffer operations
-keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<leader><Tab>", "<cmd>b#<CR>", { desc = "Last buffer" })
 keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
-keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Delete buffer" })
+keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete buffer" })
