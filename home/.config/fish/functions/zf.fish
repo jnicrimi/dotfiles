@@ -5,5 +5,6 @@ function zf --description "Select directory from zoxide database with fzf"
         return 0
     end
 
-    _set_commandline "z $selected_path"
+    set -l escaped_path (string escape -- $selected_path)
+    _set_commandline "z $escaped_path"
 end
