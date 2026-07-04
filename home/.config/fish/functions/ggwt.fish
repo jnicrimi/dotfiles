@@ -28,7 +28,9 @@ function _ggwt_add
         return 1
     end
 
-    _set_commandline "git worktree add $worktree_path $selected_branch"
+    set -l escaped_path (string escape -- $worktree_path)
+    set -l escaped_branch (string escape -- $selected_branch)
+    _set_commandline "git worktree add $escaped_path $escaped_branch"
 end
 
 function _ggwt_remove
@@ -45,7 +47,8 @@ function _ggwt_remove
         return 0
     end
 
-    _set_commandline "git worktree remove $selected_worktree"
+    set -l escaped_worktree (string escape -- $selected_worktree)
+    _set_commandline "git worktree remove $escaped_worktree"
 end
 
 function _ggwt_generate_path

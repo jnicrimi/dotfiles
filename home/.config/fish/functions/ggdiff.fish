@@ -3,14 +3,15 @@ function ggdiff --description "Show git differences"
     _assert_in_git_repository
     or return 1
 
-    set -l selected_branch (_select_other_branch)
-    or return 0
     set -l current_branch (git branch --show-current)
 
     if test -z "$current_branch"
         echo "Error: Cannot show diff in detached HEAD state" >&2
         return 1
     end
+
+    set -l selected_branch (_select_other_branch)
+    or return 0
 
     set -l action (_select_menu "Action" "diff" "stat" "edit")
     or return 0
