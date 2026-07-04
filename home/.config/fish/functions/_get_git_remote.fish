@@ -1,6 +1,12 @@
 function _get_git_remote
 
-    set -l branch (git rev-parse --abbrev-ref HEAD)
+    set -l branch (git branch --show-current)
+
+    if test -z "$branch"
+        echo "Error: Cannot determine branch in detached HEAD state" >&2
+        return 1
+    end
+
     set -l remote (git config --get branch.$branch.remote 2>/dev/null)
 
     if test -z "$remote"

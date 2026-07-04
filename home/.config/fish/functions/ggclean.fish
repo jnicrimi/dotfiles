@@ -5,7 +5,7 @@ function ggclean --description "Discard all git changes"
 
     set -l changes (git status --porcelain)
     if test -z "$changes"
-        echo "No changes to stash"
+        echo "No changes to discard"
         return 0
     end
 

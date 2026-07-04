@@ -36,6 +36,7 @@ function ggstash --description "Manage git stashes"
             end
 
             read -P "Stash message: " -l stash_message
+            or return 0
 
             if test -z "$stash_message"
                 echo "Error: No stash message entered" >&2
