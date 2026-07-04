@@ -1,16 +1,13 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = {},
-  config = function()
-    local wk = require("which-key")
-    wk.setup({})
-    wk.add({
+  opts = {
+    spec = {
       { "<leader>b", group = "buffer" },
       { "<leader>f", group = "find" },
       { "<leader>g", group = "git" },
-    })
-  end,
+    },
+  },
   keys = {
     {
       "<leader>?",
