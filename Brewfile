@@ -26,14 +26,14 @@ brew "ghq"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Render markdown on the CLI
-brew "glow"
 # Command-line tool for generating regular expressions
 brew "grex"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Terminal Markdown previewer with a GUI-like experience
+brew "leaf-md"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
