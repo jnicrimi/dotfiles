@@ -68,8 +68,6 @@ cask "amazon-photos"
 cask "bruno"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# OpenAI's official browser with ChatGPT built in
-cask "chatgpt-atlas"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # OpenAI's coding agent that runs in your terminal
