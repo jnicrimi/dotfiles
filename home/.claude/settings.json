@@ -111,6 +111,11 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
