@@ -1,7 +1,7 @@
 set -gx EDITOR nvim
 set -gx FZF_DEFAULT_OPTS "--height 100% --reverse --border=rounded --no-sort --ansi --info=inline --preview-window=right:50%:wrap --bind 'ctrl-/:preview-page-down,ctrl-\:preview-page-up'"
 set -gx HOMEBREW_BUNDLE_DUMP_NO_NPM 1
-set -gx HOMEBREW_NO_ENV_HINTS 1
+set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
 set -gx LANG ja_JP.UTF-8
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx XDG_CONFIG_HOME $HOME/.config
