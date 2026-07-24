@@ -13,11 +13,11 @@ function ggdiff --description "Show git differences"
     set -l selected_branch (_select_other_branch)
     or return 0
 
-    set -l action (_select_menu "Action" "diff" "stat" "edit")
+    set -l action (_select_menu "Action" "diff" "stat" "path")
     or return 0
 
     set -l diff_options
-    if test "$action" != edit
+    if test "$action" != path
         set diff_options (_select_menu "Options" "空白・空行無視" "指定なし")
         or return 0
     end
@@ -37,7 +37,7 @@ function ggdiff --description "Show git differences"
                 case 指定なし
                     _set_commandline "git diff --stat $selected_branch..$current_branch"
             end
-        case edit
+        case path
             set -l root (git rev-parse --show-toplevel)
             set -l files (git diff --name-only "$selected_branch..$current_branch" | \
                 fzf --multi --prompt="Select files: ")
@@ -47,7 +47,9 @@ function ggdiff --description "Show git differences"
                 for file in $files
                     set -a escaped_files (string escape -- "$root/$file")
                 end
-                _set_commandline "vim $escaped_files"
+                _set_commandline "$escaped_files"
+                commandline -C 0
+                commandline -f repaint
             end
         case '*'
             return 0
