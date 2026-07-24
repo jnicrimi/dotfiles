@@ -50,6 +50,9 @@
     "BIZ UDGothic"
   ],
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_features": {
+    "calt": false
+  },
   "linked_edits": true,
   "show_whitespaces": "boundary",
   "ensure_final_newline_on_save": true,
@@ -73,5 +76,11 @@
     "mode": "dark",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha",
+  },
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "html": true,
+    "toml": true,
   },
 }
