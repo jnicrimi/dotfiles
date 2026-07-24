@@ -29,6 +29,8 @@ brew "git"
 brew "git-delta"
 # Command-line tool for generating regular expressions
 brew "grex"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
