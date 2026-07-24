@@ -1,3 +1,4 @@
+tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -32,8 +33,6 @@ brew "grex"
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Terminal Markdown previewer with a GUI-like experience
-brew "leaf-md"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
@@ -58,6 +57,8 @@ brew "xh"
 brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# mo is a Markdown viewer that opens .md files in a browser.
+brew "k1low/tap/mo", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Enable Windows-like alt-tab
