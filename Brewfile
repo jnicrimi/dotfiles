@@ -101,8 +101,8 @@ cask "raycast"
 cask "slack"
 # Native GUI tool for relational databases
 cask "tableplus"
-# Open-source code editor
-cask "visual-studio-code"
+# Multiplayer code editor
+cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "EdgeView", id: 1580323719
@@ -111,14 +111,3 @@ mas "LINE", id: 539883307
 mas "Messenger", id: 1480068668
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
-vscode "alefragnani.bookmarks"
-vscode "alefragnani.project-manager"
-vscode "catppuccin.catppuccin-vsc"
-vscode "catppuccin.catppuccin-vsc-icons"
-vscode "eamodio.gitlens"
-vscode "editorconfig.editorconfig"
-vscode "mechatroner.rainbow-csv"
-vscode "ms-ceintl.vscode-language-pack-ja"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "usernamehw.errorlens"
-vscode "vscodevim.vim"

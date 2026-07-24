@@ -7,7 +7,11 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!home/.config/karabiner/karabiner.json"]
+    "includes": [
+      "**",
+      "!home/.config/karabiner/karabiner.json",
+      "!home/.config/zed"
+    ]
   },
   "formatter": {
     "enabled": true,
