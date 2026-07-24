@@ -1,5 +1,10 @@
+onboarding = false
+
 [theme]
 name = "catppuccin"
 
 [ui.toast]
 delivery = "system"
+
+[terminal]
+new_cwd = "current"
