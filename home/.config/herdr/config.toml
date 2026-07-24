@@ -1,0 +1,5 @@
+[theme]
+name = "catppuccin"
+
+[ui.toast]
+delivery = "system"
