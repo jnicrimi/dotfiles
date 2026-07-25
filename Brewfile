@@ -1,4 +1,3 @@
-tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -59,8 +58,6 @@ brew "xh"
 brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# mo is a Markdown viewer that opens .md files in a browser.
-brew "k1low/tap/mo", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Enable Windows-like alt-tab
