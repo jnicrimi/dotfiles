@@ -27,7 +27,6 @@ cursor-style-blink = false
 # Input
 mouse-hide-while-typing = true
 keybind = super+enter=toggle_fullscreen
-keybind = ctrl+[=text:\x1b
 
 # Clipboard
 copy-on-select = clipboard
