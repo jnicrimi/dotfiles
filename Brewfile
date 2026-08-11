@@ -108,6 +108,5 @@ cask "zoom"
 mas "EdgeView", id: 1580323719
 mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
-mas "Messenger", id: 1480068668
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835
