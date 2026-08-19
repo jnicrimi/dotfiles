@@ -18,9 +18,7 @@ set -g fish_color_selection --background=494d64
 set -g fish_color_search_match --background=494d64
 set -g fish_greeting ""
 
-fish_add_path $HOME/.local/bin
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew/sbin
+fish_add_path -g $HOME/.local/bin /opt/homebrew/sbin /opt/homebrew/bin
 
 alias cat "bat --paging=never"
 alias chrome "open -a 'Google Chrome'"
@@ -68,3 +66,5 @@ starship init fish | source
 enable_transience
 
 zoxide init fish | source
+
+fzf --fish | source
