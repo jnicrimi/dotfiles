@@ -4,6 +4,9 @@
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0"
   },
+  "enabledPlugins": {
+    "vercel@claude-plugins-official": true
+  },
   "permissions": {
     "allow": [
       "Bash(cp:*)",
@@ -39,6 +42,7 @@
       "Bash(whoami)",
       "WebSearch"
     ],
+    "ask": ["Bash(rm:*)"],
     "deny": [
       "Bash(chown:*)",
       "Bash(dd:*)",
@@ -56,13 +60,6 @@
       "Bash(osascript:*)",
       "Bash(pkill:*)",
       "Bash(psql:*)",
-      "Bash(rm -fR:*)",
-      "Bash(rm -fr:*)",
-      "Bash(rm -Rf:*)",
-      "Bash(rm -rf:*)",
-      "Bash(rm -R:*)",
-      "Bash(rm -r:*)",
-      "Bash(rm --recursive:*)",
       "Bash(scp:*)",
       "Bash(security:*)",
       "Bash(ssh:*)",
@@ -70,20 +67,30 @@
       "Read(.env*)",
       "Read(~/.env*)",
       "Read(~/.aws/**)",
+      "Read(~/.config/gh/hosts.yml)",
+      "Read(~/.docker/config.json)",
       "Read(~/.ssh/**)",
+      "Read(*.key)",
+      "Read(*.pem)",
       "Read(*credentials*)",
       "Read(*password*)",
       "Read(*secret*)",
+      "Read(id_rsa*)",
       "Edit(.env*)",
       "Edit(~/.env*)",
       "Edit(~/.aws/**)",
+      "Edit(~/.config/gh/hosts.yml)",
+      "Edit(~/.docker/config.json)",
       "Edit(~/.ssh/**)",
       "Edit(//System/**)",
       "Edit(//etc/**)",
       "Edit(//usr/**)",
+      "Edit(*.key)",
+      "Edit(*.pem)",
       "Edit(*credentials*)",
       "Edit(*password*)",
-      "Edit(*secret*)"
+      "Edit(*secret*)",
+      "Edit(id_rsa*)"
     ],
     "defaultMode": "plan"
   },
