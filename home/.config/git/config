@@ -3,6 +3,9 @@
   pager = delta
   quotepath = false
 
+[init]
+  defaultBranch = main
+
 [commit]
   verbose = true
 
@@ -11,6 +14,7 @@
 
 [fetch]
   prune = true
+  pruneTags = true
 
 [pull]
   rebase = false
@@ -20,17 +24,25 @@
 
 [rebase]
   autoStash = true
+  updateRefs = true
 
 [merge]
   conflictStyle = zdiff3
   tool = nvimdiff
 
+[rerere]
+  enabled = true
+
 [diff]
   algorithm = histogram
   colorMoved = default
+  colorMovedWS = allow-indentation-change
 
 [interactive]
   diffFilter = delta --color-only
+
+[column]
+  ui = auto
 
 [delta]
   navigate = true
