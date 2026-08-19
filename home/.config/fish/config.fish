@@ -6,16 +6,16 @@ set -gx LANG ja_JP.UTF-8
 set -gx RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 set -gx XDG_CONFIG_HOME $HOME/.config
 
-set -g fish_color_command 8aadf4
-set -g fish_color_error ed8796
-set -g fish_color_param 8bd5ca
-set -g fish_color_valid_path a6da95
-set -g fish_color_quote eed49f
+set -g fish_color_command 89b4fa
+set -g fish_color_error f38ba8
+set -g fish_color_param 94e2d5
+set -g fish_color_valid_path a6e3a1
+set -g fish_color_quote f9e2af
 set -g fish_color_operator fab387
 set -g fish_color_redirection f5c2e7
-set -g fish_color_end a6da95
-set -g fish_color_selection --background=494d64
-set -g fish_color_search_match --background=494d64
+set -g fish_color_end a6e3a1
+set -g fish_color_selection --background=45475a
+set -g fish_color_search_match --background=45475a
 set -g fish_greeting ""
 
 fish_add_path -g $HOME/.local/bin /opt/homebrew/sbin /opt/homebrew/bin
