@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 IFS=$'\t' read -r model pct < <(
   jq -r '[
