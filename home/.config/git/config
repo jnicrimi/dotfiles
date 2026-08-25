@@ -40,9 +40,6 @@
 [interactive]
   diffFilter = delta --color-only
 
-[column]
-  ui = auto
-
 [delta]
   navigate = true
   side-by-side = true
