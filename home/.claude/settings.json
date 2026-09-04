@@ -73,9 +73,6 @@
       "Read(~/.ssh/**)",
       "Read(*.key)",
       "Read(*.pem)",
-      "Read(*credentials*)",
-      "Read(*password*)",
-      "Read(*secret*)",
       "Read(id_rsa*)",
       "Edit(.env*)",
       "Edit(~/.env*)",
@@ -88,9 +85,6 @@
       "Edit(//usr/**)",
       "Edit(*.key)",
       "Edit(*.pem)",
-      "Edit(*credentials*)",
-      "Edit(*password*)",
-      "Edit(*secret*)",
       "Edit(id_rsa*)"
     ],
     "defaultMode": "plan"
