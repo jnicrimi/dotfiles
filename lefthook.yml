@@ -24,7 +24,7 @@ pre-commit:
       run: zizmor --persona=pedantic --offline {staged_files}
     taplo:
       glob: "*.toml"
-      run: pnpm exec taplo fmt --check {staged_files}
+      run: taplo fmt --check {staged_files}
     fish:
       glob: "**/*.fish"
       run: for f in {staged_files}; do fish -n "$f" || exit 1; done
