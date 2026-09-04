@@ -10,7 +10,7 @@
   "permissions": {
     "allow": [
       "Bash(cp:*)",
-      "Bash(date)",
+      "Bash(date:*)",
       "Bash(echo:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr edit:*)",
@@ -31,6 +31,7 @@
       "Bash(git show:*)",
       "Bash(git status:*)",
       "Bash(git switch:*)",
+      "Bash(jq:*)",
       "Bash(ls:*)",
       "Bash(mise run:*)",
       "Bash(mkdir:*)",
