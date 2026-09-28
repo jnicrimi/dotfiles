@@ -85,8 +85,6 @@ cask "google-drive"
 cask "google-japanese-ime"
 # Keyboard customiser
 cask "karabiner-elements"
-# Software for Logitech devices
-cask "logi-options+"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
