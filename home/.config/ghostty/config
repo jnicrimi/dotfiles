@@ -35,7 +35,6 @@ clipboard-paste-bracketed-safe = false
 
 # macOS
 macos-option-as-alt = true
-macos-titlebar-style = tabs
 
 # Tab/Split
 tab-inherit-working-directory = true
