@@ -10,6 +10,7 @@
     "includes": [
       "**",
       "!home/.config/karabiner/karabiner.json",
+      "!home/.config/nvim/lazy-lock.json",
       "!home/.config/zed"
     ]
   },
