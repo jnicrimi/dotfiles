@@ -1,47 +1,47 @@
 commit-msg:
-  commands:
-    commitlint:
+  jobs:
+    - name: commitlint
       run: pnpm exec commitlint --edit {1}
 
 pre-commit:
   parallel: true
-  commands:
-    gitleaks:
+  jobs:
+    - name: gitleaks
       run: gitleaks git --pre-commit --staged
-    biome:
+    - name: biome
       run: pnpm exec biome check --staged --no-errors-on-unmatched
-    markdownlint:
+    - name: markdownlint
       glob: "*.md"
       run: pnpm exec markdownlint-cli2 {staged_files}
-    yamllint:
+    - name: yamllint
       glob: "*.{yml,yaml}"
       run: mise run yamllint --strict {staged_files}
-    actionlint:
+    - name: actionlint
       glob: ".github/workflows/*.{yml,yaml}"
       run: actionlint {staged_files}
-    zizmor:
+    - name: zizmor
       glob: ".github/workflows/*.{yml,yaml}"
       run: zizmor --persona=pedantic --offline {staged_files}
-    taplo:
+    - name: taplo
       glob: "*.toml"
       run: taplo fmt --check {staged_files}
-    fish:
+    - name: fish
       glob: "**/*.fish"
       run: for f in {staged_files}; do fish -n "$f" || exit 1; done
-    fish_indent:
+    - name: fish_indent
       glob: "**/*.fish"
       run: fish_indent --check {staged_files}
-    shellcheck:
+    - name: shellcheck
       glob: "**/*.sh"
       run: shellcheck {staged_files}
-    selene:
+    - name: selene
       glob: "**/*.lua"
       run: selene {staged_files}
-    stylua:
+    - name: stylua
       glob: "**/*.lua"
       run: stylua --check {staged_files}
 
 pre-push:
-  commands:
-    gitleaks:
+  jobs:
+    - name: gitleaks
       run: gitleaks git --log-opts "origin/main..HEAD"
