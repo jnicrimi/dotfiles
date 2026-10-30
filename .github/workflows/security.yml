@@ -12,8 +12,8 @@ permissions:
   contents: read
 
 jobs:
-  gitleaks:
-    name: gitleaks
+  betterleaks:
+    name: betterleaks
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -23,6 +23,6 @@ jobs:
           fetch-depth: 0
       - uses: jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde  # v5.2.1
         with:
-          install_args: gitleaks
-      - name: Run gitleaks
-        run: gitleaks git --log-opts "origin/main..HEAD"
+          install_args: betterleaks
+      - name: Run betterleaks
+        run: betterleaks git --log-opts "origin/main..HEAD"
