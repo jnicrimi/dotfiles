@@ -6,8 +6,8 @@ commit-msg:
 pre-commit:
   parallel: true
   jobs:
-    - name: gitleaks
-      run: gitleaks git --pre-commit --staged
+    - name: betterleaks
+      run: betterleaks git --pre-commit --staged
     - name: biome
       run: pnpm exec biome check --staged --no-errors-on-unmatched
     - name: markdownlint
@@ -46,5 +46,5 @@ pre-commit:
 
 pre-push:
   jobs:
-    - name: gitleaks
-      run: gitleaks git --log-opts "origin/main..HEAD"
+    - name: betterleaks
+      run: betterleaks git --log-opts "origin/main..HEAD"
