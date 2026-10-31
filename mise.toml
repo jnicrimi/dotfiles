@@ -1,6 +1,6 @@
 [tools]
 pnpm = "12.16.1"
-node = "24.22.2"
+node = "26.13.0"
 actionlint = "1.7.12"
 zizmor = "1.31.1"
 betterleaks = "1.9.0"
